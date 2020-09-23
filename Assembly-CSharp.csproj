@@ -58,7 +58,6 @@
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\BaseTemplate\TutorialInfo\Scripts\Readme.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
