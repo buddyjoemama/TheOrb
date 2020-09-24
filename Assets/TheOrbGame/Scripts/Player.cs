@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    public Projectile projectile;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnFire() 
+    {
+        Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
+        clone.Fire();
     }
 
     private void OnMove(InputValue move)
