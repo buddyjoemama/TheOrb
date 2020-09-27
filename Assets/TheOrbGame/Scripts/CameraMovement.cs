@@ -10,7 +10,7 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offset = transform.position - player.transform.position;    
+        offset = transform.position - player.transform.position;
     }
 
     // Update is called once per frame
@@ -21,6 +21,10 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = player.transform.position + offset;
+         transform.position = player.transform.position + offset;
+        //if (Time.frameCount % 10 == 0)
+        //{
+        //    transform.position = Vector3.Lerp(transform.position, transform.position - (transform.forward * 10), 10f);
+        //}
     }
 }

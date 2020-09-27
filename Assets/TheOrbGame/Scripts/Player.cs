@@ -11,17 +11,12 @@ public class Player : MonoBehaviour
     private float movementY;
 
     public Projectile projectile;
+    public Transform shield;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void OnFire() 
@@ -44,6 +39,12 @@ public class Player : MonoBehaviour
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
 
-        rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+       rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+    }
+
+    private void Update()
+    {
+        if (shield != null)
+            shield.position = transform.position;
     }
 }
