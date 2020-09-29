@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2377295276750494650
 Transform:
   m_ObjectHideFlags: 0
@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4062987494322421068}
+  - component: {fileID: 6229487523696476108}
   m_Layer: 0
   m_Name: PlayerOrb
   m_TagString: Untagged
@@ -127,6 +128,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6229487523696476108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406535841497221817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ee2bf6f87ebf8a4c962ab2b797866d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 3624082242024932767}
 --- !u!1 &5521272185245506123
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,11 +249,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5521272185245506123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dadc12200cca2046b4ee9668ca5c8c5, type: 3}
+  m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  projectile: {fileID: 0}
+  projectile: {fileID: 5267724684869463440, guid: aa0149a4e9937c94f8c529616ec91b17, type: 3}
   shield: {fileID: 2377295276750494650}
 --- !u!114 &6425757504133794518
 MonoBehaviour:

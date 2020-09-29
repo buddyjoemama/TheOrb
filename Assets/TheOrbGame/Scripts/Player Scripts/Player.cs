@@ -10,19 +10,24 @@ public class Player : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public Projectile projectile;
+    public Transform projectile;
     public Transform shield;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();    
+        rb = GetComponent<Rigidbody>();
+        shield.gameObject.SetActive(false);
     }
 
     void OnFire() 
     {
-        Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
-        clone.Fire();
+        // Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
+        //clone.Fire();
+
+        var text = Instantiate(projectile, transform.position, transform.rotation);
+
+        Destroy(text.gameObject, 1.0f);
     }
 
     private void OnMove(InputValue move)

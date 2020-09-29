@@ -57,9 +57,10 @@
   <ItemGroup>
     <Compile Include="Assets\TheOrbGame\Scripts\Projectile.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Player.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraMovement.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Shield.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\Shields\Shield.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\Player.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\PlayerManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
