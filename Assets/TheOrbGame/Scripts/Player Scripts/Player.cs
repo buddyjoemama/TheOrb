@@ -11,13 +11,13 @@ public class Player : MonoBehaviour
     private float movementY;
 
     public Transform projectile;
-    public Transform shield;
+    public Shield shield;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        shield.gameObject.SetActive(false);
+        shield.Deactivate();
     }
 
     void OnFire() 
@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (shield != null)
-            shield.position = transform.position;
+        //if (shield != null)
+       //     shield.position = transform.position;
     }
 }

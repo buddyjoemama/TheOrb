@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public Rigidbody shieldBase;
+    public Transform shieldBase;
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +17,10 @@ public class Shield : MonoBehaviour
     void Update()
     {
         
+    }
+
+    internal void Deactivate()
+    {
+        shieldBase.gameObject.SetActive(false);
     }
 }

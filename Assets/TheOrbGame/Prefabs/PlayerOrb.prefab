@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 1175845860615470189}
   - component: {fileID: 6800832886158907783}
   - component: {fileID: 6885402719623772291}
+  - component: {fileID: 3047708927531637704}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2377295276750494650
 Transform:
   m_ObjectHideFlags: 0
@@ -95,6 +96,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3047708927531637704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1251473255591819108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed50def6a3cce0419ed75a0d7df9b6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shieldBase: {fileID: 2377295276750494650}
 --- !u!1 &3406535841497221817
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   projectile: {fileID: 5267724684869463440, guid: aa0149a4e9937c94f8c529616ec91b17, type: 3}
-  shield: {fileID: 2377295276750494650}
+  shield: {fileID: 3047708927531637704}
 --- !u!114 &6425757504133794518
 MonoBehaviour:
   m_ObjectHideFlags: 0
