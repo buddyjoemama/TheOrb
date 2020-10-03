@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,19 @@ public class Player : MonoBehaviour
         Destroy(text.gameObject, 1.0f);
     }
 
+    bool shouldSave = false;
+    Transform saveLocation;
+
+    internal void MoveToSaveCenter(Transform transform)
+    {
+        saveLocation = transform;
+        shouldSave = true;
+
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.rotation = Quaternion.identity;
+    }
+
     private void OnMove(InputValue move)
     {
         Vector2 movementVector = move.Get<Vector2>();
@@ -44,7 +58,19 @@ public class Player : MonoBehaviour
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
 
-       rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+        if (!shouldSave)
+        {
+            rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+        }
+        else
+        {
+            rb.useGravity = false;
+              rb.position = Vector3.Lerp(rb.position, saveLocation.position, .1f);
+            var v = saveLocation.position - rb.position;
+
+            //rb.AddForce(v, ForceMode.Impulse);
+            shouldSave = rb.position.z != saveLocation.position.z && rb.position.x != saveLocation.position.x;
+        }
     }
 
     private void Update()

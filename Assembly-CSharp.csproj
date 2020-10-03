@@ -58,12 +58,13 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Projectile.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\ProjecileMove.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Turret.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\Player.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\SpawnProjecle.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\PlayerManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\Shields\Shield.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\SpawnProjecle.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\ProjecileMove.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\SaveLocationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
