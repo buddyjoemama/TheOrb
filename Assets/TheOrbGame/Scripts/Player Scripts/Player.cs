@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public Transform projectile;
     public Shield shield;
+    public Transform platform;
 
     // Start is called before the first frame update
     void Start()
@@ -26,9 +27,11 @@ public class Player : MonoBehaviour
         // Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
         //clone.Fire();
 
-        var text = Instantiate(projectile, transform.position, transform.rotation);
+        //var text = Instantiate(projectile, transform.position, transform.rotation);
 
-        Destroy(text.gameObject, 1.0f);
+        // Destroy(text.gameObject, 1.0f);
+
+       // Instantiate(platform, transform.position, Quaternion.identity);
     }
 
     bool shouldSave = false;
