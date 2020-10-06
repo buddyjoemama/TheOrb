@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SaveLocationManager : MonoBehaviour
+public class SaveLocationDetector : MonoBehaviour
 {
-    public Player player;
+    public delegate void OnTriggerEnterHandler(Collider other);
+    public event OnTriggerEnterHandler triggerEvent;
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +19,11 @@ public class SaveLocationManager : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == player.tag)
+        if(triggerEvent != null)
         {
-            player.MoveToSaveCenter(transform);
+            triggerEvent(other);
         }
     }
 }

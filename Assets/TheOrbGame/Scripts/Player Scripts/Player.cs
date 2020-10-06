@@ -15,6 +15,9 @@ public class Player : MonoBehaviour
     public Shield shield;
     public Transform platform;
 
+    private bool saving = false;
+    private Vector3 savePosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,17 +37,16 @@ public class Player : MonoBehaviour
        // Instantiate(platform, transform.position, Quaternion.identity);
     }
 
-    bool shouldSave = false;
-    Transform saveLocation;
 
-    internal void MoveToSaveCenter(Transform transform)
+    internal void MoveToSaveCenter(Vector3 position)
     {
-        saveLocation = transform;
-        shouldSave = true;
+        saving = true;
 
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.rotation = Quaternion.identity;
+
+        savePosition = position;
     }
 
     private void OnMove(InputValue move)
@@ -61,18 +63,13 @@ public class Player : MonoBehaviour
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
 
-        if (!shouldSave)
+        if (!saving)
         {
             rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
         }
         else
         {
-            rb.useGravity = false;
-              rb.position = Vector3.Lerp(rb.position, saveLocation.position, .1f);
-            var v = saveLocation.position - rb.position;
-
-            //rb.AddForce(v, ForceMode.Impulse);
-            shouldSave = rb.position.z != saveLocation.position.z && rb.position.x != saveLocation.position.x;
+            rb.position = Vector3.Lerp(rb.position, savePosition, .1f);
         }
     }
 
