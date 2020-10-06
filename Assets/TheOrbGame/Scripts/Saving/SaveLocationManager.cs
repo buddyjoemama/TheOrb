@@ -6,6 +6,7 @@ public class SaveLocationManager : MonoBehaviour
 {
     public Player player;
     public SaveLocationDetector detector;
+    public Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class SaveLocationManager : MonoBehaviour
     {
         Vector3 position = new Vector3(detector.transform.position.x, 0, detector.transform.position.z);
         player.MoveToSaveCenter(position);
+        animator.SetBool("Waiting", false);
+        animator.SetBool("Saving", true);
     }
 
     // Update is called once per frame

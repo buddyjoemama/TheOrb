@@ -66,6 +66,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Player Scripts\Shields\Shield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Saving\SaveLocationManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Saving\SaveLocationDetector.cs" />
+    <Compile Include="Assets\Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
