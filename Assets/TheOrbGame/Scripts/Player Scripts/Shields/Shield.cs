@@ -23,4 +23,14 @@ public class Shield : MonoBehaviour
     {
         shieldBase.gameObject.SetActive(false);
     }
+
+    internal void Activate()
+    {
+        shieldBase.gameObject.SetActive(true);
+    }
+
+    internal void Move(Vector3 position)
+    {
+        shieldBase.position = position;
+    }
 }

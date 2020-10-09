@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
     private bool saving = false;
     private Vector3 savePosition;
+    public bool shieldEnabled = false;
+    public Transform gunRig;
+    public Transform light;
 
     // Start is called before the first frame update
     void Start()
@@ -56,6 +59,15 @@ public class Player : MonoBehaviour
         this.movementY = movementVector.y;
     }
 
+    private void OnLook(InputValue look)
+    {
+        Vector2 lookVector = look.Get<Vector2>();
+
+        var r = gunRig.rotation.eulerAngles + new Vector3(0, lookVector.y);
+
+        gunRig.rotation = Quaternion.Euler(r);
+    }
+
     private void FixedUpdate()
     {
         Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * speed;
@@ -75,7 +87,17 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        //if (shield != null)
-       //     shield.position = transform.position;
+        shield.Move(transform.position);
+        gunRig.position = transform.position;
+        light.position = transform.position;
+
+        if(shieldEnabled)
+        {
+            shield.Activate();
+        }
+        else
+        {
+            shield.Deactivate();
+        }
     }
 }
