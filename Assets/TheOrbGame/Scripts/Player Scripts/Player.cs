@@ -40,10 +40,10 @@ public class Player : MonoBehaviour
 
         // Instantiate(platform, transform.position, Quaternion.identity);
 
-        var clone = Instantiate(projectile, firePoint.position, gunRig.rotation);
-         clone.Rotate(new Vector3(0, 90));
-
-        clone.position = firePoint.position + (clone.forward * 10);
+        Debug.Log(firePoint.rotation.eulerAngles);
+        
+        var clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
+        clone.position = firePoint.position + (firePoint.forward * 10);
     }
 
 
