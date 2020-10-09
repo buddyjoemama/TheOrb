@@ -10,8 +10,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        projectile.velocity = new Vector3(1, 0) * 50;
-        Destroy(projectile.gameObject, 2f);
+
     }
 
     // Update is called once per frame
@@ -20,8 +19,10 @@ public class Projectile : MonoBehaviour
         
     }
 
-    internal void Fire()
+    internal void Fire(Vector3 forward)
     {
         projectile = GetComponent<Rigidbody>();
+        projectile.velocity = forward * 50;
+        Destroy(projectile.gameObject, 2f);
     }
 }

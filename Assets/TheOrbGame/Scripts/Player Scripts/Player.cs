@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public Transform projectile;
+    public Projectile projectile;
     public Shield shield;
     public Transform platform;
 
@@ -42,8 +42,10 @@ public class Player : MonoBehaviour
 
         Debug.Log(firePoint.rotation.eulerAngles);
         
-        var clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
-        clone.position = firePoint.position + (firePoint.forward * 10);
+        Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
+        clone.Fire(firePoint.forward);
+        //clone.position = firePoint.position + (firePoint.forward * 10);
+
     }
 
 
