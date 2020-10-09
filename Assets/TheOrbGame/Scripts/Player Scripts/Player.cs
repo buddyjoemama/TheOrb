@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public bool shieldEnabled = false;
     public Transform gunRig;
     public Transform light;
+    public Transform firePoint;
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +31,19 @@ public class Player : MonoBehaviour
 
     void OnFire() 
     {
-        // Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
+        //Projectile clone = (Projectile)Instantiate(projectile, transform.position, transform.rotation);
         //clone.Fire();
 
         //var text = Instantiate(projectile, transform.position, transform.rotation);
 
         // Destroy(text.gameObject, 1.0f);
 
-       // Instantiate(platform, transform.position, Quaternion.identity);
+        // Instantiate(platform, transform.position, Quaternion.identity);
+
+        var clone = Instantiate(projectile, firePoint.position, gunRig.rotation);
+         clone.Rotate(new Vector3(0, 90));
+
+        clone.position = firePoint.position + (clone.forward * 10);
     }
 
 
