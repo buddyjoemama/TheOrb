@@ -74,11 +74,11 @@ public class Player : MonoBehaviour
     {
         Vector2 lookVector = look.Get<Vector2>();
 
-        var r = gunRig.rotation.eulerAngles + new Vector3(0, lookVector.y);
+        //var r = gunRig.rotation.eulerAngles + new Vector3(0, lookVector.y);
 
         //gunRig.rotation = Quaternion.Euler(r);
 
-        gunRig.transform.Rotate(r, Space.Self);
+        gunRig.transform.Rotate(new Vector3(0, lookVector.y * 4), Space.Self);
     }
 
     private void FixedUpdate()
