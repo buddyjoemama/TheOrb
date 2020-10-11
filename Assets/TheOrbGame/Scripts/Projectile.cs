@@ -21,8 +21,7 @@ public class Projectile : MonoBehaviour
 
     internal void Fire(Vector3 forward)
     {
-        projectile = GetComponent<Rigidbody>();
-        projectile.velocity = forward * 50;
-        Destroy(projectile.gameObject, 2f);
+        projectile = this.gameObject.transform.GetChild(0).GetComponent<Rigidbody>();
+        projectile.velocity = forward * 250;
     }
 }

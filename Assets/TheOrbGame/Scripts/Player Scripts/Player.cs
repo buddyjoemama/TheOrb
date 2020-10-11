@@ -40,12 +40,15 @@ public class Player : MonoBehaviour
 
         // Instantiate(platform, transform.position, Quaternion.identity);
 
-        Debug.Log(firePoint.rotation.eulerAngles);
-        
-        Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
-        clone.Fire(firePoint.forward);
-        //clone.position = firePoint.position + (firePoint.forward * 10);
+        Debug.Log("Front: " + firePoint.forward);
+        Debug.Log("Right: " + firePoint.right);
 
+        //Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
+        //clone.Fire(firePoint.forward);
+
+        Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
+        clone.Fire(firePoint.forward);
+        Destroy(clone.gameObject, 2f);
     }
 
 
@@ -73,7 +76,9 @@ public class Player : MonoBehaviour
 
         var r = gunRig.rotation.eulerAngles + new Vector3(0, lookVector.y);
 
-        gunRig.rotation = Quaternion.Euler(r);
+        //gunRig.rotation = Quaternion.Euler(r);
+
+        gunRig.transform.Rotate(r, Space.Self);
     }
 
     private void FixedUpdate()
@@ -95,6 +100,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        return;
         shield.Move(transform.position);
         gunRig.position = transform.position;
         light.position = transform.position;
