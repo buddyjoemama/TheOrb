@@ -46,9 +46,17 @@ public class Player : MonoBehaviour
         //Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
         //clone.Fire(firePoint.forward);
 
+        var c = projectile.transform.GetChild(0).GetChild(2).position;
+
+        var p = firePoint.transform.position;
+
         Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
+
+
         clone.Fire(firePoint.forward);
         Destroy(clone.gameObject, 2f);
+
+        
     }
 
 
@@ -100,10 +108,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        return;
         shield.Move(transform.position);
         gunRig.position = transform.position;
-        light.position = transform.position;
+       // f light.position = transform.position;
 
         if(shieldEnabled)
         {
