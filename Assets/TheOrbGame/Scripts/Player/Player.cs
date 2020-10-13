@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     private float movementX;
     private float movementY;
 
-    public Projectile projectile;
+    public BasicProjectile projectile;
     public Shield shield;
     public Transform platform;
 
@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
     private Vector3 savePosition;
     public bool shieldEnabled = false;
     public Transform gunRig;
-    public Transform light;
     public Transform firePoint;
 
     // Start is called before the first frame update
@@ -46,17 +45,12 @@ public class Player : MonoBehaviour
         //Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
         //clone.Fire(firePoint.forward);
 
-        var c = projectile.transform.GetChild(0).GetChild(2).position;
+       // var c = projectile.transform.GetChild(0).GetChild(2).position;
 
-        var p = firePoint.transform.position;
+      //  var p = firePoint.transform.position;
 
-        Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
-
-
+        BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
         clone.Fire(firePoint.forward);
-        Destroy(clone.gameObject, 2f);
-
-        
     }
 
 
@@ -110,7 +104,6 @@ public class Player : MonoBehaviour
     {
         shield.Move(transform.position);
         gunRig.position = transform.position;
-       // f light.position = transform.position;
 
         if(shieldEnabled)
         {

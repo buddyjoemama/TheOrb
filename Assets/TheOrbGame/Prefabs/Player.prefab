@@ -407,12 +407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  projectile: {fileID: 5401113359812635551, guid: a3651a914bc588c4c91c6629a94649d0, type: 3}
+  projectile: {fileID: 6475166328392104762, guid: 4b15a299842da184e83a63e37da6ab30, type: 3}
   shield: {fileID: 3047708927531637704}
   platform: {fileID: 0}
   shieldEnabled: 1
   gunRig: {fileID: 6342926157983717184}
-  light: {fileID: 8741282662546002445}
   firePoint: {fileID: 3524374784218420990}
 --- !u!114 &6425757504133794518
 MonoBehaviour:
