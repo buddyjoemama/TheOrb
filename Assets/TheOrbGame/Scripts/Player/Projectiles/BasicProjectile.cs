@@ -6,6 +6,7 @@ using UnityEngine.Video;
 public class BasicProjectile : MonoBehaviour
 {
     public int speed = 250;
+    public Transform explosion;
 
     private Rigidbody projectile;
 
@@ -34,6 +35,7 @@ public class BasicProjectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Instantiate(explosion, collision.GetContact(0).point, Quaternion.identity * Quaternion.Euler(180, 0, 0));
         Destroy(projectile.gameObject);
     }
 }

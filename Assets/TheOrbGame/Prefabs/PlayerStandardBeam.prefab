@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 5684522878616874011}
   - component: {fileID: 6475166328392104762}
   - component: {fileID: 3436713042314286515}
+  - component: {fileID: 5121461430104115268}
   m_Layer: 0
   m_Name: PlayerStandardBeam
   m_TagString: Untagged
@@ -679,6 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
+  explosion: {fileID: 8896758405881471150, guid: 5f17443eb6e7240488e2ac0660f06168, type: 3}
 --- !u!65 &3436713042314286515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -688,7 +690,21 @@ BoxCollider:
   m_GameObject: {fileID: 7271350113496894142}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.069247045, y: 0.04464979, z: 0.095732644}
-  m_Center: {x: 0.00270091, y: 0.35307676, z: 0.054611374}
+  m_Size: {x: 0.02851568, y: 0.0045080185, z: 0.024564771}
+  m_Center: {x: -0.006224117, y: 0.363679, z: 0.051676966}
+--- !u!136 &5121461430104115268
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271350113496894142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.037324417
+  m_Height: 0.09560137
+  m_Direction: 1
+  m_Center: {x: -0.004936063, y: 0.32320365, z: 0.051562656}
