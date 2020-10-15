@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
 
       //  var p = firePoint.transform.position;
 
-        BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
+        BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
         clone.Fire(firePoint.forward);
     }
 
