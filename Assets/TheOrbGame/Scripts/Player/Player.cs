@@ -113,5 +113,7 @@ public class Player : MonoBehaviour
         {
             shield.Deactivate();
         }
+
+        Debug.Log(transform.position);
     }
 }

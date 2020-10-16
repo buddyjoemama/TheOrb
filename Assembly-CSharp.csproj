@@ -65,6 +65,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
     <Compile Include="Assets\SphereCaster.cs" />
+    <Compile Include="Assets\EnemyTurret.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
