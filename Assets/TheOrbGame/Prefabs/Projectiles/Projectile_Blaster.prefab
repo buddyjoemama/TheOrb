@@ -153,4 +153,5 @@ MonoBehaviour:
   max: 5
   radius: 1
   point: {x: 0, y: 0, z: 0}
+  bulletMark: {fileID: 5253067766270831328, guid: 1996dea362ae3b548957b77d014075ad, type: 3}
   currentHitDistance: 1

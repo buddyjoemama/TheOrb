@@ -6,12 +6,19 @@ using UnityEngine.Video;
 [ExecuteInEditMode]
 public class BasicProjectile : MonoBehaviour
 {
-    public int speed = 250;
-    public Transform explosion;
-
     private Rigidbody projectile;
 
+    public int speed = 250;
+    public Transform explosion;
     public LayerMask mask;
+    public GameObject currentHitObject;
+    public Vector3 origin;
+    public Vector3 direction;
+    public float max = 5;
+    public float radius = 1;
+    public Vector3 point;
+    public Transform bulletMark;
+    public float currentHitDistance;
 
     private void Awake()
     {
@@ -23,15 +30,6 @@ public class BasicProjectile : MonoBehaviour
     {
         
     }
-
-
-    public GameObject currentHitObject;
-
-    public Vector3 origin;
-    public Vector3 direction;
-    public float max = 5;
-    public float radius = 1;
-    public Vector3 point;
 
     // Update is called once per frame
     void Update()
@@ -46,7 +44,8 @@ public class BasicProjectile : MonoBehaviour
             currentHitDistance = hit.distance;
             point = new Vector3(hit.point.x, hit.point.y, hit.point.z - max);
 
-            Instantiate(explosion, point, Quaternion.identity * Quaternion.Euler(180, 0, 0));
+            Instantiate(explosion, point, Quaternion.Euler(180, 0, 0));
+            Instantiate(bulletMark, point, Quaternion.identity);
             Destroy(projectile.gameObject);
         }
         else
@@ -62,14 +61,6 @@ public class BasicProjectile : MonoBehaviour
         projectile.velocity = forward * speed;
         Destroy(projectile.gameObject, 2f);
     }
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    Instantiate(explosion, collision.GetContact(0).point, Quaternion.identity * Quaternion.Euler(180, 0, 0));
-    //    Destroy(projectile.gameObject);
-    //}
-
-   public float currentHitDistance;
 
     private void OnDrawGizmosSelected()
     {
