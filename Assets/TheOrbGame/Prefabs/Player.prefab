@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7143510075180004099}
   m_Layer: 0
   m_Name: Shield
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 8271213039808763365}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 353261325151944973}
   m_Layer: 0
   m_Name: Orb
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -472,7 +472,7 @@ GameObject:
   - component: {fileID: 4794867700694740090}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 6342926157983717184}
   m_Layer: 0
   m_Name: GunRig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

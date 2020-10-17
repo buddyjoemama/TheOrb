@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3251637609830047089}
   - component: {fileID: 5390686498004663364}
   - component: {fileID: 4439014330984013076}
-  - component: {fileID: 3260400582412597778}
+  - component: {fileID: 7715206396967614583}
   m_Layer: 0
   m_Name: GunTurret
   m_TagString: Untagged
@@ -193,7 +193,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3260400582412597778
+--- !u!114 &7715206396967614583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -202,13 +202,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5642329426283810438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0587468475a384642a5dacb51a82ced9, type: 3}
+  m_Script: {fileID: 11500000, guid: 32fcbc844cba27844a69d7991d9eede8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   followsPlayer: 1
   manager: {fileID: 0}
   turret: {fileID: 5197514286903463606}
-  projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
+  projectile: {fileID: 0}
   firePoint: {fileID: 440710634782880101}
   laserLine: {fileID: 5308805714712185817, guid: c3785066f6180de44be0780913dbf8c2, type: 3}
 --- !u!1 &5826351025276292911
