@@ -39,9 +39,6 @@ public class Player : MonoBehaviour
 
         // Instantiate(platform, transform.position, Quaternion.identity);
 
-        Debug.Log("Front: " + firePoint.forward);
-        Debug.Log("Right: " + firePoint.right);
-
         //Projectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation * Quaternion.Euler(90, 0, 0));
         //clone.Fire(firePoint.forward);
 
@@ -50,7 +47,7 @@ public class Player : MonoBehaviour
       //  var p = firePoint.transform.position;
 
         BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
-        clone.Fire(firePoint.forward);
+        clone.Fire(firePoint.forward, firePoint.position);
     }
 
 
@@ -113,7 +110,5 @@ public class Player : MonoBehaviour
         {
             shield.Deactivate();
         }
-
-        Debug.Log(transform.position);
     }
 }

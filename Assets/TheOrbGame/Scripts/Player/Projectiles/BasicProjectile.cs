@@ -8,18 +8,18 @@ using UnityEngine.Video;
 public class BasicProjectile : MonoBehaviour
 {
     private Rigidbody projectile;
+    private Vector3 origin;
+    public  Vector3 direction;
+    private Vector3 hitPoint;
+    private float currentHitDistance;
 
     public int speed = 250;
     public Transform explosion;
     public LayerMask mask;
     public GameObject currentHitObject;
-    public Vector3 origin;
-    public Vector3 direction;
     public float max = 5;
     public float radius = 1;
-    public Vector3 point;
     public Transform bulletMark;
-    public float currentHitDistance;
 
     private void Awake()
     {
@@ -39,27 +39,37 @@ public class BasicProjectile : MonoBehaviour
         direction = projectile.transform.forward;
 
         RaycastHit hit;
-        if (Physics.SphereCast(origin, radius, direction, out hit, max, mask, QueryTriggerInteraction.UseGlobal))
+        if (Physics.SphereCast(origin - new Vector3(0, 0, 5), radius, direction, out hit, max, mask, QueryTriggerInteraction.UseGlobal))
         {
             currentHitObject = hit.transform.gameObject;
             currentHitDistance = hit.distance;
-            point = new Vector3(hit.point.x, hit.point.y, hit.point.z - max);
+            hitPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z - .5f);
 
-            Instantiate(explosion, point, Quaternion.Euler(180, 0, 0));
-            Instantiate(bulletMark, point, Quaternion.identity);
+            if (explosion != null)
+                Instantiate(explosion, hitPoint, Quaternion.Euler(180, 0, 0));
+
+            if (bulletMark != null)
+                Instantiate(bulletMark, hitPoint, Quaternion.identity);
+
             Destroy(projectile.gameObject);
         }
         else
         {
             currentHitDistance = 1;
             currentHitObject = null;
-            point = origin;
+            hitPoint = origin;
         }
+
+        transform.position = projectile.position;
     }
 
-    public void Fire(Vector3 forward)
+    Vector3 fFrom;
+    Vector3 fForward;
+    public void Fire(Vector3 forward, Vector3 firedFrom)
     {
         projectile.velocity = forward * speed;
+        fFrom = firedFrom;
+        fForward = forward;
         Destroy(projectile.gameObject, 2f);
     }
 
@@ -67,6 +77,6 @@ public class BasicProjectile : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Debug.DrawLine(origin, origin + direction * currentHitDistance);
-        Gizmos.DrawWireSphere(origin + direction * currentHitDistance, radius);
+        Gizmos.DrawWireSphere(origin  + direction * currentHitDistance, radius);
     }
 }
