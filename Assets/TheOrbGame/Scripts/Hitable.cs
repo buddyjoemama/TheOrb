@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEditor.UIElements;
 using UnityEngine;
 
 public class Hitable : MonoBehaviour, IHitable
 {
-    public int hitPoints = 0;
+    public int maxHitPoints;
+    public int currentHitPoints;
 
     private Material material;
     private bool hit = false;
@@ -21,37 +23,45 @@ public class Hitable : MonoBehaviour, IHitable
     private void Awake()
     {
         material = GetComponent<Renderer>().material;
+        currentHitPoints = maxHitPoints;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(hit)
+        if (currentHitPoints == 0)
         {
-            Color currentColor = material.GetColor("EmissionColor");
-
-            if (material.GetColor("EmissionColor").r <= .3f && !reverse)
+            Destroy(gameObject);
+        }
+        else
+        {
+            if (hit)
             {
-                float amount = currentColor.r + (3.8f * Time.deltaTime);
+                Color currentColor = material.GetColor("EmissionColor");
 
-                currentColor.r = amount;
-                material.SetColor("EmissionColor", currentColor);
-            }
-            else
-            {
-                reverse = true;
-            }
-
-            if(reverse)
-            {
-                if(material.GetColor("EmissionColor").r >= 0f)
+                if (material.GetColor("EmissionColor").r <= .3f && !reverse)
                 {
-                    float amount = material.GetColor("EmissionColor").r - (3.8f * Time.deltaTime);
+                    float amount = currentColor.r + (3.8f * Time.deltaTime);
 
                     currentColor.r = amount;
                     material.SetColor("EmissionColor", currentColor);
-                    hit = material.GetColor("EmissionColor").r > 0f;
-                }                    
+                }
+                else
+                {
+                    reverse = true;
+                }
+
+                if (reverse)
+                {
+                    if (material.GetColor("EmissionColor").r >= 0f)
+                    {
+                        float amount = material.GetColor("EmissionColor").r - (3.8f * Time.deltaTime);
+
+                        currentColor.r = amount;
+                        material.SetColor("EmissionColor", currentColor);
+                        hit = material.GetColor("EmissionColor").r > 0f;
+                    }
+                }
             }
         }
     }
@@ -60,5 +70,6 @@ public class Hitable : MonoBehaviour, IHitable
     {
         hit = true;
         reverse = false;
+        currentHitPoints -= 1;
     }
 }
