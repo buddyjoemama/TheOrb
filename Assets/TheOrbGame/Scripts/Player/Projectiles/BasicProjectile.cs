@@ -32,6 +32,8 @@ public class BasicProjectile : MonoBehaviour
         
     }
 
+    public Material currentMaterial;
+
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +54,14 @@ public class BasicProjectile : MonoBehaviour
                 Instantiate(bulletMark, hitPoint, Quaternion.identity);
 
             Destroy(projectile.gameObject);
+
+            //currentMaterial = hit.collider.GetComponent<Renderer>().material;
+            //  hit.collider.SendMessage("OnCollisionEnter");
+            var hittable = hit.collider.gameObject.GetComponent<Hitable>();
+            if (hittable != null)
+            {
+                hittable.Hit(transform);
+            }
         }
         else
         {
@@ -61,6 +71,14 @@ public class BasicProjectile : MonoBehaviour
         }
 
         transform.position = projectile.position;
+
+        //if(currentMaterial != null)
+        //{
+        //    Color currentColor = currentMaterial.GetColor("EmissionColor");
+        //    currentColor = Color.Lerp(currentColor, Color.red, 2f);
+
+        //    currentMaterial.SetColor("EmissionColor", currentColor);
+        //}
     }
 
     Vector3 fFrom;
