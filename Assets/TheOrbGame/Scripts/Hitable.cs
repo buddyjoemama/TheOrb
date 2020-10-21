@@ -32,9 +32,19 @@ public class Hitable : MonoBehaviour, IHitable
     {
         if (currentHitPoints == 0)
         {
-            replace.localScale = new Vector3(10, 10, 10);
-            Instantiate(replace, transform.position, transform.rotation);
-            Destroy(replace.gameObject, 5f);
+            if (replace != null)
+            {
+                replace.localScale = new Vector3(10, 10, 10);
+                Instantiate(replace, transform.position, transform.rotation);
+
+                for(int i = 0; i < replace.childCount; i++)
+                {
+                    Destroy(replace.GetChild(i).gameObject, 5f);
+                }
+
+                Destroy(replace.gameObject, 5f);
+            }
+
             Destroy(gameObject);
         }
         else
