@@ -10,6 +10,7 @@ public class Hitable : MonoBehaviour, IHitable
     public int maxHitPoints;
     public int currentHitPoints;
 
+    public Transform replace;
     private Material material;
     private bool hit = false;
     private bool reverse = false;
@@ -31,6 +32,9 @@ public class Hitable : MonoBehaviour, IHitable
     {
         if (currentHitPoints == 0)
         {
+            replace.localScale = new Vector3(10, 10, 10);
+            Instantiate(replace, transform.position, transform.rotation);
+            Destroy(replace.gameObject, 5f);
             Destroy(gameObject);
         }
         else

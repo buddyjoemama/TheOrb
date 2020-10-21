@@ -32,7 +32,6 @@ public class BasicProjectile : MonoBehaviour
         
     }
 
-    public Material currentMaterial;
 
     // Update is called once per frame
     void Update()
@@ -55,13 +54,13 @@ public class BasicProjectile : MonoBehaviour
 
             Destroy(projectile.gameObject);
 
-            //currentMaterial = hit.collider.GetComponent<Renderer>().material;
-            //  hit.collider.SendMessage("OnCollisionEnter");
             var hittable = hit.collider.gameObject.GetComponent<Hitable>();
             if (hittable != null)
             {
                 hittable.Hit(transform);
             }
+
+            hit.collider.attachedRigidbody.AddExplosionForce(10, projectile.position, 1, 0, ForceMode.Impulse);
         }
         else
         {
@@ -70,24 +69,11 @@ public class BasicProjectile : MonoBehaviour
             hitPoint = origin;
         }
 
-        transform.position = projectile.position;
-
-        //if(currentMaterial != null)
-        //{
-        //    Color currentColor = currentMaterial.GetColor("EmissionColor");
-        //    currentColor = Color.Lerp(currentColor, Color.red, 2f);
-
-        //    currentMaterial.SetColor("EmissionColor", currentColor);
-        //}
     }
 
-    Vector3 fFrom;
-    Vector3 fForward;
     public void Fire(Vector3 forward, Vector3 firedFrom)
     {
         projectile.velocity = forward * speed;
-        fFrom = firedFrom;
-        fForward = forward;
         Destroy(projectile.gameObject, 2f);
     }
 
