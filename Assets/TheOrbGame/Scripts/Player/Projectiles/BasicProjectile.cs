@@ -59,8 +59,6 @@ public class BasicProjectile : MonoBehaviour
             {
                 hittable.Hit(transform);
             }
-
-            hit.collider.attachedRigidbody.AddExplosionForce(10, projectile.position, 1, 0, ForceMode.Impulse);
         }
         else
         {
