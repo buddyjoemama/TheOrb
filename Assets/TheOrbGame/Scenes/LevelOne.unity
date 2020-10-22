@@ -895,9 +895,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1155071567102380361, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c29776f3ac5d657438ab1f7f5abef363, type: 2}
     - target: {fileID: 6564317732672015741, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613629108837442784, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613629108837442784, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8613629108837442784, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
+      propertyPath: SizeBySpeedModule.enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}

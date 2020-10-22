@@ -34,7 +34,7 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null)
             {
-                Instantiate(replace, transform.position, transform.rotation);
+                Instantiate(replace, transform.position, Quaternion.Euler(-90, 0, 0));
             }
 
             Destroy(gameObject);
