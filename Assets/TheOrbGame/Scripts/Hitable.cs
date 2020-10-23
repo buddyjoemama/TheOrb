@@ -34,7 +34,8 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null)
             {
-                Instantiate(replace, transform.position, Quaternion.Euler(-90, 0, 0));
+                var position = new Vector3(transform.position.x, 0, transform.position.z);
+                Instantiate(replace, position, Quaternion.Euler(-90, 0, 0));
             }
 
             Destroy(gameObject);
@@ -72,10 +73,12 @@ public class Hitable : MonoBehaviour, IHitable
         }
     }
 
-    public void Hit(Transform collider)
+    Transform hitBy;
+    public void Hit(Transform collider, Transform transform)
     {
         hit = true;
         reverse = false;
         currentHitPoints -= 1;
+        hitBy = transform;
     }
 }

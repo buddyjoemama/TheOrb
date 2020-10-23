@@ -2,5 +2,5 @@
 
 internal interface IHitable
 {
-    void Hit(Transform collider);
+    void Hit(Transform collider, Transform transform);
 }

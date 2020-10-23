@@ -7,6 +7,10 @@ public class SphereCaster : MonoBehaviour
 {
 
     public LayerMask mask;
+    private GameObject currentHitObject;
+    private Vector3 origin;
+    private Vector3 direction;
+    private float currentHitDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +19,13 @@ public class SphereCaster : MonoBehaviour
     }
 
 
-    GameObject currentHitObject;
     // Update is called once per frame
     void Update()
     {
         origin = transform.position;
         direction = transform.forward;
 
-        RaycastHit hit;
-        if(Physics.SphereCast(origin, .5f, direction, out hit, 5, mask, QueryTriggerInteraction.UseGlobal))
+        if(Physics.SphereCast(origin, .5f, direction, out RaycastHit hit, 5, mask, QueryTriggerInteraction.UseGlobal))
         {
             currentHitObject = hit.transform.gameObject;
             currentHitDistance = hit.distance;
@@ -34,10 +36,6 @@ public class SphereCaster : MonoBehaviour
             currentHitObject = null;
         }
     }
-
-    Vector3 origin;
-    Vector3 direction;
-    public float currentHitDistance;
 
     private void OnDrawGizmosSelected()
     {
