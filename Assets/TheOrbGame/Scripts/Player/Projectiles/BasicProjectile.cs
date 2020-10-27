@@ -54,7 +54,9 @@ public class BasicProjectile : MonoBehaviour
 
             Destroy(projectile.gameObject);
 
-            var hittable = hit.collider.gameObject.GetComponent<Hitable>();
+            var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
+
+            //var hittable = hit.collider.gameObject.GetComponent<Hitable>();
             if (hittable != null)
             {
                 hittable.Hit(transform, projectile.transform);

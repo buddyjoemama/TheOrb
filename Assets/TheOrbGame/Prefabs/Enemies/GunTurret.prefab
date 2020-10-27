@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 5390686498004663364}
   - component: {fileID: 4439014330984013076}
   - component: {fileID: 7715206396967614583}
+  - component: {fileID: 5795674739634161656}
   m_Layer: 0
   m_Name: GunTurret
   m_TagString: Untagged
@@ -124,7 +125,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5642329426283810438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 5197514286903463606}
@@ -158,7 +159,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 5954fa1844e09194abcb70da17d1982f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -214,6 +215,21 @@ MonoBehaviour:
   raycastHit: {x: -4.360177, y: 5.9368787, z: 2.260777}
   colliderTag: Player
   laserEnabled: 1
+--- !u!114 &5795674739634161656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5642329426283810438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8db0daebfe61c345aacbb9f615a3515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 5
+  currentHitPoints: 0
+  replace: {fileID: 1112556918324544043, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}
 --- !u!1 &5826351025276292911
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +283,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8317712196652892501}
-  m_LocalRotation: {x: 0.048884526, y: 0.85069907, z: -0.08041214, w: 0.5171609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
