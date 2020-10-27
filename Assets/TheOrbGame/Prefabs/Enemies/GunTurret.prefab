@@ -211,6 +211,9 @@ MonoBehaviour:
   projectile: {fileID: 0}
   firePoint: {fileID: 440710634782880101}
   laserLine: {fileID: 5308805714712185817, guid: c3785066f6180de44be0780913dbf8c2, type: 3}
+  raycastHit: {x: -4.360177, y: 5.9368787, z: 2.260777}
+  colliderTag: Player
+  laserEnabled: 1
 --- !u!1 &5826351025276292911
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +267,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8317712196652892501}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.048884526, y: 0.85069907, z: -0.08041214, w: 0.5171609}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

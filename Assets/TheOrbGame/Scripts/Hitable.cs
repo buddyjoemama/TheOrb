@@ -34,7 +34,7 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null)
             {
-                var position = new Vector3(transform.position.x, 5, transform.position.z);
+                var position = new Vector3(transform.position.x, 0, transform.position.z);
                 Instantiate(replace, position, Quaternion.Euler(-90, 0, 0));
             }
 

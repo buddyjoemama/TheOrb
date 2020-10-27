@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class EnemyTurret : MonoBehaviour
 {
     public bool followsPlayer = true;
@@ -27,8 +27,6 @@ public class EnemyTurret : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(manager.player.transform.position);
-
         if(followsPlayer)   
             turret.LookAt(manager.player.transform.position);
 
