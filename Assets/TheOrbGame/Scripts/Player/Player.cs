@@ -99,16 +99,20 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        shield.Move(transform.position);
-        gunRig.position = transform.position;
+        if (shield != null)
+        {
+            shield.Move(transform.position);
 
-        if(shieldEnabled)
-        {
-            shield.Activate();
+            if (shieldEnabled)
+            {
+                shield.Activate();
+            }
+            else
+            {
+                shield.Deactivate();
+            }
         }
-        else
-        {
-            shield.Deactivate();
-        }
+
+        gunRig.position = transform.position;
     }
 }

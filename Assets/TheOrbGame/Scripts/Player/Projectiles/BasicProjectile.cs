@@ -1,86 +1,104 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.ProBuilder;
 using UnityEngine.Video;
 
 [ExecuteInEditMode]
 public class BasicProjectile : MonoBehaviour
 {
     private Rigidbody projectile;
-    private Vector3 origin;
-    public  Vector3 direction;
-    private Vector3 hitPoint;
-    private float currentHitDistance;
+    private Vector3 lastBackPosition;
 
     public int speed = 250;
     public Transform explosion;
     public LayerMask mask;
     public GameObject currentHitObject;
-    public float max = 5;
-    public float radius = 1;
     public Transform bulletMark;
+
+    public Transform projectileFront;
+    public Transform projectileBack;
 
     private void Awake()
     {
-        projectile = GetComponent<Rigidbody>();   
+        projectile = GetComponent<Rigidbody>(); 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
-    // Update is called once per frame
+    /// <summary>
+    /// It's possible the tip of the projectile has already passed the object, resulting in a missed hit.
+    /// The way to get around this is to basically spherecast along the entire displacement vector, which will
+    /// allow us to determine if (even though we've passed the mesh) the projectile *would have* hit the mesh if 
+    /// it were slower (or the framerate was faster).
+    /// </summary>
     void Update()
     {
-        origin = projectile.transform.position;
-        direction = projectile.transform.forward;
+        bool found = false;
 
-        RaycastHit hit;
-        if (Physics.SphereCast(origin - new Vector3(0, 0, 5), radius, direction, out hit, max, mask, QueryTriggerInteraction.UseGlobal))
+        // How far did we move this frame?
+        Vector3 displacement = projectileFront.position - lastBackPosition;
+
+        // Find everything we've collided with...but use the closest mesh.
+        RaycastHit[] hits = Physics.SphereCastAll(lastBackPosition, 1, displacement.normalized, displacement.magnitude, -1, QueryTriggerInteraction.Collide);
+
+        RaycastHit closest = new RaycastHit { distance = Mathf.Infinity };
+        foreach(RaycastHit hit in hits)
         {
-            currentHitObject = hit.transform.gameObject;
-            currentHitDistance = hit.distance;
-            hitPoint = new Vector3(hit.point.x, hit.point.y, hit.point.z - .5f);
-
-            if (explosion != null)
-                Instantiate(explosion, hitPoint, Quaternion.Euler(180, 0, 0));
-
-            if (bulletMark != null)
-                Instantiate(bulletMark, hitPoint, Quaternion.identity);
-
-            Destroy(projectile.gameObject);
-
-            var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
-
-            //var hittable = hit.collider.gameObject.GetComponent<Hitable>();
-            if (hittable != null)
+            if (IsValidHit(hit) && hit.distance < closest.distance)
             {
-                hittable.Hit(transform, projectile.transform);
+                found = true;
+                closest = hit;
             }
         }
-        else
+
+        // We have a hit but we might be inside a collider....
+        if(found)
         {
-            currentHitDistance = 1;
-            currentHitObject = null;
-            hitPoint = origin;
+            if(closest.distance <= 0f)
+            {
+                closest.point = projectileBack.position;
+                closest.normal = -transform.forward; /// its behind us
+            }
+
+            // Break up the projectile.
+            if (explosion != null)
+                Instantiate(explosion, closest.point, Quaternion.identity);
+
+            // Show the mark
+            if (bulletMark != null)
+                Instantiate(bulletMark, closest.point, Quaternion.identity);
+
+            // Is it hittable?
+            Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
+            if(hitable != null)
+            {
+                hitable.Hit(transform, projectile.transform);
+            }
+
+            // Destroy the projectile.
+            Destroy(projectile.gameObject);
         }
 
+        lastBackPosition = projectileBack.position;
+    }
+
+    /// <summary>
+    /// It's valid if its not me
+    /// </summary>
+    /// <param name="hit"></param>
+    /// <returns></returns>
+    private bool IsValidHit(RaycastHit hit)
+    {
+        return hit.collider.tag != "Player" && hit.collider.tag != "Shield";
     }
 
     public void Fire(Vector3 forward, Vector3 firedFrom)
     {
         projectile.velocity = forward * speed;
-        Destroy(projectile.gameObject, 2f);
-    }
+        lastBackPosition = projectileBack.position;
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Debug.DrawLine(origin, origin + direction * currentHitDistance);
-        Gizmos.DrawWireSphere(origin  + direction * currentHitDistance, radius);
+        // Destroy after 2 seconds...may want to extend this.
+        Destroy(projectile.gameObject, 2f);
     }
 }

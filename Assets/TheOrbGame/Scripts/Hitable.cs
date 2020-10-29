@@ -34,7 +34,7 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null)
             {
-                var position = new Vector3(transform.position.x, 0, transform.position.z);
+                var position = new Vector3(transform.position.x, 5, transform.position.z);
                 Instantiate(replace, position, Quaternion.Euler(-90, 0, 0));
             }
 
@@ -44,14 +44,14 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (hit)
             {
-                Color currentColor = material.GetColor("EmissionColor");
+                Color currentColor = material.GetColor("HitColor");
 
-                if (material.GetColor("EmissionColor").r <= .3f && !reverse)
+                if (material.GetColor("HitColor").r <= .3f && !reverse)
                 {
                     float amount = currentColor.r + (3.8f * Time.deltaTime);
 
                     currentColor.r = amount;
-                    material.SetColor("EmissionColor", currentColor);
+                    material.SetColor("HitColor", currentColor);
                 }
                 else
                 {
@@ -60,13 +60,13 @@ public class Hitable : MonoBehaviour, IHitable
 
                 if (reverse)
                 {
-                    if (material.GetColor("EmissionColor").r >= 0f)
+                    if (material.GetColor("HitColor").r >= 0f)
                     {
-                        float amount = material.GetColor("EmissionColor").r - (3.8f * Time.deltaTime);
+                        float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
 
                         currentColor.r = amount;
-                        material.SetColor("EmissionColor", currentColor);
-                        hit = material.GetColor("EmissionColor").r > 0f;
+                        material.SetColor("HitColor", currentColor);
+                        hit = material.GetColor("HitColor").r > 0f;
                     }
                 }
             }
