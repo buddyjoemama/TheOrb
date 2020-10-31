@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public Transform shieldBase;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,16 +19,16 @@ public class Shield : MonoBehaviour
 
     internal void Deactivate()
     {
-        shieldBase.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     internal void Activate()
     {
-        shieldBase.gameObject.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     internal void Move(Vector3 position)
     {
-        shieldBase.position = position;
+        transform.position = position;
     }
 }
