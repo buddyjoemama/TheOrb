@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public Shield mainShield;
     public GunRig rig;
     public BasicProjectile projectile;
-
+    public ShatterableShield shatterableShield;
     public bool shieldEnabled = false;
 
     // Start is called before the first frame update
@@ -44,6 +44,11 @@ public class PlayerManager : MonoBehaviour
     void OnFire() 
     {
         rig.Fire(projectile);
+        shieldEnabled = false;
+
+        ShatterableShield s = Instantiate(shatterableShield, transform.position, Quaternion.identity);
+        s.Destroy();
+        Destroy(s.gameObject, 5);
     }
 
     /// <summary>
