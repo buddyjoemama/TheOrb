@@ -9,7 +9,7 @@ public class Hitable : MonoBehaviour, IHitable
 {
     public int maxHitPoints;
     public int currentHitPoints;
-
+    public DissolvableCube dissolvable;
     public Transform replace;
     private Material material;
     private bool hit = false;
@@ -27,15 +27,22 @@ public class Hitable : MonoBehaviour, IHitable
         currentHitPoints = maxHitPoints;
     }
 
+    bool destroyed = false;
     // Update is called once per frame
     void Update()
     {
         if (currentHitPoints == 0)
         {
-            if (replace != null)
+            if (replace != null && !destroyed)
             {
+                destroyed = true;
                 var position = new Vector3(transform.position.x, 5, transform.position.z);
                 Instantiate(replace, position, Quaternion.Euler(-90, 0, 0));
+
+                if (dissolvable != null)
+                {
+                    Instantiate(dissolvable, position, transform.rotation);
+                }
             }
 
             Destroy(gameObject);

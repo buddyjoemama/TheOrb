@@ -44,11 +44,6 @@ public class PlayerManager : MonoBehaviour
     void OnFire() 
     {
         rig.Fire(projectile);
-        shieldEnabled = false;
-
-        ShatterableShield s = Instantiate(shatterableShield, transform.position, Quaternion.identity);
-        s.Destroy();
-        Destroy(s.gameObject, 5);
     }
 
     /// <summary>

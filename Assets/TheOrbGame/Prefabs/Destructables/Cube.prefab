@@ -111,4 +111,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 10
   currentHitPoints: 0
+  dissolvable: {fileID: 9076547072142236922, guid: bdd242f458f7635409950766f0d3ff25, type: 3}
   replace: {fileID: 1112556918324544043, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}

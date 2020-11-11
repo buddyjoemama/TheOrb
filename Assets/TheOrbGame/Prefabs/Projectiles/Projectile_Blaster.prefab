@@ -282,18 +282,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f149340ca4fb57f479c70590ea768344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 1}
   speed: 250
   explosion: {fileID: 8896758405881471150, guid: 5f17443eb6e7240488e2ac0660f06168, type: 3}
   mask:
     serializedVersion: 2
     m_Bits: 4294967295
   currentHitObject: {fileID: 0}
-  max: 5
-  radius: 1
   bulletMark: {fileID: 5253067766270831328, guid: 1996dea362ae3b548957b77d014075ad, type: 3}
   projectileFront: {fileID: 7768811411999383730}
   projectileBack: {fileID: 1933895087272657584}
+  dissolveMaterial: {fileID: 2100000, guid: 2b4e12837db6d7b4da9707ba4b7ef996, type: 2}
 --- !u!64 &5770248030156846338
 MeshCollider:
   m_ObjectHideFlags: 0

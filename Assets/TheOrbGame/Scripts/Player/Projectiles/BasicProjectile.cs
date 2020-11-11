@@ -20,6 +20,7 @@ public class BasicProjectile : MonoBehaviour
 
     public Transform projectileFront;
     public Transform projectileBack;
+    public Material dissolveMaterial;
 
     private void Awake()
     {
