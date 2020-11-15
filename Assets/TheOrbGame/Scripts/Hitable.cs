@@ -42,39 +42,41 @@ public class Hitable : MonoBehaviour, IHitable
                 if (dissolvable != null)
                 {
                     Instantiate(dissolvable, position, transform.rotation);
+                    
                 }
             }
 
             Destroy(gameObject);
         }
-        else
-        {
-            if (hit)
-            {
-                Color currentColor = material.GetColor("HitColor");
+    }
 
-                if (material.GetColor("HitColor").r <= .3f && !reverse)
+    public void FixedUpdate()
+    {
+        if (hit)
+        {
+            Color currentColor = material.GetColor("HitColor");
+
+            if (material.GetColor("HitColor").r <= .4f && !reverse)
+            {
+                float amount = currentColor.r + (3.8f * Time.deltaTime);
+
+                currentColor.r = amount;
+                material.SetColor("HitColor", currentColor);
+            }
+            else
+            {
+                reverse = true;
+            }
+
+            if (reverse)
+            {
+                if (material.GetColor("HitColor").r >= 0f)
                 {
-                    float amount = currentColor.r + (3.8f * Time.deltaTime);
+                    float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
 
                     currentColor.r = amount;
                     material.SetColor("HitColor", currentColor);
-                }
-                else
-                {
-                    reverse = true;
-                }
-
-                if (reverse)
-                {
-                    if (material.GetColor("HitColor").r >= 0f)
-                    {
-                        float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
-
-                        currentColor.r = amount;
-                        material.SetColor("HitColor", currentColor);
-                        hit = material.GetColor("HitColor").r > 0f;
-                    }
+                    hit = material.GetColor("HitColor").r > 0f;
                 }
             }
         }

@@ -26,7 +26,7 @@ public class DissolvableCube : MonoBehaviour
 
     private void FixedUpdate()
     {
-        amount += (Time.deltaTime / 2.2f);
+        amount += (Time.deltaTime / 3.5f);
         material.SetFloat("DissolveAmount", amount);
     }
 }

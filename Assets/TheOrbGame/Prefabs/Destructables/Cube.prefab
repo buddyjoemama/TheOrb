@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8db0daebfe61c345aacbb9f615a3515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 10
+  maxHitPoints: 3
   currentHitPoints: 0
   dissolvable: {fileID: 9076547072142236922, guid: bdd242f458f7635409950766f0d3ff25, type: 3}
   replace: {fileID: 1112556918324544043, guid: c01c13c8491f41547ba914ae98828dd1, type: 3}

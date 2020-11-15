@@ -56,7 +56,9 @@ public class BasicProjectile : MonoBehaviour
         // We have a hit but we might be inside a collider....
         if(found)
         {
-            if(closest.distance <= 0f)
+            Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
+
+            if (closest.distance <= 0f)
             {
                 closest.point = projectileBack.position;
                 closest.normal = -transform.forward; /// its behind us
@@ -70,9 +72,7 @@ public class BasicProjectile : MonoBehaviour
             if (bulletMark != null)
                 Instantiate(bulletMark, closest.point, Quaternion.identity);
 
-            // Is it hittable?
-            Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
-            if(hitable != null)
+            if (hitable != null)
             {
                 hitable.Hit(transform, projectile.transform);
             }
@@ -91,7 +91,9 @@ public class BasicProjectile : MonoBehaviour
     /// <returns></returns>
     private bool IsValidHit(RaycastHit hit)
     {
-        return hit.collider.tag != "Player" && hit.collider.tag != "Shield";
+        var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
+
+        return hit.collider.tag != "Player" && hit.collider.tag != "Shield" && hittable?.currentHitPoints > 0;
     }
 
     public void Fire(Vector3 forward, Vector3 firedFrom)
