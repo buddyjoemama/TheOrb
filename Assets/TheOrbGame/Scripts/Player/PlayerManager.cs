@@ -38,12 +38,23 @@ public class PlayerManager : MonoBehaviour
         rig.Move(player.transform.position);
     }
 
+    int shotsFired = 0;
     /// <summary>
     /// Fire the projectile.
     /// </summary>
     void OnFire() 
     {
         rig.Fire(projectile);
+
+        //shotsFired += 1;
+
+        //if(shotsFired >= 5)
+        //{
+        //    shieldEnabled = false;
+
+        //    ShatterableShield shield = Instantiate(shatterableShield, player.transform.position, player.transform.rotation);
+        //    shield.Destroy();
+        //}
     }
 
     /// <summary>

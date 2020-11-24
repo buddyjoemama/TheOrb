@@ -12,7 +12,7 @@ public class BasicProjectile : MonoBehaviour
     private Rigidbody projectile;
     private Vector3 lastBackPosition;
 
-    public int speed = 250;
+    public int speed = 550;
     public Transform explosion;
     public LayerMask mask;
     public GameObject currentHitObject;
@@ -58,11 +58,11 @@ public class BasicProjectile : MonoBehaviour
         {
             Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
 
-            if (closest.distance <= 0f)
-            {
-                closest.point = projectileBack.position;
-                closest.normal = -transform.forward; /// its behind us
-            }
+            //if (closest.distance <= 0f)
+            //{
+            //    closest.point = projectileBack.position;
+            //    closest.normal = -transform.forward; /// its behind us
+            //}
 
             // Break up the projectile.
             if (explosion != null)
@@ -93,7 +93,7 @@ public class BasicProjectile : MonoBehaviour
     {
         var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
 
-        return hit.collider.tag != "Player" && hit.collider.tag != "Shield" && hittable?.currentHitPoints > 0;
+        return hit.collider.tag != "Player" && hit.collider.tag != "Shield";// && hittable?.currentHitPoints > 0;
     }
 
     public void Fire(Vector3 forward, Vector3 firedFrom)
