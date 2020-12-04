@@ -18,7 +18,7 @@ public class Hitable : MonoBehaviour, IHitable
     // Start is called before the first frame update
     void Start()
     {
-        
+        var a = gameObject.GetComponent<Animator>();
     }
 
     private void Awake()
@@ -36,13 +36,16 @@ public class Hitable : MonoBehaviour, IHitable
             if (replace != null && !destroyed)
             {
                 destroyed = true;
-                var position = new Vector3(transform.position.x, 5, transform.position.z);
-                Instantiate(replace, position, Quaternion.Euler(-90, 0, 0));
+                var v = Instantiate(replace, transform.position, transform.rotation);
+                
+                foreach(Transform t in v.transform)
+                {
+                    Destroy(t.gameObject, 5f);
+                }
 
                 if (dissolvable != null)
                 {
-                    Instantiate(dissolvable, position, transform.rotation);
-                    
+                    Instantiate(dissolvable, transform.position, transform.rotation);                    
                 }
             }
 
