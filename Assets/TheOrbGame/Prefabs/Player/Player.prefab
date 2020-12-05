@@ -126,6 +126,8 @@ MonoBehaviour:
   currentHitPoints: 0
   dissolvable: {fileID: 0}
   replace: {fileID: 5914976784869504627, guid: 615df16a4d4e4884fa31cb0744daa864, type: 3}
+  player: {fileID: 0}
+  effects: []
 --- !u!54 &3141746553023984062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -152,7 +154,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4062987494322421068}
   - component: {fileID: 8271213039808763365}
-  - component: {fileID: 7844898998484260847}
+  - component: {fileID: 138983252133326467}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -195,7 +197,7 @@ MonoBehaviour:
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
   shatterableShield: {fileID: 6357042328334398504, guid: 3b26f6ea2ae874e4a880e09282a789a9, type: 3}
   shieldEnabled: 0
---- !u!114 &7844898998484260847
+--- !u!114 &138983252133326467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +223,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

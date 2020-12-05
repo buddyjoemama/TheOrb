@@ -8,10 +8,7 @@ public class Hitable : MonoBehaviour, IHitable
 {
     public int maxHitPoints;
     public int currentHitPoints;
-    public DissolvableCube dissolvable;
-    public Transform replace;
     public PlayerManager player;
-    private Material material;
     private bool hit = false;
     private bool reverse = false;
     public List<Transform> effects;
@@ -24,7 +21,6 @@ public class Hitable : MonoBehaviour, IHitable
 
     private void Awake()
     {
-        material = GetComponent<Renderer>().material;
         currentHitPoints = maxHitPoints;
     }
 
@@ -34,7 +30,7 @@ public class Hitable : MonoBehaviour, IHitable
     {
         if (currentHitPoints == 0)
         {
-            if (replace != null && !destroyed)
+            if (effects != null && effects.Count > 0 && !destroyed)
             {
                 destroyed = true;
                 Transform r = effects[Random.Range(0, effects.Count - 1)];
@@ -43,11 +39,6 @@ public class Hitable : MonoBehaviour, IHitable
                 foreach(Transform t in shatterEffect.transform)
                 {
                     Destroy(t.gameObject, 5f);
-                }
-
-                if (dissolvable != null)
-                {
-                    Instantiate(dissolvable, transform.position, transform.rotation);                    
                 }
             }
 
@@ -59,6 +50,7 @@ public class Hitable : MonoBehaviour, IHitable
     {
         if (hit)
         {
+            Material material = GetComponent<Renderer>().material;
             Color currentColor = material.GetColor("HitColor");
 
             if (material.GetColor("HitColor").r <= .4f && !reverse)
