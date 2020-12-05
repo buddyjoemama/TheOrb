@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using UnityEditor.UIElements;
@@ -15,6 +14,7 @@ public class Hitable : MonoBehaviour, IHitable
     private Material material;
     private bool hit = false;
     private bool reverse = false;
+    public List<Transform> effects;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +36,9 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null && !destroyed)
             {
-                destroyed = true;                
-                Transform shatterEffect = Instantiate(replace, transform.position, player.rig.firePoint.rotation);
+                destroyed = true;
+                Transform r = effects[Random.Range(0, effects.Count - 1)];
+                Transform shatterEffect = Instantiate(r, transform.position, player.rig.firePoint.rotation);
                 
                 foreach(Transform t in shatterEffect.transform)
                 {
