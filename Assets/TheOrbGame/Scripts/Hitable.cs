@@ -11,6 +11,7 @@ public class Hitable : MonoBehaviour, IHitable
     public int currentHitPoints;
     public DissolvableCube dissolvable;
     public Transform replace;
+    public PlayerManager player;
     private Material material;
     private bool hit = false;
     private bool reverse = false;
@@ -18,7 +19,7 @@ public class Hitable : MonoBehaviour, IHitable
     // Start is called before the first frame update
     void Start()
     {
-        var a = gameObject.GetComponent<Animator>();
+       
     }
 
     private void Awake()
@@ -35,10 +36,10 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (replace != null && !destroyed)
             {
-                destroyed = true;
-                var v = Instantiate(replace, transform.position, transform.rotation);
+                destroyed = true;                
+                Transform shatterEffect = Instantiate(replace, transform.position, player.rig.firePoint.rotation);
                 
-                foreach(Transform t in v.transform)
+                foreach(Transform t in shatterEffect.transform)
                 {
                     Destroy(t.gameObject, 5f);
                 }
@@ -85,12 +86,10 @@ public class Hitable : MonoBehaviour, IHitable
         }
     }
 
-    Transform hitBy;
     public void Hit(Transform collider, Transform transform)
     {
         hit = true;
         reverse = false;
         currentHitPoints -= 1;
-        hitBy = transform;
     }
 }

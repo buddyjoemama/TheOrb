@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2377295276750494650
 Transform:
   m_ObjectHideFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 5
   currentHitPoints: 0
+  dissolvable: {fileID: 0}
   replace: {fileID: 5914976784869504627, guid: 615df16a4d4e4884fa31cb0744daa864, type: 3}
 --- !u!54 &3141746553023984062
 Rigidbody:
@@ -151,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4062987494322421068}
   - component: {fileID: 8271213039808763365}
-  - component: {fileID: 4371728249171856036}
+  - component: {fileID: 7844898998484260847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -168,7 +169,7 @@ Transform:
   m_GameObject: {fileID: 3406535841497221817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 7}
   m_Children:
   - {fileID: 2377295276750494650}
   - {fileID: 2326350303370097235}
@@ -193,8 +194,8 @@ MonoBehaviour:
   rig: {fileID: 3788103158502925761}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
   shatterableShield: {fileID: 6357042328334398504, guid: 3b26f6ea2ae874e4a880e09282a789a9, type: 3}
-  shieldEnabled: 1
---- !u!114 &4371728249171856036
+  shieldEnabled: 0
+--- !u!114 &7844898998484260847
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,7 +221,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
