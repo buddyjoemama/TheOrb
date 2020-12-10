@@ -35,11 +35,8 @@ public class Hitable : MonoBehaviour, IHitable
                 destroyed = true;
                 Transform r = effects[Random.Range(0, effects.Count - 1)];
                 Transform shatterEffect = Instantiate(r, transform.position, player.rig.firePoint.rotation);
-                
-                foreach(Transform t in shatterEffect.transform)
-                {
-                    Destroy(t.gameObject, 5f);
-                }
+
+                Destroy(shatterEffect.gameObject, 5f);
             }
 
             Destroy(gameObject);
