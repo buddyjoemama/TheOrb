@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody rb;
+    public Rigidbody rb;
     private float movementX;
     private float movementY;
 

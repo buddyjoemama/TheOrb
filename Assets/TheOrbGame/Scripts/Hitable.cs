@@ -39,8 +39,13 @@ public class Hitable : MonoBehaviour, IHitable
                 Destroy(shatterEffect.gameObject, 5f);
             }
 
-            Destroy(gameObject);
+            DestroyMe();
         }
+    }
+
+    protected virtual void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 
     public void FixedUpdate()
@@ -50,27 +55,30 @@ public class Hitable : MonoBehaviour, IHitable
             Material material = GetComponent<Renderer>().material;
             Color currentColor = material.GetColor("HitColor");
 
-            if (material.GetColor("HitColor").r <= .4f && !reverse)
+            if (material != null && material.GetColor("HitColor") != null)
             {
-                float amount = currentColor.r + (3.8f * Time.deltaTime);
-
-                currentColor.r = amount;
-                material.SetColor("HitColor", currentColor);
-            }
-            else
-            {
-                reverse = true;
-            }
-
-            if (reverse)
-            {
-                if (material.GetColor("HitColor").r >= 0f)
+                if (material.GetColor("HitColor").r <= .4f && !reverse)
                 {
-                    float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
+                    float amount = currentColor.r + (3.8f * Time.deltaTime);
 
                     currentColor.r = amount;
                     material.SetColor("HitColor", currentColor);
-                    hit = material.GetColor("HitColor").r > 0f;
+                }
+                else
+                {
+                    reverse = true;
+                }
+
+                if (reverse)
+                {
+                    if (material.GetColor("HitColor").r >= 0f)
+                    {
+                        float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
+
+                        currentColor.r = amount;
+                        material.SetColor("HitColor", currentColor);
+                        hit = material.GetColor("HitColor").r > 0f;
+                    }
                 }
             }
         }

@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2377295276750494650
 Transform:
   m_ObjectHideFlags: 0
@@ -124,10 +124,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 5
   currentHitPoints: 0
-  dissolvable: {fileID: 0}
-  replace: {fileID: 5914976784869504627, guid: 615df16a4d4e4884fa31cb0744daa864, type: 3}
   player: {fileID: 0}
-  effects: []
+  effects:
+  - {fileID: -8679921383154817045, guid: 142180021b3a10d48ae8e74e5ae59628, type: 3}
+  - {fileID: -8679921383154817045, guid: eea288827017c944d8a0a4de07908a57, type: 3}
+  - {fileID: -8679921383154817045, guid: 20ff83c04e3a5ab438dc4eab38c200dc, type: 3}
 --- !u!54 &3141746553023984062
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -171,7 +172,7 @@ Transform:
   m_GameObject: {fileID: 3406535841497221817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 7}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 2377295276750494650}
   - {fileID: 2326350303370097235}
@@ -195,8 +196,8 @@ MonoBehaviour:
   mainShield: {fileID: 3047708927531637704}
   rig: {fileID: 3788103158502925761}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
-  shatterableShield: {fileID: 6357042328334398504, guid: 3b26f6ea2ae874e4a880e09282a789a9, type: 3}
-  shieldEnabled: 0
+  shatterableShield: {fileID: 8430350151181491723, guid: 0158ebe1ca245eb4e896b3457184c7ed, type: 3}
+  shieldEnabled: 1
 --- !u!114 &138983252133326467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
 --- !u!114 &6425757504133794518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -437,6 +439,10 @@ PrefabInstance:
     - target: {fileID: 2927367572497855691, guid: ba1f19ae1db7dac4dbc65656e46d102d, type: 3}
       propertyPath: m_Name
       value: GunRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6900475528456802984, guid: ba1f19ae1db7dac4dbc65656e46d102d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba1f19ae1db7dac4dbc65656e46d102d, type: 3}

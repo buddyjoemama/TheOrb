@@ -25,7 +25,7 @@ public class FlashIn : MonoBehaviour
 
     IEnumerator UpdateColor()
     {
-        Color currentColor = new Color(2, 2, 2);
+        Color currentColor = new Color(4, 4, 4);
 
         while (currentColor.r >= 0.0f)
         {

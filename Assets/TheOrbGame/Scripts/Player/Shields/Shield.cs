@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield : MonoBehaviour
+public class Shield : Hitable
 {
     // Start is called before the first frame update
     void Start()
@@ -30,5 +30,10 @@ public class Shield : MonoBehaviour
     internal void Move(Vector3 position)
     {
         transform.position = position;
+    }
+
+    protected override void DestroyMe()
+    {
+        this.Deactivate();
     }
 }
