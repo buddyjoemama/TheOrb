@@ -8,7 +8,7 @@ public class Hitable : MonoBehaviour, IHitable
 {
     public int maxHitPoints;
     public int currentHitPoints;
-    public PlayerManager player;
+
     private bool hit = false;
     private bool reverse = false;
     public List<Transform> effects;
@@ -24,17 +24,16 @@ public class Hitable : MonoBehaviour, IHitable
         currentHitPoints = maxHitPoints;
     }
 
-    bool destroyed = false;
     // Update is called once per frame
     void Update()
     {
         if (currentHitPoints == 0)
         {
-            if (effects != null && effects.Count > 0 && !destroyed)
+            if (effects != null && effects.Count > 0)
             {
-                destroyed = true;
-                Transform r = effects[Random.Range(0, effects.Count - 1)];
-                Transform shatterEffect = Instantiate(r, transform.position, player.rig.firePoint.rotation);
+                Transform randomEffect = effects[Random.Range(0, effects.Count - 1)];
+                Transform shatterEffect = Instantiate(randomEffect, transform.position,
+                    Quaternion.Euler(0, Random.Range(0, 360), 0));
 
                 Destroy(shatterEffect.gameObject, 5f);
             }
