@@ -31,7 +31,7 @@ public class Hitable : MonoBehaviour, IHitable
         {
             if (effects != null && effects.Count > 0)
             {
-                Transform randomEffect = effects[Random.Range(0, effects.Count - 1)];
+                Transform randomEffect = effects[Random.Range(0, effects.Count)];
                 Transform shatterEffect = Instantiate(randomEffect, transform.position,
                     Quaternion.Euler(0, Random.Range(0, 360), 0));
 
