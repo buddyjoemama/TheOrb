@@ -7,8 +7,19 @@ using UnityEngine.InputSystem;
 public class GunRig : MonoBehaviour
 {
     public Transform firePoint;
-    public Transform target;
+    public Player target;
     public BasicProjectile projectile;
+    private AIEnemy ai;
+
+    private void Start()
+    {
+        ai = GetComponent<AIEnemy>();
+
+        if (ai != null)
+        {
+            ai.Configure(transform, target.transform);
+        }
+    }
 
     void OnFire()
     {
@@ -18,7 +29,7 @@ public class GunRig : MonoBehaviour
 
     private void Update()
     {
-        if (target == null)
+        if (ai == null)
         {
             var mousePos = InputSystem.GetDevice<Mouse>().position;
 
@@ -36,11 +47,5 @@ public class GunRig : MonoBehaviour
 
             transform.LookAt(lookAt);
         }
-        else
-        {
-            transform.LookAt(target);
-        }
-
-        //playerManager.rig.transform.LookAt(lookAt);
     }
 }

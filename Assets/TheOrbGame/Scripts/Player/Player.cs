@@ -6,12 +6,13 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    private Rigidbody rigidBody;
+    public Rigidbody rigidBody;
     private float movementX;
     private float movementY;
     private Camera mainCamera;
     private Vector3 cameraOffset;
     // Start is called before the first frame update
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();

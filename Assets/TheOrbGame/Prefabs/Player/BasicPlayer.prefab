@@ -174,7 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 10
   currentHitPoints: 0
-  effects: []
+  effects:
+  - {fileID: -8679921383154817045, guid: 14caf3ccb12c9d041bee4050422923a5, type: 3}
+  - {fileID: -8679921383154817045, guid: 2c42453dea7b84e45917b7b81e8926bd, type: 3}
+  canBeDestroyed: 1
 --- !u!114 &5080036164057487700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rigidBody: {fileID: 0}
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -251,6 +255,7 @@ MonoBehaviour:
   firePoint: {fileID: 6277063395363487719}
   target: {fileID: 0}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
+  autoFire: 0
 --- !u!114 &8610324229380412253
 MonoBehaviour:
   m_ObjectHideFlags: 0
