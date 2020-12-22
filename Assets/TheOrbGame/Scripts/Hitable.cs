@@ -12,14 +12,17 @@ public class Hitable : MonoBehaviour, IHitable
     private bool hit = false;
     private bool reverse = false;
     public List<Transform> effects;
+    public bool canBeDestroyed = true;
+
+    public System.Guid Id { get; set; }
+
+    public Hitable()
+    {
+        Id = System.Guid.NewGuid();
+    }
 
     // Start is called before the first frame update
     void Start()
-    {
-       
-    }
-
-    private void Awake()
     {
         currentHitPoints = maxHitPoints;
     }
@@ -27,7 +30,7 @@ public class Hitable : MonoBehaviour, IHitable
     // Update is called once per frame
     void Update()
     {
-        if (currentHitPoints == 0)
+        if (currentHitPoints == 0 && canBeDestroyed)
         {
             if (effects != null && effects.Count > 0)
             {
@@ -45,7 +48,7 @@ public class Hitable : MonoBehaviour, IHitable
     protected virtual void DestroyMe()
     {
         Destroy(gameObject);
-    }
+    }  
 
     public void FixedUpdate()
     {
@@ -85,8 +88,11 @@ public class Hitable : MonoBehaviour, IHitable
 
     public void Hit(Transform collider, Transform transform)
     {
-        hit = true;
-        reverse = false;
-        currentHitPoints -= 1;
+        if (canBeDestroyed)
+        {
+            hit = true;
+            reverse = false;
+            currentHitPoints -= 1;
+        }
     }
 }

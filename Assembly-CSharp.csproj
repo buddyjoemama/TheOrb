@@ -58,7 +58,6 @@
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\Serializables.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\SaveParticleSystemScript.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Camera\CameraMovement.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyTurret.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\IHitable.cs" />
@@ -66,15 +65,13 @@
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\ParticleSystemController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\ParticleSystemControllerEditor.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Player\Projectiles\BasicProjectile.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Player.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\ProjectileMoveScript.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyManager.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\SpawnProjectilesScript.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\CameraShakeSimpleScript.cs" />
     <Compile Include="Assets\FlashIn.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\RotateToMouseScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShatterableShield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />

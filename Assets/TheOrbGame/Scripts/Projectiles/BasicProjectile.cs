@@ -11,6 +11,7 @@ public class BasicProjectile : MonoBehaviour
 {
     private Rigidbody projectile;
     private Vector3 lastBackPosition;
+    private Hitable firedFrom; // Where did the projectile originate?
 
     public int speed = 550;
     public Transform explosion;
@@ -20,7 +21,6 @@ public class BasicProjectile : MonoBehaviour
 
     public Transform projectileFront;
     public Transform projectileBack;
-    public Material dissolveMaterial;
 
     private void Awake()
     {
@@ -93,15 +93,16 @@ public class BasicProjectile : MonoBehaviour
     {
         var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
 
-        return hit.collider.tag != "Player" && hit.collider.tag != "Shield";// && hittable?.currentHitPoints > 0;
+        // Cant hit yourself.
+        return hittable != null && hittable.Id != firedFrom.Id;
     }
 
-    public void Fire(Vector3 forward, Vector3 firedFrom)
+    public void Fire(Vector3 forward, Hitable firedFrom)
     {
         projectile.velocity = forward * speed;
         lastBackPosition = projectileBack.position;
+        this.firedFrom = firedFrom;
 
-        // Destroy after 2 seconds...may want to extend this.
-        Destroy(projectile.gameObject, 2f);
+        Destroy(projectile.gameObject, 5f);
     }
 }

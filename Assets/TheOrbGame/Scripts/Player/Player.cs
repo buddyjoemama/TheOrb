@@ -6,28 +6,41 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody rb;
+    private Rigidbody rigidBody;
     private float movementX;
     private float movementY;
-
+    private Camera mainCamera;
+    private Vector3 cameraOffset;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
+        mainCamera = Camera.main;
+        cameraOffset = Camera.main.transform.position - transform.position;
     }
 
-    public void Move(Vector2 movementVector)
+    /// <summary>
+    /// Move the player ball.
+    /// </summary>
+    /// <param name="move"></param>
+    private void OnMove(InputValue move)
     {
+        Vector2 movementVector = move.Get<Vector2>();
         this.movementX = movementVector.x;
         this.movementY = movementVector.y;
     }
 
     private void FixedUpdate()
     {
-        Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 10;
+        Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 25;
 
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
-        rb.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z)); 
+        rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z)); 
+    }
+
+    private void LateUpdate()
+    {
+        mainCamera.transform.position = transform.position + cameraOffset;
     }
 }

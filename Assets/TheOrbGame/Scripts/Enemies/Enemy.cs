@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
+    public Player player;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,6 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.position);
+        
     }
 }
