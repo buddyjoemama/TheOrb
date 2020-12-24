@@ -13,15 +13,15 @@ public class GunRig : MonoBehaviour
 
     private void Start()
     {
-        ai = GetComponent<AIEnemy>();
+        ai = GetComponentInParent<AIEnemy>();
 
         if (ai != null)
         {
-            ai.Configure(transform, target.transform);
+            ai.Configure(transform, target.transform, this);
         }
     }
 
-    void OnFire()
+    public void OnFire()
     {
         BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
         clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<Hitable>());
