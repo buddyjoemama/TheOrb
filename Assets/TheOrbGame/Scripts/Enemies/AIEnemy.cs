@@ -22,12 +22,13 @@ public class AIEnemy : MonoBehaviour
     private IEnumerator Move()
     {
         int index = 0;
-
+        
+        Vector3 velocity = Vector3.zero;
         while (true)
         {
-            while(!Approched(parent.transform.position, boundaries[index].position))
+            while(!this.Approached(parent.transform.position, boundaries[index].position))
             {
-                parent.transform.position = Vector3.Lerp(parent.transform.position, boundaries[index].position, Time.deltaTime);
+                parent.transform.position = Vector3.SmoothDamp(parent.transform.position, boundaries[index].position, ref velocity, .75f);
                 yield return new WaitForFixedUpdate();
             }
 
@@ -40,11 +41,11 @@ public class AIEnemy : MonoBehaviour
         }
     }
 
-    private bool Approched(Vector3 position1, Vector3 position2)
+    private bool Approached(Vector3 position1, Vector3 position2)
     {
-        return (int)position1.x == (int)position2.x
-            && (int)position1.y == (int)position2.y
-            && (int)position1.z == (int)position2.z;
+        return Mathf.CeilToInt(position1.x) == Mathf.CeilToInt(position2.x)
+            && Mathf.CeilToInt(position1.y) == Mathf.CeilToInt(position2.y)
+            && Mathf.CeilToInt(position1.z) == Mathf.CeilToInt(position2.z);
     }
 
     // Update is called once per frame
