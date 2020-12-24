@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 4402528859697269396}
+  target: {fileID: 0}
+  projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
 --- !u!1 &2367588623089525391
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,8 +186,8 @@ GameObject:
   - component: {fileID: 6644447984369364682}
   - component: {fileID: 1802250875116278068}
   - component: {fileID: 6818689016049645846}
-  - component: {fileID: 3407820328013922948}
   - component: {fileID: 7289101665234092962}
+  - component: {fileID: 3354063807403641482}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Untagged
@@ -286,18 +288,7 @@ MonoBehaviour:
   currentHitPoints: 0
   effects:
   - {fileID: -8679921383154817045, guid: 14caf3ccb12c9d041bee4050422923a5, type: 3}
---- !u!114 &3407820328013922948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6857554383434383695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84865e5e694710f43a93016d987b3e44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  canBeDestroyed: 1
 --- !u!114 &7289101665234092962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,4 +301,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c867803fb56b9247b6be671dab33981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+--- !u!114 &3354063807403641482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6857554383434383695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3dc270d6e25fc84e88aceaab47dc105, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

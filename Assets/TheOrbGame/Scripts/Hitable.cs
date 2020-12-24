@@ -12,14 +12,17 @@ public class Hitable : MonoBehaviour, IHitable
     private bool hit = false;
     private bool reverse = false;
     public List<Transform> effects;
+    public bool canBeDestroyed = true;
+
+    public System.Guid Id { get; set; }
+
+    public Hitable()
+    {
+        Id = System.Guid.NewGuid();
+    }
 
     // Start is called before the first frame update
     void Start()
-    {
-       
-    }
-
-    private void Awake()
     {
         currentHitPoints = maxHitPoints;
     }
@@ -27,7 +30,7 @@ public class Hitable : MonoBehaviour, IHitable
     // Update is called once per frame
     void Update()
     {
-        if (currentHitPoints == 0)
+        if (currentHitPoints == 0 && canBeDestroyed)
         {
             if (effects != null && effects.Count > 0)
             {
@@ -45,39 +48,37 @@ public class Hitable : MonoBehaviour, IHitable
     protected virtual void DestroyMe()
     {
         Destroy(gameObject);
-    }
+    }  
 
     public void FixedUpdate()
     {
-        if (hit)
+        Material material = GetComponent<Renderer>().material;
+
+        if (hit && material.HasProperty("HitColor"))
         {
-            Material material = GetComponent<Renderer>().material;
             Color currentColor = material.GetColor("HitColor");
 
-            if (material != null && material.GetColor("HitColor") != null)
+            if (material.GetColor("HitColor").r <= .4f && !reverse)
             {
-                if (material.GetColor("HitColor").r <= .4f && !reverse)
+                float amount = currentColor.r + (3.8f * Time.deltaTime);
+
+                currentColor.r = amount;
+                material.SetColor("HitColor", currentColor);
+            }
+            else
+            {
+                reverse = true;
+            }
+
+            if (reverse)
+            {
+                if (material.GetColor("HitColor").r >= 0f)
                 {
-                    float amount = currentColor.r + (3.8f * Time.deltaTime);
+                    float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
 
                     currentColor.r = amount;
                     material.SetColor("HitColor", currentColor);
-                }
-                else
-                {
-                    reverse = true;
-                }
-
-                if (reverse)
-                {
-                    if (material.GetColor("HitColor").r >= 0f)
-                    {
-                        float amount = material.GetColor("HitColor").r - (3.8f * Time.deltaTime);
-
-                        currentColor.r = amount;
-                        material.SetColor("HitColor", currentColor);
-                        hit = material.GetColor("HitColor").r > 0f;
-                    }
+                    hit = material.GetColor("HitColor").r > 0f;
                 }
             }
         }
@@ -85,8 +86,11 @@ public class Hitable : MonoBehaviour, IHitable
 
     public void Hit(Transform collider, Transform transform)
     {
-        hit = true;
-        reverse = false;
-        currentHitPoints -= 1;
+        if (canBeDestroyed)
+        {
+            hit = true;
+            reverse = false;
+            currentHitPoints -= 1;
+        }
     }
 }

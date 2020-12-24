@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed50def6a3cce0419ed75a0d7df9b6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHitPoints: 0
+  currentHitPoints: 0
+  effects: []
 --- !u!114 &7479893938208302116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHitPoints: 5
   currentHitPoints: 0
-  player: {fileID: 0}
   effects:
   - {fileID: -8679921383154817045, guid: 142180021b3a10d48ae8e74e5ae59628, type: 3}
   - {fileID: -8679921383154817045, guid: eea288827017c944d8a0a4de07908a57, type: 3}
@@ -171,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3406535841497221817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 2377295276750494650}
@@ -196,7 +198,6 @@ MonoBehaviour:
   mainShield: {fileID: 3047708927531637704}
   rig: {fileID: 3788103158502925761}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
-  shatterableShield: {fileID: 8430350151181491723, guid: 0158ebe1ca245eb4e896b3457184c7ed, type: 3}
   shieldEnabled: 1
 --- !u!114 &138983252133326467
 MonoBehaviour:

@@ -22,7 +22,8 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(objectToCreate, new Vector3(0, 20, 50), Quaternion.identity);
+            if(objectToCreate != null)
+                Instantiate(objectToCreate, new Vector3(0, 20, 50), Quaternion.identity);
 
             yield return new WaitForSeconds(5f);
         }
