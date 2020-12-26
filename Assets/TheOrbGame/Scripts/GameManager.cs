@@ -1,15 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Transform objectToCreate;
+    public Player player;
+    private Hitable hitablePlayer;
+    private Image lifeBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(CreateObject());
+        lifeBar = GetComponentInChildren<Image>();
+
+        hitablePlayer = player.GetComponent<Hitable>();
+        hitablePlayer.OnHit += HitablePlayer_OnHit;
+    }
+
+    private void HitablePlayer_OnHit(int amount)
+    {
+        lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
     }
 
     // Update is called once per frame
@@ -18,14 +29,14 @@ public class GameManager : MonoBehaviour
             
     }
 
-    IEnumerator CreateObject()
-    {
-        while(true)
-        {
-            if(objectToCreate != null)
-                Instantiate(objectToCreate, new Vector3(0, 20, 50), Quaternion.identity);
+    //IEnumerator CreateObject()
+    //{
+    //    while(true)
+    //    {
+    //        if(objectToCreate != null)
+    //            Instantiate(objectToCreate, new Vector3(0, 20, 50), Quaternion.identity);
 
-            yield return new WaitForSeconds(5f);
-        }
-    }
+    //        yield return new WaitForSeconds(5f);
+    //    }
+    //}
 }

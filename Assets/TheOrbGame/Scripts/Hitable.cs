@@ -13,6 +13,10 @@ public class Hitable : MonoBehaviour, IHitable
     private bool reverse = false;
     public List<Transform> effects;
     public bool canBeDestroyed = true;
+    public List<Pickup> droppedItems;
+
+    public delegate void HitDelegate(int amount);
+    public event HitDelegate OnHit;
 
     public System.Guid Id { get; set; }
 
@@ -35,8 +39,7 @@ public class Hitable : MonoBehaviour, IHitable
             if (effects != null && effects.Count > 0)
             {
                 Transform randomEffect = effects[Random.Range(0, effects.Count)];
-                Transform shatterEffect = Instantiate(randomEffect, transform.position,
-                    Quaternion.Euler(0, Random.Range(0, 360), 0));
+                Transform shatterEffect = Instantiate(randomEffect, transform.position, Quaternion.identity);
 
                 Destroy(shatterEffect.gameObject, 5f);
             }
@@ -47,8 +50,20 @@ public class Hitable : MonoBehaviour, IHitable
 
     protected virtual void DestroyMe()
     {
+        try
+        {
+            int dropIndex = Random.Range(0, droppedItems.Count);
+            var item = droppedItems[dropIndex];
+
+            if (item != null)
+            {
+                Instantiate(droppedItems[dropIndex], transform.position, Quaternion.identity);
+            }
+        }
+        catch { }
+
         Destroy(gameObject);
-    }  
+    }
 
     public void FixedUpdate()
     {
@@ -91,6 +106,11 @@ public class Hitable : MonoBehaviour, IHitable
             hit = true;
             reverse = false;
             currentHitPoints -= 1;
+
+            if (OnHit != null)
+            {
+                OnHit(10);
+            }
         }
     }
 }

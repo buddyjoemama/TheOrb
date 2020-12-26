@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    public Rigidbody rigidBody;
+    private Rigidbody rigidBody;
     private float movementX;
     private float movementY;
     private Camera mainCamera;
@@ -18,6 +18,11 @@ public class Player : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
+    }
+
+    internal void AddHealth(int lifeValue)
+    {
+        
     }
 
     /// <summary>
@@ -43,5 +48,16 @@ public class Player : MonoBehaviour
     private void LateUpdate()
     {
         mainCamera.transform.position = transform.position + cameraOffset;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // other.GetComponent
+        var pickup = other.GetComponent<Pickup>();
+
+        if(pickup != null)
+        {
+            pickup.Apply(this);
+        }
     }
 }

@@ -58,11 +58,11 @@ public class BasicProjectile : MonoBehaviour
         {
             Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
 
-            //if (closest.distance <= 0f)
-            //{
-            //    closest.point = projectileBack.position;
-            //    closest.normal = -transform.forward; /// its behind us
-            //}
+            if (closest.distance <= 0f)
+            {
+                closest.point = projectileBack.position;
+                closest.normal = -transform.forward; /// its behind us
+            }
 
             // Break up the projectile.
             if (explosion != null)
