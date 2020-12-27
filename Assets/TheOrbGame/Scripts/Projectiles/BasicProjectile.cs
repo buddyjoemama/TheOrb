@@ -77,6 +77,13 @@ public class BasicProjectile : MonoBehaviour
                 hitable.Hit(transform, projectile.transform, closest, this);
             }
 
+            // Any effects attached to the hitable?
+            HitEffect hitEffect = closest.collider.gameObject.GetComponentInParent<HitEffect>();
+            if(hitEffect != null)
+            {
+                hitEffect.Hit();
+            }
+
             // Destroy the projectile.
             Destroy(projectile.gameObject);
         }

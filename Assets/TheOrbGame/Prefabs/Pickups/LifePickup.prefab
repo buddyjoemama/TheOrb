@@ -4828,7 +4828,7 @@ GameObject:
   - component: {fileID: 6108566748703673892}
   - component: {fileID: 1945895389526866697}
   - component: {fileID: 9009402134547492331}
-  - component: {fileID: 1833186200564918500}
+  - component: {fileID: 2360449544453181061}
   m_Layer: 0
   m_Name: LifePickup
   m_TagString: Untagged
@@ -4913,7 +4913,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1833186200564918500
+--- !u!114 &2360449544453181061
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4922,7 +4922,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9119377178314846538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccac45d08089d694099fe09f9a0a38c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 05e5f2e465cdfaa488f5d0d21bc1bbee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lifeValue: 10

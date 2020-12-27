@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8648660622616445623}
   - component: {fileID: 1742124893}
   - component: {fileID: 6020400029872362948}
+  - component: {fileID: 2002183424024965249}
   m_Layer: 0
   m_Name: OrangeStationaryCube
   m_TagString: Untagged
@@ -144,8 +145,20 @@ MonoBehaviour:
   - {fileID: -8679921383154817045, guid: 122b62a48e14a8d419f53c533cbb7b9c, type: 3}
   - {fileID: -8679921383154817045, guid: f4b1394c16414554c96585417c156a97, type: 3}
   - {fileID: -8679921383154817045, guid: d0ebcdbabe42c81488a108382cdc251b, type: 3}
-  canBeDestroyed: 1
   droppedItems:
   - {fileID: 1833186200564918500, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &2002183424024965249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377057969015294371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c8835fa1804f5418a4d2a3ab928c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materialColorName: HitColor
