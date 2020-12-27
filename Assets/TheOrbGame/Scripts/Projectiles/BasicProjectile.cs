@@ -74,7 +74,7 @@ public class BasicProjectile : MonoBehaviour
 
             if (hitable != null)
             {
-                hitable.Hit(transform, projectile.transform);
+                hitable.Hit(transform, projectile.transform, closest, this);
             }
 
             // Destroy the projectile.

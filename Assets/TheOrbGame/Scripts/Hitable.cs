@@ -12,7 +12,6 @@ public class Hitable : MonoBehaviour, IHitable
     private bool hit = false;
     private bool reverse = false;
     public List<Transform> effects;
-    public bool canBeDestroyed = true;
     public List<Pickup> droppedItems;
 
     public delegate void HitDelegate(int amount);
@@ -23,18 +22,19 @@ public class Hitable : MonoBehaviour, IHitable
     public Hitable()
     {
         Id = System.Guid.NewGuid();
+        currentHitPoints = maxHitPoints;
     }
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         currentHitPoints = maxHitPoints;
     }
 
     // Update is called once per frame
-    void Update()
+    public virtual void Update()
     {
-        if (currentHitPoints == 0 && canBeDestroyed)
+        if (currentHitPoints == 0)
         {
             if (effects != null && effects.Count > 0)
             {
@@ -99,18 +99,10 @@ public class Hitable : MonoBehaviour, IHitable
         }
     }
 
-    public void Hit(Transform collider, Transform transform)
+    public virtual void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
-        if (canBeDestroyed)
-        {
-            hit = true;
-            reverse = false;
-            currentHitPoints -= 1;
-
-            if (OnHit != null)
-            {
-                OnHit(10);
-            }
-        }
+        hit = true;
+        reverse = false;
+        currentHitPoints -= 1;
     }
 }

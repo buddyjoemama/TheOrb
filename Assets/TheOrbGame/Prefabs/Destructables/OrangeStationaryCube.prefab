@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 6776142082345541921}
   - component: {fileID: 8718906068228413358}
   - component: {fileID: 4742342658143670199}
-  - component: {fileID: 7342706170489320899}
   - component: {fileID: 8648660622616445623}
   - component: {fileID: 1742124893}
-  - component: {fileID: 1742124894}
+  - component: {fileID: 6020400029872362948}
   m_Layer: 0
   m_Name: OrangeStationaryCube
   m_TagString: Untagged
@@ -99,29 +98,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7342706170489320899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377057969015294371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8db0daebfe61c345aacbb9f615a3515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHitPoints: 3
-  currentHitPoints: 0
-  effects:
-  - {fileID: -8679921383154817045, guid: d0ebcdbabe42c81488a108382cdc251b, type: 3}
-  - {fileID: -8679921383154817045, guid: f4b1394c16414554c96585417c156a97, type: 3}
-  - {fileID: -8679921383154817045, guid: 122b62a48e14a8d419f53c533cbb7b9c, type: 3}
-  canBeDestroyed: 1
-  droppedItems:
-  - {fileID: 1833186200564918500, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &8648660622616445623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +126,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1742124894
+--- !u!114 &6020400029872362948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -159,6 +135,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 5377057969015294371}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84865e5e694710f43a93016d987b3e44, type: 3}
+  m_Script: {fileID: 11500000, guid: fa202f897b08b1e4c88780bec7f9e063, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHitPoints: 3
+  currentHitPoints: 0
+  effects:
+  - {fileID: -8679921383154817045, guid: 122b62a48e14a8d419f53c533cbb7b9c, type: 3}
+  - {fileID: -8679921383154817045, guid: f4b1394c16414554c96585417c156a97, type: 3}
+  - {fileID: -8679921383154817045, guid: d0ebcdbabe42c81488a108382cdc251b, type: 3}
+  canBeDestroyed: 1
+  droppedItems:
+  - {fileID: 1833186200564918500, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

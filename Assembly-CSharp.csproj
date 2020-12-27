@@ -73,12 +73,14 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShatterableShield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\ProjectileMoveScript.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\RigidbodyHitable.cs" />
     <Compile Include="Assets\Pickup.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\CameraShakeSimpleScript.cs" />
     <Compile Include="Assets\LifePickup.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\Serializables.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\PermanentHitable.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
