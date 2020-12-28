@@ -16,9 +16,15 @@ public class GameManager : MonoBehaviour
 
         hitablePlayer = player.GetComponent<Hitable>();
         hitablePlayer.OnHit += HitablePlayer_OnHit;
+        hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
     }
 
-    private void HitablePlayer_OnHit(int amount)
+    private void HitablePlayer_OnHitPointsChanged()
+    {
+        lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
+    }
+
+    private void HitablePlayer_OnHit(int damage)
     {
         lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
     }

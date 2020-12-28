@@ -22,7 +22,7 @@ public class LifePickup : Pickup
 
     public override void Apply(Player player)
     {
-        player.AddHealth(lifeValue);
+        player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
         Destroy(this.gameObject);
     }
 }

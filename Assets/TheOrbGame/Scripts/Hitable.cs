@@ -11,17 +11,29 @@ public class Hitable : MonoBehaviour, IHitable
     public List<Transform> effects;
     public List<Pickup> droppedItems;
 
-    public delegate void HitDelegate(int amount);
+    public delegate void HitDelegate(int damage);
     public delegate void DestroyedDelegate();
+    public delegate void HitPointsChangedDelegate();
 
     public event HitDelegate OnHit;
     public event DestroyedDelegate OnDestroyed;
+    public event HitPointsChangedDelegate OnHitPointsChanged;
 
     public System.Guid Id { get; set; }
 
     public Hitable()
     {
         Id = System.Guid.NewGuid();
+    }
+
+    internal void AddHitPoint(int lifeValue)
+    {
+        currentHitPoints += lifeValue;
+        
+        if(OnHitPointsChanged != null)
+        {
+            OnHitPointsChanged();
+        }
     }
 
     // Start is called before the first frame update
@@ -33,7 +45,7 @@ public class Hitable : MonoBehaviour, IHitable
     // Update is called once per frame
     public virtual void Update()
     {
-        if (currentHitPoints == 0)
+        if (currentHitPoints <= 0)
         {
             if (effects != null && effects.Count > 0)
             {
@@ -72,7 +84,7 @@ public class Hitable : MonoBehaviour, IHitable
 
     public virtual void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
-        currentHitPoints -= 1;
+        currentHitPoints -= projectile.damage;
 
         if(OnHit != null)
         {

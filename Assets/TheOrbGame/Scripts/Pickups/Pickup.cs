@@ -18,6 +18,6 @@ public class Pickup : MonoBehaviour
 
     public virtual void Apply(Player player)
     {
-
+        
     }
 }
