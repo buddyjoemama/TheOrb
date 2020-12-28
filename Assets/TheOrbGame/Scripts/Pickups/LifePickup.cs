@@ -9,7 +9,7 @@ public class LifePickup : Pickup
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(this.gameObject, 5f);
     }
 
     Vector3 velocity = Vector3.zero;
