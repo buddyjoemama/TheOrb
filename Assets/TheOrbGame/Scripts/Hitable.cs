@@ -51,9 +51,10 @@ public class Hitable : MonoBehaviour, IHitable
     {
         try
         {
-            int dropIndex = Random.Range(0, droppedItems.Count);
+            int dropIndex = Random.Range(0, droppedItems.Count - 1);
             var item = droppedItems[dropIndex];
 
+            Debug.Log(dropIndex);
             if (item != null)
             {
                 Instantiate(droppedItems[dropIndex], transform.position, Quaternion.identity);
@@ -72,5 +73,10 @@ public class Hitable : MonoBehaviour, IHitable
     public virtual void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         currentHitPoints -= 1;
+
+        if(OnHit != null)
+        {
+            OnHit(projectile.damage);
+        }
     }
 }

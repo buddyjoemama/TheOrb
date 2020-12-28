@@ -21,6 +21,7 @@ public class BasicProjectile : MonoBehaviour
 
     public Transform projectileFront;
     public Transform projectileBack;
+    public int damage = 2;
 
     private void Awake()
     {

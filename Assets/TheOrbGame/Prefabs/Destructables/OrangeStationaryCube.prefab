@@ -146,7 +146,8 @@ MonoBehaviour:
   - {fileID: -8679921383154817045, guid: f4b1394c16414554c96585417c156a97, type: 3}
   - {fileID: -8679921383154817045, guid: d0ebcdbabe42c81488a108382cdc251b, type: 3}
   droppedItems:
-  - {fileID: 1833186200564918500, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
+  - {fileID: 2360449544453181061, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!114 &2002183424024965249

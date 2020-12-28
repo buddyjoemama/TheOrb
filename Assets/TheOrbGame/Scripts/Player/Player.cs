@@ -12,12 +12,14 @@ public class Player : MonoBehaviour
     private Camera mainCamera;
     private Vector3 cameraOffset;
     // Start is called before the first frame update
+    private GunRig rig;
 
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
+        rig = GetComponentInChildren<GunRig>();
     }
 
     internal void AddHealth(int lifeValue)
@@ -34,6 +36,11 @@ public class Player : MonoBehaviour
         Vector2 movementVector = move.Get<Vector2>();
         this.movementX = movementVector.x;
         this.movementY = movementVector.y;
+    }
+
+    private void OnFire()
+    {
+        rig.OnFire();
     }
 
     private void FixedUpdate()
