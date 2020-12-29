@@ -38,6 +38,11 @@ public class Player : MonoBehaviour
         this.movementY = movementVector.y;
     }
 
+    void OnLook(InputValue value)
+    {
+        Debug.Log(value);
+    }
+
     private void OnFire()
     {
         rig.OnFire();

@@ -5,6 +5,7 @@ using UnityEngine;
 public class LifePickup : Pickup
 {
     public int lifeValue;
+    public Transform effect;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class LifePickup : Pickup
     public override void Apply(Player player)
     {
         player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
+        Instantiate(effect, new Vector3(transform.position.x, 50, transform.position.z), Quaternion.Euler(-90, 0, 0));
         Destroy(this.gameObject);
     }
 }

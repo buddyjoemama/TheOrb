@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AutonomousGunRig : GunRig
 {
+    public bool enabled = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,8 @@ public class AutonomousGunRig : GunRig
     {
         while(true)
         {
-            OnFire();
+            if(enabled) 
+                OnFire();
 
             yield return new WaitForSeconds(2);
         }

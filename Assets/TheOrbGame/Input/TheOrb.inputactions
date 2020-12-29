@@ -197,6 +197,61 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "2D Vector",
+                    "id": "87aa23f9-356b-46a1-88d0-166c9787ac06",
+                    "path": "2DVector(mode=2)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "47c8e0c5-a2ff-4c83-9d78-02f448ead715",
+                    "path": "<HID::Logitech Logitech Dual Action>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Joystick",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "5f5c73d3-b44b-47aa-a979-2873fb3f7d33",
+                    "path": "<HID::Logitech Logitech Dual Action>/rz",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Joystick",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "05351731-2ff3-472c-a7a1-d8d80764a8a6",
+                    "path": "<HID::Logitech Logitech Dual Action>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Joystick",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "49bedc22-07b2-47cc-b6d2-7c1506e15377",
+                    "path": "<HID::Logitech Logitech Dual Action>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad;Joystick",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
                     "path": "<Gamepad>/rightTrigger",
@@ -268,7 +323,7 @@
                     "path": "<HID::Logitech Logitech Dual Action>/button8",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "Gamepad;Joystick",
                     "action": "Fire",
                     "isComposite": false,
                     "isPartOfComposite": false

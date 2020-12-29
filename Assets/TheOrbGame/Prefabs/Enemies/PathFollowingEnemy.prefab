@@ -28,6 +28,7 @@ MonoBehaviour:
   firePoint: {fileID: 2256694387727413184}
   target: {fileID: 0}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
+  enabled: 0
 --- !u!1001 &2470663353227634004
 PrefabInstance:
   m_ObjectHideFlags: 0
