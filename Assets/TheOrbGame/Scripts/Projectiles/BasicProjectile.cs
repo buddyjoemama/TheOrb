@@ -102,7 +102,7 @@ public class BasicProjectile : MonoBehaviour
         var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
 
         // Cant hit yourself.
-        return hittable != null && hittable.Id != firedFrom.Id;
+        return hittable != null && hittable.Id != firedFrom.Id && !hit.collider.isTrigger;
     }
 
     public void Fire(Vector3 forward, Hitable firedFrom)

@@ -66,7 +66,6 @@ public class Hitable : MonoBehaviour, IHitable
             int dropIndex = Random.Range(0, droppedItems.Count - 1);
             var item = droppedItems[dropIndex];
 
-            Debug.Log(dropIndex);
             if (item != null)
             {
                 Instantiate(droppedItems[dropIndex], transform.position, Quaternion.identity);
