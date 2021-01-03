@@ -267,6 +267,7 @@ MonoBehaviour:
   firePoint: {fileID: 6277063395363487719}
   target: {fileID: 0}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
+  reticle: {fileID: 4545743891320941487, guid: 1177af6ecf274be4c9fdb6f6c6fd3d37, type: 3}
 --- !u!1 &5851121215654115977
 GameObject:
   m_ObjectHideFlags: 0

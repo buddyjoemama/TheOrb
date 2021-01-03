@@ -40,7 +40,8 @@ public class Player : MonoBehaviour
 
     void OnLook(InputValue value)
     {
-        
+        var s = value.Get<Vector2>();
+        rig.Rotate(value.Get<Vector2>());
     }
 
     private void OnFire()
