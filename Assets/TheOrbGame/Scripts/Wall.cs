@@ -20,7 +20,7 @@ public class Wall : MonoBehaviour
 
     internal void UpdatePlayerPosition(Vector3 point, float distance)
     {
-        float chunk = ((.2f / 10f) * (distance)) - .2f;
+        float chunk = (.02f * (distance)) - .2f;
 
         GetComponent<Renderer>().material.SetVector("Position", new Vector4(point.x, 0, 0, 0));
         GetComponent<Renderer>().material.SetFloat("Distance", Mathf.Clamp(chunk, 0, .2f));

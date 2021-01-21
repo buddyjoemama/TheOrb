@@ -58,8 +58,9 @@
   <ItemGroup>
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\Pickup.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\LifePickup.cs" />
-    <Compile Include="Assets\Wall.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Wall.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\SaveParticleSystemScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\PathFollowingEnemy.cs" />
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\UniqueProjectiles\RotateToMouseScript.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_2\Scripts\ParticleSystemController\Serializables.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
-    <Compile Include="Assets\Reticle.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

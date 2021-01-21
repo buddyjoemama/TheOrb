@@ -96,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: e017e4a8d067fa643a3d4fa561675ea2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
   firePoint: {fileID: 6277063395363487719}
   target: {fileID: 0}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
-  reticle: {fileID: 4545743891320941487, guid: 1177af6ecf274be4c9fdb6f6c6fd3d37, type: 3}
+  reticle: {fileID: -1071574771941991703, guid: 2bd6aa0bb25f99c43b8f98e211aaf573, type: 3}
 --- !u!1 &5851121215654115977
 GameObject:
   m_ObjectHideFlags: 0
