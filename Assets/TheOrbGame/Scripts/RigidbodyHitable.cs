@@ -22,7 +22,23 @@ public class RigidbodyHitable : Hitable
         Rigidbody rb = GetComponent<Rigidbody>();
         if(rb != null)
         {
-            rb.AddForceAtPosition(new Vector3(4, 0, 4), hitPoint.point, ForceMode.Impulse);
+            int x = -4;
+            int z = -4;
+
+            var dirX = projectile.transform.position.x - rb.position.x;
+            var dirZ = projectile.transform.position.z - rb.position.z;
+
+            if(dirX <= 0)
+            {
+                x = 4;
+            }
+            if(dirZ <= 0)
+            {
+                z = 4;
+            }
+
+            if(projectile.transform.position.x > rb.position.x)
+                rb.AddForceAtPosition(new Vector3(x, 0, z), hitPoint.point, ForceMode.Impulse);
         }
     }
 }

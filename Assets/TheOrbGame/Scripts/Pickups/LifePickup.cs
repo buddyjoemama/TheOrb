@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class LifePickup : Pickup
 {
     public int lifeValue;
     public Transform effect;
+    public float timeToLive;
+    public VisualEffect p;
+    private bool pickedUp = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, 5f);
+        Destroy(this.gameObject, timeToLive);
+
+        this.GetComponent<VisualEffect>().Play();     
     }
 
     Vector3 velocity = Vector3.zero;
@@ -18,13 +24,19 @@ public class LifePickup : Pickup
     void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position,
-            new Vector3(transform.position.x, 0, transform.position.z), ref velocity, 1f);
+            new Vector3(transform.position.x, 2.5f, transform.position.z), ref velocity, 1f);
     }
 
     public override void Apply(Player player)
     {
-        player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
-        Instantiate(effect, new Vector3(transform.position.x, 50, transform.position.z), Quaternion.Euler(-90, 0, 0));
-        Destroy(this.gameObject);
+        if (!pickedUp)
+        {
+            pickedUp = true;
+
+            player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
+            var o = Instantiate(effect, transform.position, Quaternion.Euler(-90, 0, 0));
+            Destroy(o.gameObject, 2.5f);
+            Destroy(this.gameObject);
+        }
     }
 }

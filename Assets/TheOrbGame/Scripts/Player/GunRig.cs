@@ -9,10 +9,12 @@ public class GunRig : MonoBehaviour
     public Transform firePoint;
     public Player target;
     public BasicProjectile projectile;
+    public Reticle reticle;
+    private Reticle rClone;
 
     private void Start()
     {
-
+        rClone = Instantiate(reticle);
     }
 
     public virtual void OnFire()
@@ -21,7 +23,9 @@ public class GunRig : MonoBehaviour
         clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<Hitable>());
     }
 
-    protected virtual void Update()
+    protected virtual void Update() { }
+
+    protected virtual void FixedUpdate()
     {
         var mousePos = InputSystem.GetDevice<Mouse>().position;
 
@@ -31,6 +35,8 @@ public class GunRig : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 1000))
         {
             lookAt = hit.point;
+            rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            rClone.transform.position = lookAt + rClone.transform.up;
         }
         else
         {
@@ -38,5 +44,17 @@ public class GunRig : MonoBehaviour
         }
 
         transform.LookAt(lookAt);
+    }
+
+    internal void Rotate(Vector2 vector2)
+    {
+        Quaternion rotation = transform.rotation;
+        var currentX = rotation.eulerAngles.x;
+        currentX += vector2.x;
+
+        var currentY = rotation.eulerAngles.y;
+        currentY += vector2.y;
+
+        //   transform.rotation = Quaternion.Euler(currentX, 0, 0);
     }
 }
