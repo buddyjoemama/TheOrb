@@ -105,12 +105,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // other.GetComponent
-        var pickup = other.GetComponent<Pickup>();
-
-        if(pickup != null)
-        {
-            pickup.Apply(this);
-        }
+        var trigger = other.GetComponent<ITrigger>();
+        
+        if(trigger != null)
+            trigger.Apply(this);
     }
 }

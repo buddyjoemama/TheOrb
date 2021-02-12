@@ -35,8 +35,12 @@ public class GunRig : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, 1000))
         {
             lookAt = hit.point;
-            rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-            rClone.transform.position = lookAt + rClone.transform.up;
+
+            if (rClone != null)
+            {
+                rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                rClone.transform.position = lookAt + rClone.transform.up;
+            }
         }
         else
         {

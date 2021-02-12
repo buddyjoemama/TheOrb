@@ -10,6 +10,7 @@ public class Hitable : MonoBehaviour, IHitable
     public int currentHitPoints;
     public List<Transform> effects;
     public List<Pickup> droppedItems;
+    public bool dropsItems = true;
 
     public delegate void HitDelegate(int damage);
     public delegate void DestroyedDelegate();
@@ -66,7 +67,7 @@ public class Hitable : MonoBehaviour, IHitable
             int dropIndex = Random.Range(0, droppedItems.Count - 1);
             var item = droppedItems[dropIndex];
 
-            if (item != null)
+            if (item != null && dropsItems)
             {
                 Instantiate(droppedItems[dropIndex], transform.position, Quaternion.identity);
             }

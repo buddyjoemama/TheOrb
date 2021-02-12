@@ -1,9 +1,14 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour, ITrigger
+public class SaveLocationTrigger : MonoBehaviour, ITrigger
 {
+    public void Apply(Player player)
+    {
+        Debug.Log("Saving...");        
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -12,11 +17,6 @@ public class Pickup : MonoBehaviour, ITrigger
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-
-    public virtual void Apply(Player player)
     {
         
     }

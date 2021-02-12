@@ -61,6 +61,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\LifePickup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Wall.cs" />
+    <Compile Include="Assets\RotateForever.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\PathFollowingEnemy.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
@@ -77,6 +78,8 @@
     <Compile Include="Assets\TheOrbGame\Scripts\RigidbodyHitable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Pickups\ITrigger.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\SaveLocationTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
