@@ -19,26 +19,15 @@ public class RigidbodyHitable : Hitable
     {
         base.Hit(collider, transform, hitPoint, projectile);
 
-        Rigidbody rb = GetComponent<Rigidbody>();
-        if(rb != null)
+        if (currentHitPoints == 0)
         {
-            int x = -4;
-            int z = -4;
+            var clone = Instantiate(effects[0], hitPoint.point, Quaternion.identity);
+            clone.transform.forward = projectile.transform.forward;// hitPoint.point.normalized;
 
-            var dirX = projectile.transform.position.x - rb.position.x;
-            var dirZ = projectile.transform.position.z - rb.position.z;
+           // clone = Instantiate(effects[1], hitPoint.point, Quaternion.identity);
+           // clone.transform.forward = projectile.transform.forward;///hitPoint.point.normalized;
 
-            if(dirX <= 0)
-            {
-                x = 4;
-            }
-            if(dirZ <= 0)
-            {
-                z = 4;
-            }
-
-            if(projectile.transform.position.x > rb.position.x)
-                rb.AddForceAtPosition(new Vector3(x, 0, z), hitPoint.point, ForceMode.Impulse);
+            DestroyMe();
         }
     }
 }

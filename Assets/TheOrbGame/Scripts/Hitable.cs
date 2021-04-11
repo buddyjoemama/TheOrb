@@ -48,15 +48,15 @@ public class Hitable : MonoBehaviour, IHitable
     {
         if (currentHitPoints <= 0)
         {
-            if (effects != null && effects.Count > 0)
-            {
-                Transform randomEffect = effects[Random.Range(0, effects.Count)];
-                Transform shatterEffect = Instantiate(randomEffect, transform.position, transform.rotation);
+            //if (effects != null && effects.Count > 0)
+            //{
+            //    Transform randomEffect = effects[Random.Range(0, effects.Count)];
+            //    Transform shatterEffect = Instantiate(randomEffect, transform.position, transform.rotation);
 
-                Destroy(shatterEffect.gameObject, 5f);
-            }
+            //    Destroy(shatterEffect.gameObject, 5f);
+            //}
 
-            DestroyMe();
+          //  DestroyMe();
         }
     }
 

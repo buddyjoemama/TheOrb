@@ -13,6 +13,9 @@ public class PermanentHitable : Hitable
    
     public override void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
+        //var clone = Instantiate(effects[0], hitPoint.point, Quaternion.identity);
+        //clone.transform.forward = hitPoint.point.normalized;
+
         base.Hit(collider, transform, hitPoint, projectile);
     }
 
