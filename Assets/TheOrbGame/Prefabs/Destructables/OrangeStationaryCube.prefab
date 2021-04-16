@@ -142,14 +142,13 @@ MonoBehaviour:
   maxHitPoints: 3
   currentHitPoints: 0
   effects:
-  - {fileID: -8679921383154817045, guid: 122b62a48e14a8d419f53c533cbb7b9c, type: 3}
-  - {fileID: -8679921383154817045, guid: f4b1394c16414554c96585417c156a97, type: 3}
-  - {fileID: -8679921383154817045, guid: d0ebcdbabe42c81488a108382cdc251b, type: 3}
+  - {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
   droppedItems:
   - {fileID: 2360449544453181061, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dropsItems: 0
 --- !u!114 &2002183424024965249
 MonoBehaviour:
   m_ObjectHideFlags: 0
