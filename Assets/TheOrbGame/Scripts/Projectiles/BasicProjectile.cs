@@ -12,7 +12,7 @@ public class BasicProjectile : MonoBehaviour
     private Rigidbody projectile;
     private Vector3 lastBackPosition;
     private Hitable firedFrom; // Where did the projectile originate?
-
+    public Color hitColor;
     public int speed = 550;
     public Transform explosion;
     public LayerMask mask;
@@ -82,7 +82,7 @@ public class BasicProjectile : MonoBehaviour
             HitEffect hitEffect = closest.collider.gameObject.GetComponentInParent<HitEffect>();
             if(hitEffect != null)
             {
-                hitEffect.Hit();
+                hitEffect.Hit(this.hitColor);
             }
 
             // Destroy the projectile.

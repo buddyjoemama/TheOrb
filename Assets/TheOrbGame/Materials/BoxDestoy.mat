@@ -113,7 +113,7 @@ Material:
     - _Glossiness: 0
     - _GlossinessSource: 0
     - _GlossyReflections: 0
-    - _LightingEnabled: 0
+    - _LightingEnabled: 1
     - _Metallic: 0
     - _Mode: 2
     - _OcclusionStrength: 1
@@ -135,6 +135,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
+    - ActivatedColor: {r: 0, g: 0, b: 0, a: 0}
+    - Color_905b442db4ef4d3986d09dd70aaee534: {r: 0, g: 0, b: 0, a: 0}
     - HitColor: {r: 0, g: 0, b: 0, a: 0}
     - TileVector: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 0.51526874, b: 0, a: 1}

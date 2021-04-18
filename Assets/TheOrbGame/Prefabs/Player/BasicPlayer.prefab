@@ -96,7 +96,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e017e4a8d067fa643a3d4fa561675ea2, type: 2}
+  - {fileID: 2100000, guid: 32c764d9335a7bf4f9f1fa2f4642bc07, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   - {fileID: -8679921383154817045, guid: 14caf3ccb12c9d041bee4050422923a5, type: 3}
   - {fileID: -8679921383154817045, guid: 2c42453dea7b84e45917b7b81e8926bd, type: 3}
   droppedItems: []
+  dropsItems: 1
 --- !u!114 &5080036164057487700
 MonoBehaviour:
   m_ObjectHideFlags: 0

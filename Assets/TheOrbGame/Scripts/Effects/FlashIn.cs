@@ -30,7 +30,7 @@ public class FlashIn : MonoBehaviour
         while (currentColor.r >= 0.0f)
         {
             currentColor.r = currentColor.g = currentColor.b = (currentColor.r -= .1f);
-            material.SetColor("HitColor", currentColor);
+            material.SetColor("Color", currentColor);
 
             yield return new WaitForSeconds(0.005f);
         }

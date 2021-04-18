@@ -283,6 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f149340ca4fb57f479c70590ea768344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitColor: {r: 1, g: 0, b: 0, a: 0}
   speed: 550
   explosion: {fileID: 8896758405881471150, guid: 5f17443eb6e7240488e2ac0660f06168, type: 3}
   mask:

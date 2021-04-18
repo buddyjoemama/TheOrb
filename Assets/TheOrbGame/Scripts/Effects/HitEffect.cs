@@ -4,53 +4,33 @@ using UnityEngine;
 
 public class HitEffect : MonoBehaviour
 {
-    public string materialColorName = "HitColor";
+    private string materialColorName = "ActivatedColor";
+    private Color originalColor;
+    private Color targetColor;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetColor = originalColor = GetComponent<Renderer>().material.GetColor(materialColorName);    
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void Hit()
-    {
-        StartCoroutine(UpdateMaterial());
-    }
-
-    IEnumerator UpdateMaterial()
+    void FixedUpdate()
     {
         Material material = GetComponent<Renderer>().material;
-        if(material.HasProperty(materialColorName))
+        Color matColor = material.GetColor(materialColorName);
+
+        Color color = Color.Lerp(matColor, targetColor, 1f);        
+        material.SetColor(materialColorName, color);
+        
+        if(color == targetColor)
         {
-            Color currentColor = material.GetColor(materialColorName);
-
-            while(material.GetColor(materialColorName).r <= .4f)
-            {
-                float amount = currentColor.r + (3.8f * .02f);
-
-                currentColor.r = amount;
-                material.SetColor(materialColorName, currentColor);
-
-                yield return new WaitForFixedUpdate();
-            }
-
-            while (material.GetColor(materialColorName).r > 0f)
-            {
-                float amount = material.GetColor(materialColorName).r - (3.8f * .02f);
-
-                currentColor.r = amount;
-                material.SetColor(materialColorName, currentColor);
-
-                yield return new WaitForFixedUpdate();
-            }
+            targetColor = originalColor;
         }
+    }
 
-        yield return new WaitForEndOfFrame();
+    public void Hit(Color hitColor)
+    {
+        targetColor = hitColor;
     }
 }

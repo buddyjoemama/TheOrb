@@ -8,15 +8,11 @@ public class LifePickup : Pickup
     public int lifeValue;
     public Transform effect;
     public float timeToLive;
-    public VisualEffect p;
-    private bool pickedUp = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(this.gameObject, timeToLive);
-
-        this.GetComponent<VisualEffect>().Play();     
+        Destroy(this.gameObject, timeToLive);  
     }
 
     Vector3 velocity = Vector3.zero;
@@ -29,14 +25,8 @@ public class LifePickup : Pickup
 
     public override void Apply(Player player)
     {
-        if (!pickedUp)
-        {
-            pickedUp = true;
-
-            player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
-            var o = Instantiate(effect, transform.position, Quaternion.Euler(-90, 0, 0));
-            Destroy(o.gameObject, 2.5f);
-            Destroy(this.gameObject);
-        }
+        player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
+        Instantiate(effect, transform.position, Quaternion.Euler(-90, 0, 0));
+        Destroy(this.gameObject);
     }
 }
