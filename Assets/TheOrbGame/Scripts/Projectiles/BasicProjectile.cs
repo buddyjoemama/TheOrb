@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.ProBuilder;
 using UnityEngine.Video;
 
-[ExecuteInEditMode]
 public class BasicProjectile : MonoBehaviour
 {
     private Rigidbody projectile;

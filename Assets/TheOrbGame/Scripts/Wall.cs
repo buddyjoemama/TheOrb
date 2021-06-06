@@ -11,7 +11,6 @@ public class Wall : MonoBehaviour
         
     }
 
-    int i = 0;
     // Update is called once per frame
     void Update()
     {
@@ -22,7 +21,7 @@ public class Wall : MonoBehaviour
     {
         float chunk = (.02f * (distance)) - .2f;
 
-        GetComponent<Renderer>().material.SetVector("Position", new Vector4(point.x, 0, 0, 0));
-        GetComponent<Renderer>().material.SetFloat("Distance", Mathf.Clamp(chunk, 0, .2f));
+        GetComponent<Renderer>().sharedMaterial.SetVector("Position", new Vector4(point.x, 0, 0, 0));
+        GetComponent<Renderer>().sharedMaterial.SetFloat("Distance", Mathf.Clamp(chunk, 0, .2f));
     }
 }
