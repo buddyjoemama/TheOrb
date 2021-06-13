@@ -56,10 +56,10 @@ public class Player : MonoBehaviour
     {
         if (shield != null)
         {
-            if (shieldActivated)
-                shield.Activate();
-            else
-                shield.Deactivate();
+           // if (shieldActivated)
+           //     shield.Activate();
+           // else
+           //     shield.Deactivate();
         }
 
         if(Physics.Raycast(rigidBody.transform.position, new Vector3(0, 0, 1), out RaycastHit hitFront))

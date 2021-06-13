@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.039243598, g: 0.06804138, b: 0.12607603, a: 1}
+  m_IndirectSpecularColor: {r: 0.03924381, g: 0.06804145, b: 0.1260762, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &317437999
 Transform:
   m_ObjectHideFlags: 0
@@ -1520,25 +1520,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2657534841344287961, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
+      propertyPath: maxHitPoints
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3738804018425212160, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_Name
       value: BasicPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 5054519160521012778, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5054519160521012779, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5080036164057487700, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: shieldActivated
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8570280375467320280, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8677111932515470731, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_RootOrder

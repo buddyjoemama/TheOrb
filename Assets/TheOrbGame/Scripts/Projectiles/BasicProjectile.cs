@@ -74,14 +74,16 @@ public class BasicProjectile : MonoBehaviour
 
             if (hitable != null)
             {
-                hitable.Hit(transform, projectile.transform, closest, this);
-            }
-
-            // Any effects attached to the hitable?
-            HitEffect hitEffect = closest.collider.gameObject.GetComponentInParent<HitEffect>();
-            if(hitEffect != null)
-            {
-                hitEffect.Hit(this.hitColor);
+                // Ask the hittable if this is a valid hit.
+                if(hitable.Hit(transform, projectile.transform, closest, this))
+                {
+                    // Any effects attached to the hitable?
+                    HitEffect hitEffect = closest.collider.gameObject.GetComponentInParent<HitEffect>();
+                    if (hitEffect != null)
+                    {
+                        hitEffect.Hit(this.hitColor);
+                    }
+                }
             }
 
             // Destroy the projectile.
@@ -100,8 +102,14 @@ public class BasicProjectile : MonoBehaviour
     {
         var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
 
+        var firedFromParent = firedFrom?.GetComponentInParent<Player>();
+        var hitParent = hittable?.GetComponentInParent<Player>();
+
         // Cant hit yourself.
-        return hittable != null && hittable.Id != firedFrom.Id && !hit.collider.isTrigger;
+        return hittable != null &&
+            hittable.Id != firedFrom.Id &&
+            !hit.collider.isTrigger &&
+            firedFromParent != hitParent;
     }
 
     public void Fire(Vector3 forward, Hitable firedFrom)

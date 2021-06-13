@@ -46,25 +46,15 @@ public class Hitable : MonoBehaviour, IHitable
     // Update is called once per frame
     public virtual void Update()
     {
-        if (currentHitPoints <= 0)
-        {
-            //if (effects != null && effects.Count > 0)
-            //{
-            //    Transform randomEffect = effects[Random.Range(0, effects.Count)];
-            //    Transform shatterEffect = Instantiate(randomEffect, transform.position, transform.rotation);
 
-            //    Destroy(shatterEffect.gameObject, 5f);
-            //}
-
-          //  DestroyMe();
-        }
     }
 
     protected virtual void DestroyMe()
     {
-        try
+        // Does this hittable drop items?
+        if (dropsItems && droppedItems.Count >= 1)
         {
-            int dropIndex = Random.Range(0, droppedItems.Count - 1);
+            int dropIndex = Random.Range(0, droppedItems.Count);
             var item = droppedItems[dropIndex];
 
             if (item != null && dropsItems)
@@ -72,9 +62,17 @@ public class Hitable : MonoBehaviour, IHitable
                 Instantiate(droppedItems[dropIndex], transform.position, Quaternion.identity);
             }
         }
-        catch { }
 
-        if(OnDestroyed != null)
+        // Does this have a shatter effect? 
+        if (effects != null && effects.Count > 0)
+        {
+            Transform randomEffect = effects[Random.Range(0, effects.Count)];
+            Transform shatterEffect = Instantiate(randomEffect, transform.position, transform.rotation);
+
+            Destroy(shatterEffect.gameObject, 5f);
+        }
+
+        if (OnDestroyed != null)
         {
             OnDestroyed();
         }
@@ -82,7 +80,7 @@ public class Hitable : MonoBehaviour, IHitable
         Destroy(gameObject);
     }
 
-    public virtual void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+    public virtual bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         currentHitPoints -= projectile.damage;
 
@@ -90,5 +88,12 @@ public class Hitable : MonoBehaviour, IHitable
         {
             OnHit(projectile.damage);
         }
+
+        if(currentHitPoints <= 0)
+        {
+            DestroyMe();
+        }
+
+        return true;
     }
 }

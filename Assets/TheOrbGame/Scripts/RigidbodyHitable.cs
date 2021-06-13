@@ -15,7 +15,7 @@ public class RigidbodyHitable : Hitable
         base.Update();
     }
 
-    public override void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+    public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         base.Hit(collider, transform, hitPoint, projectile);
 
@@ -29,5 +29,7 @@ public class RigidbodyHitable : Hitable
 
             DestroyMe();
         }
+
+        return true;
     }
 }

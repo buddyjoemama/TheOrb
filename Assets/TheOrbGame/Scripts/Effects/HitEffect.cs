@@ -17,16 +17,16 @@ public class HitEffect : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        Material material = GetComponent<Renderer>().material;
-        Color matColor = material.GetColor(materialColorName);
+        //Material material = GetComponent<Renderer>().material;
+        //Color matColor = material.GetColor(materialColorName);
 
-        Color color = Color.Lerp(matColor, targetColor, 1f);        
-        material.SetColor(materialColorName, color);
+       // Color color = Color.Lerp(matColor, targetColor, 1f);        
+        //material.SetColor(materialColorName, color);
         
-        if(color == targetColor)
-        {
-            targetColor = originalColor;
-        }
+        //if(color == targetColor)
+        //{
+        //    targetColor = originalColor;
+       // }
     }
 
     public void Hit(Color hitColor)
