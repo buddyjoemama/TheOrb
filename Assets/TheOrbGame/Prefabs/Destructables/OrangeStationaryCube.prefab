@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 0}
   dropsItems: 1
   hitColorVarName: ActivatedColor
-  hitColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 0}
+  hitColor: {r: 0.9056604, g: 0, b: 0, a: 0}
 --- !u!114 &843781121
 MonoBehaviour:
   m_ObjectHideFlags: 0

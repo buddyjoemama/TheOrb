@@ -183,7 +183,7 @@ MonoBehaviour:
   droppedItems: []
   dropsItems: 0
   hitColorVarName: ActivatedColor
-  hitColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0}
+  hitColor: {r: 1, g: 1, b: 1, a: 0}
 --- !u!114 &5080036164057487700
 MonoBehaviour:
   m_ObjectHideFlags: 0
