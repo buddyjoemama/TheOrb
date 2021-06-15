@@ -671,6 +671,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1612235367}
+    - target: {fileID: 229478498947793818, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
+      propertyPath: enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 568656837925702387, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -731,6 +735,10 @@ PrefabInstance:
       propertyPath: boundaries.Array.data[3]
       value: 
       objectReference: {fileID: 1666226788}
+    - target: {fileID: 9000820655797197890, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
+      propertyPath: maxHitPoints
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9035173416997676059, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
       propertyPath: m_Name
       value: PathFollowingEnemy
@@ -850,6 +858,8 @@ MonoBehaviour:
   effects: []
   droppedItems: []
   dropsItems: 1
+  hitColorVarName: 
+  hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &593572394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,6 +1108,8 @@ MonoBehaviour:
   effects: []
   droppedItems: []
   dropsItems: 1
+  hitColorVarName: 
+  hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &959675421 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2616437595103219096, guid: 844890339dcf96040b1767a6e69397c6, type: 3}
@@ -1420,6 +1432,8 @@ MonoBehaviour:
   effects: []
   droppedItems: []
   dropsItems: 1
+  hitColorVarName: 
+  hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1135997511
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,10 +1534,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2657534841344287961, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: maxHitPoints
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 3738804018425212160, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_Name
       value: BasicPlayer
@@ -1687,6 +1697,8 @@ MonoBehaviour:
   effects: []
   droppedItems: []
   dropsItems: 1
+  hitColorVarName: 
+  hitColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1224980359
 PrefabInstance:
   m_ObjectHideFlags: 0

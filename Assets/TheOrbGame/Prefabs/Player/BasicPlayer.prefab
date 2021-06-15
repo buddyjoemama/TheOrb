@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 5080036164057487700}
   - component: {fileID: 6139298273850449781}
   - component: {fileID: 1890237648959145004}
-  - component: {fileID: 1295336081}
+  - component: {fileID: 1172195328}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Untagged
@@ -182,6 +182,8 @@ MonoBehaviour:
   - {fileID: -8679921383154817045, guid: 2c42453dea7b84e45917b7b81e8926bd, type: 3}
   droppedItems: []
   dropsItems: 0
+  hitColorVarName: ActivatedColor
+  hitColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0}
 --- !u!114 &5080036164057487700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,7 +226,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1295336081
+--- !u!114 &1172195328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -233,7 +235,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3738804018425212160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c8835fa1804f5418a4d2a3ab928c39, type: 3}
+  m_Script: {fileID: 11500000, guid: 71bd57afd31fd4579b0c2d6259f575d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3910689776267863053
@@ -379,15 +381,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4606524874420607644, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4606524874420607644, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4606524874420607644, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4606524874420607644, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
       propertyPath: m_LocalPosition.x
@@ -432,14 +434,6 @@ PrefabInstance:
     - target: {fileID: 4606524874420607712, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
       propertyPath: m_Name
       value: Shield
-      objectReference: {fileID: 0}
-    - target: {fileID: 4606524874420607712, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4606524874420607712, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}

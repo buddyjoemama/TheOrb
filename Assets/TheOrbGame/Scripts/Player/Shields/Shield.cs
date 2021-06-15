@@ -8,6 +8,8 @@ public class Shield : Hitable
     // Start is called before the first frame update
     private Coroutine hitEffect;
 
+    public override bool ShouldDestroy => false;
+
     internal void Deactivate()
     {
         gameObject.SetActive(false);
@@ -25,6 +27,7 @@ public class Shield : Hitable
 
     protected override void DestroyMe()
     {
+        base.DestroyMe();
         this.Deactivate();
     }
 

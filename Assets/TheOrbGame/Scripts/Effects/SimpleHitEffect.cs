@@ -2,35 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HitEffect : MonoBehaviour
+public class SimpleHitEffect : MonoBehaviour
 {
-    private string materialColorName = "ActivatedColor";
-    private Color originalColor;
-    private Color targetColor;
+    private Color originalColor = Color.clear;
+    private Coroutine coroutine;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Apply(string varName, Color hitColor)
     {
-        targetColor = originalColor = GetComponent<Renderer>().material.GetColor(materialColorName);    
+        if (originalColor == Color.clear)
+        {
+            originalColor = GetComponent<Renderer>().material.GetColor(varName);
+        }
+
+        if (coroutine != null)
+            StopCoroutine(coroutine);
+
+        coroutine = StartCoroutine(ApplyEffect(varName, originalColor, hitColor));
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    IEnumerator ApplyEffect(string varName, Color originalColor, Color hitColor)
     {
-        //Material material = GetComponent<Renderer>().material;
-        //Color matColor = material.GetColor(materialColorName);
+        GetComponent<Renderer>().material.SetColor(varName, hitColor);
 
-       // Color color = Color.Lerp(matColor, targetColor, 1f);        
-        //material.SetColor(materialColorName, color);
-        
-        //if(color == targetColor)
-        //{
-        //    targetColor = originalColor;
-       // }
-    }
+        Color currentColor = GetComponent<Renderer>().material.GetColor(varName);
 
-    public void Hit(Color hitColor)
-    {
-        targetColor = hitColor;
+        while (currentColor != originalColor)
+        {
+            currentColor = Color.Lerp(currentColor, originalColor, Time.deltaTime * 5);
+            GetComponent<Renderer>().material.SetColor(varName, currentColor);
+            yield return null;
+        }
     }
 }

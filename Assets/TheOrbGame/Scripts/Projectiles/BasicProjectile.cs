@@ -77,12 +77,7 @@ public class BasicProjectile : MonoBehaviour
                 // Ask the hittable if this is a valid hit.
                 if(hitable.Hit(transform, projectile.transform, closest, this))
                 {
-                    // Any effects attached to the hitable?
-                    HitEffect hitEffect = closest.collider.gameObject.GetComponentInParent<HitEffect>();
-                    if (hitEffect != null)
-                    {
-                        hitEffect.Hit(this.hitColor);
-                    }
+ 
                 }
             }
 

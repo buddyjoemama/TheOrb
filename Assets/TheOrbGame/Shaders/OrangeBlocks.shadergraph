@@ -228,8 +228,8 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 2.0,
-        "e01": 2.0,
+        "e00": 3.0,
+        "e01": 23.0,
         "e02": 2.0,
         "e03": 2.0,
         "e10": 2.0,
@@ -527,9 +527,9 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": {
-        "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
+        "r": 0.5283018946647644,
+        "g": 0.5283018946647644,
+        "b": 0.5283018946647644,
         "a": 0.0
     },
     "m_ColorMode": 1
@@ -613,8 +613,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 222.00001525878907,
-            "y": 642.0000610351563,
+            "x": 439.0,
+            "y": 543.0000610351563,
             "width": 156.00001525878907,
             "height": 34.0
         }
@@ -1339,7 +1339,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "f2824a0dcd1047a8a9309368f823d116"
     },
-    "m_SurfaceType": 0,
+    "m_SurfaceType": 1,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,

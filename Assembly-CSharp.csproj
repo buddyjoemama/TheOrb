@@ -60,7 +60,6 @@
      <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\PermanentHitable.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Enemies\AutonomousGunRig.cs" />
-     <Compile Include="Assets\TheOrbGame\Scripts\Effects\HitEffect.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Player\Player.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
@@ -72,6 +71,7 @@
      <Compile Include="Assets\TheOrbGame\Scripts\RigidbodyHitable.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
+     <Compile Include="Assets\TheOrbGame\Scripts\Effects\SimpleHitEffect.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

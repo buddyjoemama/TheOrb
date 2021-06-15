@@ -11,6 +11,8 @@ public class Hitable : MonoBehaviour, IHitable
     public List<Transform> effects;
     public List<Pickup> droppedItems;
     public bool dropsItems = true;
+    public string hitColorVarName = null;
+    public Color hitColor;
 
     public delegate void HitDelegate(int damage);
     public delegate void DestroyedDelegate();
@@ -21,6 +23,8 @@ public class Hitable : MonoBehaviour, IHitable
     public event HitPointsChangedDelegate OnHitPointsChanged;
 
     public System.Guid Id { get; set; }
+
+    public virtual bool ShouldDestroy => true;
 
     public Hitable()
     {
@@ -77,7 +81,8 @@ public class Hitable : MonoBehaviour, IHitable
             OnDestroyed();
         }
 
-        Destroy(gameObject);
+        if(ShouldDestroy)
+            Destroy(gameObject);
     }
 
     public virtual bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
@@ -92,6 +97,16 @@ public class Hitable : MonoBehaviour, IHitable
         if(currentHitPoints <= 0)
         {
             DestroyMe();
+        }
+
+        // Delegate the actual effect
+        if(this.hitColorVarName != null)
+        {
+            if(this.GetComponentInChildren<SimpleHitEffect>() != null)
+            {
+                var hitEffect = this.GetComponentInChildren<SimpleHitEffect>();
+                hitEffect.Apply(this.hitColorVarName, this.hitColor);
+            }
         }
 
         return true;
