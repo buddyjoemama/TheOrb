@@ -65,13 +65,13 @@
      <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\IHitable.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyTurret.cs" />
+     <Compile Include="Assets\TheOrbGame\Scripts\Effects\SimpleHitEffect.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShatterableShield.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
      <Compile Include="Assets\TestScript.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\RigidbodyHitable.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
      <Compile Include="Assets\TheOrbGame\Scripts\Hitable.cs" />
-     <Compile Include="Assets\TheOrbGame\Scripts\Effects\SimpleHitEffect.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

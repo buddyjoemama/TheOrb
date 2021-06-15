@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SimpleHitEffect : MonoBehaviour
 {
-    private Color originalColor = Color.clear;
+    private Color? originalColor = null;
     private Coroutine coroutine;
 
     public void Apply(string varName, Color hitColor)
     {
-        if (originalColor == Color.clear)
+        if (originalColor == null)
         {
             originalColor = GetComponent<Renderer>().material.GetColor(varName);
         }
@@ -17,7 +17,7 @@ public class SimpleHitEffect : MonoBehaviour
         if (coroutine != null)
             StopCoroutine(coroutine);
 
-        coroutine = StartCoroutine(ApplyEffect(varName, originalColor, hitColor));
+        coroutine = StartCoroutine(ApplyEffect(varName, originalColor.Value, hitColor));
     }
 
     IEnumerator ApplyEffect(string varName, Color originalColor, Color hitColor)

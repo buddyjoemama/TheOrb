@@ -53,6 +53,8 @@ public class Hitable : MonoBehaviour, IHitable
 
     }
 
+    public virtual Quaternion EffectOrientation => transform.rotation;
+
     protected virtual void DestroyMe()
     {
         // Does this hittable drop items?
@@ -71,7 +73,7 @@ public class Hitable : MonoBehaviour, IHitable
         if (effects != null && effects.Count > 0)
         {
             Transform randomEffect = effects[Random.Range(0, effects.Count)];
-            Transform shatterEffect = Instantiate(randomEffect, transform.position, transform.rotation);
+            Transform shatterEffect = Instantiate(randomEffect, transform.position, EffectOrientation);
 
             Destroy(shatterEffect.gameObject, 5f);
         }

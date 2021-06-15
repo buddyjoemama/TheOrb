@@ -9,6 +9,7 @@ public class Shield : Hitable
     private Coroutine hitEffect;
 
     public override bool ShouldDestroy => false;
+    public override Quaternion EffectOrientation => Quaternion.Euler(-90, 0, 0);
 
     internal void Deactivate()
     {
