@@ -50,7 +50,7 @@ public class Shield : Hitable
 
     IEnumerator UpdateOpacity()
     {
-        Color red = new Color(1, 0, 0, .5f);
+        Color red = new Color(1, 0, 0, .75f);
         GetComponent<Renderer>().material.SetColor("_BaseColor", red);
 
         yield return null;

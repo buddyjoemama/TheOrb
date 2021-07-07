@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03924381, g: 0.06804145, b: 0.1260762, a: 1}
+  m_IndirectSpecularColor: {r: 0.039243598, g: 0.06804138, b: 0.12607603, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1612235367}
+  objectToCreate: {fileID: 0}
 --- !u!4 &35232936
 Transform:
   m_ObjectHideFlags: 0
@@ -736,7 +737,7 @@ PrefabInstance:
       objectReference: {fileID: 1666226788}
     - target: {fileID: 9000820655797197890, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
       propertyPath: maxHitPoints
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9035173416997676059, guid: c627c02b16c35524fb8c3896f878a949, type: 3}
       propertyPath: m_Name
@@ -1440,6 +1441,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2657534841344287961, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
+      propertyPath: maxHitPoints
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3738804018425212160, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_Name
       value: BasicPlayer

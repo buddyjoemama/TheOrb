@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public Player player;
     private Hitable hitablePlayer;
     private Image lifeBar;
+    public Transform objectToCreate;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
         hitablePlayer = player.GetComponent<Hitable>();
         hitablePlayer.OnHit += HitablePlayer_OnHit;
         hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
+
+        StartCoroutine(CreateObject());
     }
 
     private void HitablePlayer_OnHitPointsChanged()
@@ -29,20 +32,16 @@ public class GameManager : MonoBehaviour
         lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CreateObject()
     {
-        string s = "ssds";       
+        yield return new WaitForSeconds(10);
+
+        while (true)
+        {
+            if (objectToCreate != null)
+                Instantiate(objectToCreate, new Vector3(-83, 15, 20), Quaternion.identity);
+
+            yield return new WaitForSeconds(10f);
+        }
     }
-
-    //IEnumerator CreateObject()
-    //{
-    //    while(true)
-    //    {
-    //        if(objectToCreate != null)
-    //            Instantiate(objectToCreate, new Vector3(0, 20, 50), Quaternion.identity);
-
-    //        yield return new WaitForSeconds(5f);
-    //    }
-    //}
 }
