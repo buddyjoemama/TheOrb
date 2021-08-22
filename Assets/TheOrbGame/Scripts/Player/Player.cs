@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
 
     void OnLook(InputValue value)
     {
-       // rig.Rotate(value.Get<Vector2>());
+        rig.Rotate(value.Get<Vector2>());
     }
 
     private void OnFire()
@@ -103,7 +103,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 150;
+        Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 25;
 
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);

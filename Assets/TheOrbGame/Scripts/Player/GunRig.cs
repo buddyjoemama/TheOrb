@@ -15,7 +15,6 @@ public class GunRig : MonoBehaviour
     private void Start()
     {
         rClone = Instantiate(reticle);
-        Cursor.visible = false;
     }
 
     public virtual void OnFire()
@@ -39,10 +38,8 @@ public class GunRig : MonoBehaviour
 
             if (rClone != null)
             {
-                rClone.transform.LookAt(target.transform.position);// //Quaternion.LookRotation(ray.direction, Vector3.up);// ray.direction;// Quaternion.FromToRotation(Vector3.up, ray.direction);
-                rClone.transform.Rotate(90, 0, 0, Space.Self);
-
-                rClone.transform.position = lookAt + rClone.transform.up + new Vector3(0, 10, 0);
+                rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+                rClone.transform.position = lookAt + rClone.transform.up;
             }
         }
         else
@@ -50,7 +47,18 @@ public class GunRig : MonoBehaviour
             lookAt = ray.GetPoint(1000);
         }
 
-        lookAt.y = 10;
         transform.LookAt(lookAt);
+    }
+
+    internal void Rotate(Vector2 vector2)
+    {
+        Quaternion rotation = transform.rotation;
+        var currentX = rotation.eulerAngles.x;
+        currentX += vector2.x;
+
+        var currentY = rotation.eulerAngles.y;
+        currentY += vector2.y;
+
+        //   transform.rotation = Quaternion.Euler(currentX, 0, 0);
     }
 }
