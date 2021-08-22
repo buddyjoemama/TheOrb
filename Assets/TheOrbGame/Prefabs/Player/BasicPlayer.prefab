@@ -175,11 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8db0daebfe61c345aacbb9f615a3515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 25
+  maxHitPoints: 5
   currentHitPoints: 0
   effects:
   - {fileID: -8679921383154817045, guid: 14caf3ccb12c9d041bee4050422923a5, type: 3}
-  - {fileID: -8679921383154817045, guid: 2c42453dea7b84e45917b7b81e8926bd, type: 3}
   droppedItems: []
   dropsItems: 0
   hitColorVarName: ActivatedColor
@@ -262,14 +261,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3910689776267863053}
-  m_LocalRotation: {x: 0.05080317, y: 0.57, z: -0.03534411, w: 0.8193106}
+  m_LocalRotation: {x: 0, y: 0.5710933, z: 0, w: 0.8208851}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7458449144072853055}
   m_Father: {fileID: 8677111932515470731}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 69.653, z: 0}
 --- !u!114 &5892938640088108467
 MonoBehaviour:
   m_ObjectHideFlags: 0
