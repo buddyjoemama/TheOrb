@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
         hitablePlayer.OnHit += HitablePlayer_OnHit;
         hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
 
+        Cursor.visible = false;
         StartCoroutine(CreateObject());
     }
 

@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 6277063395363487719}
-  target: {fileID: 0}
+  target: {fileID: 5080036164057487700}
   projectile: {fileID: 2738186603235852890, guid: 2a2887978352cb749bfee2ee5d314f14, type: 3}
   reticle: {fileID: -1071574771941991703, guid: 2bd6aa0bb25f99c43b8f98e211aaf573, type: 3}
 --- !u!1 &5851121215654115977
