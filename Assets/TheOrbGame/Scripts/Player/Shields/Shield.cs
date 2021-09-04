@@ -34,18 +34,38 @@ public class Shield : Hitable
 
     public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
-        if (hitEffect != null)
-        {
-            StopCoroutine(hitEffect);
+        //if (hitEffect != null)
+        //{
+        //    StopCoroutine(hitEffect);
 
-            Color alpha = new Color(0, 0, 0, 0);
-            GetComponent<Renderer>().material.SetColor("_BaseColor", alpha);
-        }
+        //    Color alpha = new Color(0, 0, 0, 0);
+        //    GetComponent<Renderer>().material.SetColor("_BaseColor", alpha);
+        //}
 
-        // Start the fade effect
-        hitEffect = StartCoroutine(UpdateOpacity());
+        //// Start the fade effect
+        //hitEffect = StartCoroutine(UpdateOpacity());
 
+        var p = hitPoint.collider.transform.InverseTransformPoint(hitPoint.point);
+
+        GetComponent<Renderer>().material.SetVector("HitLocation", p);
+
+        StartCoroutine(UpdateFade());
+
+        Debug.Log(p);
         return base.Hit(collider, transform, hitPoint, projectile);
+    }
+
+    IEnumerator UpdateFade()
+    {
+        float amount = .3f;
+
+        while (amount > 0)
+        {
+            GetComponent<Renderer>().material.SetFloat("FadeAmt", amount);
+            amount -= (Time.deltaTime / 1.2f);
+
+            yield return new WaitForFixedUpdate();
+        }
     }
 
     IEnumerator UpdateOpacity()
