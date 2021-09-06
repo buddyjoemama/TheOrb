@@ -57,12 +57,12 @@ public class Shield : Hitable
 
     IEnumerator UpdateFade()
     {
-        float amount = .3f;
+        float amount = -.9f;
 
-        while (amount > 0)
+        while (amount <= -.6f)
         {
-            GetComponent<Renderer>().material.SetFloat("FadeAmt", amount);
-            amount -= (Time.deltaTime / 1.2f);
+            GetComponent<Renderer>().material.SetFloat("FadeAmt", amount);          
+            amount += Time.deltaTime * 2;
 
             yield return new WaitForFixedUpdate();
         }
