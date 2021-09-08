@@ -1,10 +1,11 @@
 ﻿using System;
 using UnityEngine;
 
-internal interface IHitable
+public interface IHittable
 {
     bool Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile);
-    Guid Id { get; set; }
+    Guid Id { get; }
     bool ShouldDestroy { get; }
     Quaternion EffectOrientation { get; }
+    bool IsValidHit(RaycastHit hit, IHittable firedFrom);
 }

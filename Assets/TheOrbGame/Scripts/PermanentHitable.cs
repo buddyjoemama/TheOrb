@@ -2,22 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PermanentHitable : Hitable
-{
-    // Start is called before the first frame update
-    public override void Start()
-    {
-        base.Start();
-    }
-
-   
+/// <summary>
+/// Anything that responds to being hit but cant be destroyed.
+/// </summary>
+public class PermanentHitable : HittableBase
+{     
     public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         return false;
-    }
-
-    public override void Update()
-    {
-        
     }
 }

@@ -10,7 +10,7 @@ Material:
   m_Name: Shield
   m_Shader: {fileID: -6465566751694194690, guid: 3b5d27e27a5b6df47a81087398f2cb96, type: 3}
   m_ShaderKeywords: _ALPHATEST_ON
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -59,6 +59,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_0d5d7acd73984f79bc2ac9de38afb340_Texture_1:
+        m_Texture: {fileID: 2800000, guid: caa36a5f6dc91ac42bdf5248d6f55eae, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_7352bfc81db24815bd919793866abb92_Texture_1:
         m_Texture: {fileID: 2800000, guid: afa08b2a7341948438d725da5d51889a, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -98,6 +102,7 @@ Material:
     m_Floats:
     - DissolveAmount: 0
     - Distance: 0.77
+    - FadeAmt: -0.6
     - Strength: 1
     - _AlphaClip: 1
     - _Blend: 0
@@ -146,6 +151,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_d94e9321f09f40a789169fdf94beef4d: {r: 1, g: 0.37611678, b: 0, a: 0}
+    - HitLocation: {r: -0.4, g: 0, b: 0.3, a: 0}
     - Position: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0, g: 0.22763439, b: 0.8773585, a: 0}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}

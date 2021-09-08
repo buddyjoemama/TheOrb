@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    private Hitable hitablePlayer;
+    private Hittable hitablePlayer;
     private Image lifeBar;
     public Transform objectToCreate;
 
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     {
         lifeBar = GetComponentInChildren<Image>();
 
-        hitablePlayer = player.GetComponent<Hitable>();
+        hitablePlayer = player.GetComponent<Hittable>();
         hitablePlayer.OnHit += HitablePlayer_OnHit;
         hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
 

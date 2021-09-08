@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEditor.UIElements;
 using UnityEngine;
 
-public class Hitable : MonoBehaviour, IHitable
+public class Hittable : HittableBase
 {
     public int maxHitPoints;
     public int currentHitPoints;
@@ -22,13 +22,9 @@ public class Hitable : MonoBehaviour, IHitable
     public event DestroyedDelegate OnDestroyed;
     public event HitPointsChangedDelegate OnHitPointsChanged;
 
-    public System.Guid Id { get; set; }
-
-    public virtual bool ShouldDestroy => true;
-
-    public Hitable()
+    public Hittable()
     {
-        Id = System.Guid.NewGuid();
+        
     }
 
     internal void AddHitPoint(int lifeValue)
@@ -46,14 +42,6 @@ public class Hitable : MonoBehaviour, IHitable
     {
         currentHitPoints = maxHitPoints;
     }
-
-    // Update is called once per frame
-    public virtual void Update()
-    {
-
-    }
-
-    public virtual Quaternion EffectOrientation => transform.rotation;
 
     protected virtual void DestroyMe()
     {
@@ -87,7 +75,7 @@ public class Hitable : MonoBehaviour, IHitable
             Destroy(gameObject);
     }
 
-    public virtual bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+    public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         currentHitPoints -= projectile.damage;
 

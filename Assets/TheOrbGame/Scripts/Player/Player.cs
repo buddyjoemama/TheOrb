@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [ExecuteInEditMode]
-public class Player : MonoBehaviour
+public class Player : HittableBase
 {
     private Rigidbody rigidBody;
     private float movementX;
@@ -18,13 +18,16 @@ public class Player : MonoBehaviour
 
     public bool shieldActivated = false;
 
+    public Transform shieldPlaceholder;
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
-        shield = GetComponentInChildren<Shield>();
+        //shield = GetComponentInChildren<Shield>();
+
     }
 
     internal void AddHealth(int lifeValue)
@@ -122,5 +125,10 @@ public class Player : MonoBehaviour
         
         if(trigger != null)
             trigger.Apply(this);
+    }
+
+    public override bool Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    {
+        return true;
     }
 }

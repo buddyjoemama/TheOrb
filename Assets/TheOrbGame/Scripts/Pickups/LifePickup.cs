@@ -25,7 +25,7 @@ public class LifePickup : Pickup
 
     public override void Apply(Player player)
     {
-        player.GetComponentInChildren<Hitable>().AddHitPoint(lifeValue);
+        player.GetComponentInChildren<Hittable>().AddHitPoint(lifeValue);
         Instantiate(effect, transform.position, Quaternion.Euler(-90, 0, 0));
         Destroy(this.gameObject);
     }

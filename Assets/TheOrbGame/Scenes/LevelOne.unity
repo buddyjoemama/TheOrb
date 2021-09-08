@@ -417,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &317437999
 Transform:
   m_ObjectHideFlags: 0
@@ -1441,10 +1441,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2657534841344287961, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-      propertyPath: maxHitPoints
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3738804018425212160, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_Name
       value: BasicPlayer

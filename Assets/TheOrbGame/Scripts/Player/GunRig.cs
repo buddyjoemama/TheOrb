@@ -20,13 +20,16 @@ public class GunRig : MonoBehaviour
     public virtual void OnFire()
     {
         BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
-        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<Hitable>());
+        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<IHittable>());
     }
 
     protected virtual void Update() { }
 
     protected virtual void FixedUpdate()
     {
+        if (rClone == null)
+            return;
+
         var mousePos = InputSystem.GetDevice<Mouse>().position;
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(mousePos.x.ReadValue(), mousePos.y.ReadValue()));
@@ -37,7 +40,8 @@ public class GunRig : MonoBehaviour
             lookAt = hit.point;
 
             // Fire the ray from the muzzle.
-            if (Physics.Raycast(this.firePoint.position, this.transform.forward, out RaycastHit hitInfo) && hitInfo.collider.tag == "Box")
+            if (Physics.Raycast(this.firePoint.position, this.transform.forward, out RaycastHit hitInfo)
+                && hitInfo.collider != null && hitInfo.collider.tag == "Box")
             {
                 rClone.transform.position = hitInfo.point;
                 rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hitInfo.normal);

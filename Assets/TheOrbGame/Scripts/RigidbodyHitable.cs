@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RigidbodyHitable : Hitable
+/// remove this class
+public class RigidbodyHitable : Hittable
 {
 
     public override void Start()
@@ -10,10 +11,10 @@ public class RigidbodyHitable : Hitable
         base.Start();
     }
 
-    public override void Update()
-    {
-        base.Update();
-    }
+    //public override void Update()
+    //{
+    //    base.Update();
+    //}
 
     public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
