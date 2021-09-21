@@ -46,7 +46,11 @@ public class BasicProjectile : MonoBehaviour
         RaycastHit closest = new RaycastHit { distance = Mathf.Infinity };
         foreach(RaycastHit hit in hits)
         {
-            if (hit.distance < closest.distance)
+            IHittable hittable = hit.collider.gameObject.GetComponentInParent<IHittable>();
+
+            if (hittable != null && 
+                hittable.IsValidHit(hit, firedFrom) && 
+                hit.distance < closest.distance)
             {
                 found = true;
                 closest = hit;
@@ -101,30 +105,4 @@ public class BasicProjectile : MonoBehaviour
 
         Destroy(projectile.gameObject, 5f);
     }
-
-    ///// <summary>
-    ///// It's valid if its not me
-    ///// </summary>
-    ///// <param name="hit"></param>
-    ///// <returns></returns>
-    //private bool IsValidHit(RaycastHit hit)
-    //{
-    //    var hittable = hit.collider.gameObject.GetComponentInParent<IHitable>();
-
-    //    //var firedFromParent = firedFrom?.GetComponentInParent<Player>();
-
-    //    if (hittable != null)
-    //    {
-    //        //return true;
-    //        return hittable.IsValidHit(hit, this.firedFrom);
-    //        //var hitParent = ((GameObject)hittable?).GetComponentInParent<Player>();
-    //    }
-
-    //    return false;
-    //    //// Cant hit yourself.
-    //    //return hittable != null &&
-    //    //    hittable.Id != firedFrom.Id &&
-    //    //    !hit.collider.isTrigger &&
-    //    //    firedFromParent != hitParent;
-    //}
 }

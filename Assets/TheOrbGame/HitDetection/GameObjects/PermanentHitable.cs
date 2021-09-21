@@ -6,9 +6,9 @@ using UnityEngine;
 /// Anything that responds to being hit but cant be destroyed.
 /// </summary>
 public class PermanentHitable : HittableBase
-{     
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+{
+    public override void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
-        return false;
+        
     }
 }

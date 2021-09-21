@@ -102,7 +102,7 @@ Material:
     m_Floats:
     - DissolveAmount: 0
     - Distance: 0.77
-    - FadeAmt: -0.6
+    - FadeAmt: -0.52
     - Strength: 1
     - _AlphaClip: 1
     - _Blend: 0
@@ -151,7 +151,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_d94e9321f09f40a789169fdf94beef4d: {r: 1, g: 0.37611678, b: 0, a: 0}
-    - HitLocation: {r: -0.4, g: 0, b: 0.3, a: 0}
+    - HitLocation: {r: 0, g: 0, b: 0.3, a: 0}
     - Position: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0, g: 0.22763439, b: 0.8773585, a: 0}
     - _BaseColorAddSubDiff: {r: 0, g: 0, b: 0, a: 0}

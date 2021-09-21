@@ -14,20 +14,12 @@ public class Player : HittableBase
     private Vector3 cameraOffset;
     // Start is called before the first frame update
     private GunRig rig;
-    private Shield shield;
-
-    public bool shieldActivated = false;
-
-    public Transform shieldPlaceholder;
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
-        //shield = GetComponentInChildren<Shield>();
-
     }
 
     internal void AddHealth(int lifeValue)
@@ -46,25 +38,12 @@ public class Player : HittableBase
         this.movementY = movementVector.y;
     }
 
-    void OnLook(InputValue value)
-    {
-        rig.Rotate(value.Get<Vector2>());
-    }
-
     private void OnFire()
     {
         rig.OnFire();
     }
     public void Update()
     {
-        if (shield != null)
-        {
-           // if (shieldActivated)
-           //     shield.Activate();
-           // else
-           //     shield.Deactivate();
-        }
-
         if(Physics.Raycast(rigidBody.transform.position, new Vector3(0, 0, 1), out RaycastHit hitFront))
         {
             var localPoint = hitFront.collider.transform.InverseTransformPoint(hitFront.point);
@@ -127,8 +106,8 @@ public class Player : HittableBase
             trigger.Apply(this);
     }
 
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    public override void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
     {
-        return true;
+        
     }
 }

@@ -2,15 +2,22 @@
 
 public class ShieldContainer : HittableBase
 {
-    public ShieldContainer()
-    {
+    public Shield shield;
+    public float shieldScale = 1.5f;
 
+    void Start()
+    {
+        
     }
 
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
-        Debug.Log("Hit");
+        return base.IsValidHit(hit, firedFrom) && firedFrom.Tag != "Player";
+    }
 
-        return true;// base.Hit(collider, transform, hit, projectile);
+    public override void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    {
+        var clone = Instantiate(shield, this.transform.position, Quaternion.identity);
+        clone.Apply(hit.point, this.transform);
     }
 }

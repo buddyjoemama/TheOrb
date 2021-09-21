@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using UnityEditor.UIElements;
 using UnityEngine;
 
+// eventually this needs to be promoted to the base class
 public class Hittable : HittableBase
 {
     public int maxHitPoints;
@@ -75,7 +76,7 @@ public class Hittable : HittableBase
             Destroy(gameObject);
     }
 
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+    public override void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
     {
         currentHitPoints -= projectile.damage;
 
@@ -98,7 +99,5 @@ public class Hittable : HittableBase
                 hitEffect.Apply(this.hitColorVarName, this.hitColor);
             }
         }
-
-        return true;
     }
 }

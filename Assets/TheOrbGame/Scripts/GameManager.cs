@@ -13,14 +13,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lifeBar = GetComponentInChildren<Image>();
+        //lifeBar = GetComponentInChildren<Image>();
 
-        hitablePlayer = player.GetComponent<Hittable>();
-        hitablePlayer.OnHit += HitablePlayer_OnHit;
-        hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
+        //hitablePlayer = player.GetComponent<Hittable>();
+        //hitablePlayer.OnHit += HitablePlayer_OnHit;
+        //hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
 
-        Cursor.visible = false;
-        StartCoroutine(CreateObject());
+        //Cursor.visible = false;
+        //StartCoroutine(CreateObject());
     }
 
     private void HitablePlayer_OnHitPointsChanged()

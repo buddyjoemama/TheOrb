@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8718906068228413358}
   - component: {fileID: 4742342658143670199}
   - component: {fileID: 1742124893}
-  - component: {fileID: 6020400029872362948}
   - component: {fileID: 843781121}
   m_Layer: 0
   m_Name: OrangeStationaryCube
@@ -63,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 32c764d9335a7bf4f9f1fa2f4642bc07, type: 2}
+  - {fileID: 2100000, guid: 9c5ee11c8745fa5469d273920fdbb276, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,30 +113,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6020400029872362948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377057969015294371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa202f897b08b1e4c88780bec7f9e063, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHitPoints: 3
-  currentHitPoints: 0
-  effects:
-  - {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
-  droppedItems:
-  - {fileID: 2360449544453181061, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  dropsItems: 1
-  hitColorVarName: ActivatedColor
-  hitColor: {r: 0.9056604, g: 0, b: 0, a: 0}
 --- !u!114 &843781121
 MonoBehaviour:
   m_ObjectHideFlags: 0

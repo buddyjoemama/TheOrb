@@ -25,11 +25,6 @@ public class Wall : HittableBase
         GetComponent<Renderer>().sharedMaterial.SetFloat("Distance", Mathf.Clamp(chunk, 0, .2f));
     }
 
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
-    {
-        return true;
-    }
-
     public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
         return true;
