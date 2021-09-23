@@ -29,10 +29,11 @@ public class AutonomousGunRig : GunRig
     {
         while(true)
         {
-            if(enabled) 
-                OnFire();
+            yield return new WaitForSeconds(5);
 
-            yield return new WaitForSeconds(2);
+            if (enabled)
+                OnFire();
         }
     }
 }
+   

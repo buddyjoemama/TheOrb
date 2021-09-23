@@ -10,7 +10,7 @@ public class BasicProjectile : MonoBehaviour
 {
     private Rigidbody projectile;
     private Vector3 lastBackPosition;
-    private Hitable firedFrom; // Where did the projectile originate?
+    private IHittable firedFrom; // Where did the projectile originate?
     public Color hitColor;
     public int speed = 550;
     public Transform explosion;
@@ -46,7 +46,11 @@ public class BasicProjectile : MonoBehaviour
         RaycastHit closest = new RaycastHit { distance = Mathf.Infinity };
         foreach(RaycastHit hit in hits)
         {
-            if (IsValidHit(hit) && hit.distance < closest.distance)
+            IHittable hittable = hit.collider.gameObject.GetComponentInParent<IHittable>();
+
+            if (hittable != null && 
+                hittable.IsValidHit(hit, firedFrom) && 
+                hit.distance < closest.distance)
             {
                 found = true;
                 closest = hit;
@@ -56,7 +60,7 @@ public class BasicProjectile : MonoBehaviour
         // We have a hit but we might be inside a collider....
         if(found)
         {
-            Hitable hitable = closest.collider.gameObject.GetComponentInParent<Hitable>();
+            IHittable hittable = closest.collider.gameObject.GetComponentInParent<IHittable>();
 
             if (closest.distance <= 0f)
             {
@@ -72,12 +76,12 @@ public class BasicProjectile : MonoBehaviour
             if (bulletMark != null)
                 Instantiate(bulletMark, closest.point, Quaternion.identity);
 
-            if (hitable != null)
+            if (hittable != null)
             {
                 // Ask the hittable if this is a valid hit.
-                if(hitable.Hit(transform, projectile.transform, closest, this))
+                if(hittable.IsValidHit(closest, firedFrom))
                 {
- 
+                    hittable.Hit(transform, projectile.transform, closest, this);
                 }
             }
 
@@ -89,25 +93,11 @@ public class BasicProjectile : MonoBehaviour
     }
 
     /// <summary>
-    /// It's valid if its not me
+    /// Launch the projectile and capture the source (firedFrom).
     /// </summary>
-    /// <param name="hit"></param>
-    /// <returns></returns>
-    private bool IsValidHit(RaycastHit hit)
-    {
-        var hittable = hit.collider.gameObject.GetComponentInParent<Hitable>();
-
-        var firedFromParent = firedFrom?.GetComponentInParent<Player>();
-        var hitParent = hittable?.GetComponentInParent<Player>();
-
-        // Cant hit yourself.
-        return hittable != null &&
-            hittable.Id != firedFrom.Id &&
-            !hit.collider.isTrigger &&
-            firedFromParent != hitParent;
-    }
-
-    public void Fire(Vector3 forward, Hitable firedFrom)
+    /// <param name="forward"></param>
+    /// <param name="firedFrom"></param>
+    public void Fire(Vector3 forward, IHittable firedFrom)
     {
         projectile.velocity = forward * speed;
         lastBackPosition = projectileBack.position;

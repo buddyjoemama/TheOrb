@@ -6,20 +6,21 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    private Hitable hitablePlayer;
+    private Hittable hitablePlayer;
     private Image lifeBar;
     public Transform objectToCreate;
 
     // Start is called before the first frame update
     void Start()
     {
-        lifeBar = GetComponentInChildren<Image>();
+        //lifeBar = GetComponentInChildren<Image>();
 
-        hitablePlayer = player.GetComponent<Hitable>();
-        hitablePlayer.OnHit += HitablePlayer_OnHit;
-        hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
+        //hitablePlayer = player.GetComponent<Hittable>();
+        //hitablePlayer.OnHit += HitablePlayer_OnHit;
+        //hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
 
-        StartCoroutine(CreateObject());
+        //Cursor.visible = false;
+        //StartCoroutine(CreateObject());
     }
 
     private void HitablePlayer_OnHitPointsChanged()

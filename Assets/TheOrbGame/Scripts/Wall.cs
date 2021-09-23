@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wall : MonoBehaviour
+public class Wall : HittableBase
 {
     // Start is called before the first frame update
     void Start()
@@ -23,5 +23,10 @@ public class Wall : MonoBehaviour
 
         GetComponent<Renderer>().sharedMaterial.SetVector("Position", new Vector4(point.x, 0, 0, 0));
         GetComponent<Renderer>().sharedMaterial.SetFloat("Distance", Mathf.Clamp(chunk, 0, .2f));
+    }
+
+    public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
+    {
+        return true;
     }
 }

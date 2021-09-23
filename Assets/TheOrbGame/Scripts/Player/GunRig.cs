@@ -20,7 +20,7 @@ public class GunRig : MonoBehaviour
     public virtual void OnFire()
     {
         BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
-        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<Hitable>());
+        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<IHittable>());
     }
 
     protected virtual void Update() { }
@@ -48,17 +48,5 @@ public class GunRig : MonoBehaviour
         }
 
         transform.LookAt(lookAt);
-    }
-
-    internal void Rotate(Vector2 vector2)
-    {
-        Quaternion rotation = transform.rotation;
-        var currentX = rotation.eulerAngles.x;
-        currentX += vector2.x;
-
-        var currentY = rotation.eulerAngles.y;
-        currentY += vector2.y;
-
-        //   transform.rotation = Quaternion.Euler(currentX, 0, 0);
     }
 }

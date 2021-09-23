@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [ExecuteInEditMode]
-public class Player : MonoBehaviour
+public class Player : HittableBase
 {
     private Rigidbody rigidBody;
     private float movementX;
@@ -14,17 +14,12 @@ public class Player : MonoBehaviour
     private Vector3 cameraOffset;
     // Start is called before the first frame update
     private GunRig rig;
-    private Shield shield;
-
-    public bool shieldActivated = false;
-
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
-        shield = GetComponentInChildren<Shield>();
     }
 
     internal void AddHealth(int lifeValue)
@@ -43,25 +38,12 @@ public class Player : MonoBehaviour
         this.movementY = movementVector.y;
     }
 
-    void OnLook(InputValue value)
-    {
-        rig.Rotate(value.Get<Vector2>());
-    }
-
     private void OnFire()
     {
         rig.OnFire();
     }
     public void Update()
     {
-        if (shield != null)
-        {
-           // if (shieldActivated)
-           //     shield.Activate();
-           // else
-           //     shield.Deactivate();
-        }
-
         if(Physics.Raycast(rigidBody.transform.position, new Vector3(0, 0, 1), out RaycastHit hitFront))
         {
             var localPoint = hitFront.collider.transform.InverseTransformPoint(hitFront.point);
@@ -122,5 +104,10 @@ public class Player : MonoBehaviour
         
         if(trigger != null)
             trigger.Apply(this);
+    }
+
+    public override void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    {
+        
     }
 }

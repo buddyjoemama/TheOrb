@@ -3,64 +3,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shield : Hitable
+public class Shield : MonoBehaviour
 {
-    // Start is called before the first frame update
-    private Coroutine hitEffect;
+    public float beginFadeAmount = .01f;
+    public int LocalScale = 30;
+    private ShieldContainer _parentContainer;
 
-    public override bool ShouldDestroy => false;
-    public override Quaternion EffectOrientation => Quaternion.Euler(-90, 0, 0);
-
-    internal void Deactivate()
+    internal void Apply(Vector3 hitPoint, ShieldContainer parentContainer)
     {
-        gameObject.SetActive(false);
+        _parentContainer = parentContainer;
+        transform.localScale = new Vector3(LocalScale, LocalScale, LocalScale);
+        transform.LookAt(hitPoint);
+        StartCoroutine(FadeOut());
     }
 
-    internal void Activate()
+    private void FixedUpdate()
     {
-        gameObject.SetActive(true);
-    }
-
-    internal void Move(Vector3 position)
-    {
-        transform.position = position;
-    }
-
-    protected override void DestroyMe()
-    {
-        base.DestroyMe();
-        this.Deactivate();
-    }
-
-    public override bool Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
-    {
-        if (hitEffect != null)
+        if (_parentContainer != null)
         {
-            StopCoroutine(hitEffect);
-
-            Color alpha = new Color(0, 0, 0, 0);
-            GetComponent<Renderer>().material.SetColor("_BaseColor", alpha);
+            this.transform.position = _parentContainer.transform.position;
+            this.transform.localScale += new Vector3(.1f, .1f, .1f);
         }
-
-        // Start the fade effect
-        hitEffect = StartCoroutine(UpdateOpacity());
-
-        return base.Hit(collider, transform, hitPoint, projectile);
     }
 
-    IEnumerator UpdateOpacity()
+    IEnumerator FadeOut()
     {
-        Color red = new Color(1, 0, 0, .75f);
-        GetComponent<Renderer>().material.SetColor("_BaseColor", red);
+        float fadeAmount = beginFadeAmount;
 
-        yield return null;
-
-        Color currentColor = GetComponent<Renderer>().material.GetColor("_BaseColor");
-        while (currentColor.a >= 0)
+        do
         {
-            currentColor.a = currentColor.a - (Time.deltaTime );
-            GetComponent<Renderer>().material.SetColor("_BaseColor", currentColor);
-            yield return null;
+            GetComponent<Renderer>().material.SetFloat("FadeAmt", fadeAmount);
+            fadeAmount += Time.deltaTime;
+
+            yield return new WaitForFixedUpdate();
         }
+        while (fadeAmount <= 1 && _parentContainer.HitPoints > 0);
+
+        Destroy(this.gameObject);
     }
 }

@@ -9,7 +9,7 @@ public class PathFollowingEnemy : Enemy
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(Move());
+        //StartCoroutine(Move());
     }
 
     // Update is called once per frame
