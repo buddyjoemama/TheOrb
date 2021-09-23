@@ -3,12 +3,8 @@
 public class ShieldContainer : HittableBase
 {
     public Shield shield;
-    public float shieldScale = 1.5f;
 
-    void Start()
-    {
-        
-    }
+    public override Quaternion EffectOrientation => Quaternion.Euler(-90, 0, 0);
 
     public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
@@ -17,7 +13,12 @@ public class ShieldContainer : HittableBase
 
     public override void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
     {
-        var clone = Instantiate(shield, this.transform.position, Quaternion.identity);
-        clone.Apply(hit.point, this.transform);
+        base.Hit(collider, transform, hit, projectile);
+
+        if (HitPoints > 0)
+        {
+            Shield clone = Instantiate(shield, this.transform.position, Quaternion.identity);
+            clone.Apply(hit.point, this);
+        }
     }
 }

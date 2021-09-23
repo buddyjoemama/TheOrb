@@ -172,6 +172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 0
+  explosionEffect: {fileID: 0}
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -249,7 +251,7 @@ GameObject:
   - component: {fileID: 7414854754982080742}
   - component: {fileID: 1802516407289869573}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: ShieldPlaceholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,6 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9bdd85660e24247b343d515e37994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HitPoints: 10
+  explosionEffect: {fileID: 8766891548240748812, guid: 88dd9a474822347bb99798ad8532ec02, type: 3}
   shield: {fileID: 6713070758645008403, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
 --- !u!1 &5851121215654115977
 GameObject:

@@ -7,9 +7,9 @@ public class Shield : MonoBehaviour
 {
     public float beginFadeAmount = .01f;
     public int LocalScale = 30;
-    private Transform _parentContainer;
+    private ShieldContainer _parentContainer;
 
-    internal void Apply(Vector3 hitPoint, Transform parentContainer)
+    internal void Apply(Vector3 hitPoint, ShieldContainer parentContainer)
     {
         _parentContainer = parentContainer;
         transform.localScale = new Vector3(LocalScale, LocalScale, LocalScale);
@@ -21,7 +21,7 @@ public class Shield : MonoBehaviour
     {
         if (_parentContainer != null)
         {
-            this.transform.position = _parentContainer.position;
+            this.transform.position = _parentContainer.transform.position;
             this.transform.localScale += new Vector3(.1f, .1f, .1f);
         }
     }
@@ -37,7 +37,7 @@ public class Shield : MonoBehaviour
 
             yield return new WaitForFixedUpdate();
         }
-        while (fadeAmount <= 1);
+        while (fadeAmount <= 1 && _parentContainer.HitPoints > 0);
 
         Destroy(this.gameObject);
     }

@@ -17,6 +17,13 @@ public abstract class HittableBase : MonoBehaviour, IHittable
 
     public virtual Quaternion EffectOrientation => Quaternion.identity;
 
+    public int HitPoints = 0;
+
+    /// <summary>
+    /// Effect used when hittable is destoyed.
+    /// </summary>
+    public Transform explosionEffect;
+
     /// <summary>
     /// Anything that can fire a projectile is itself hittable.
     /// </summary>
@@ -28,7 +35,12 @@ public abstract class HittableBase : MonoBehaviour, IHittable
     /// <returns></returns>
     public virtual void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
     {
-        
+        HitPoints -= 1;
+
+        if(HitPoints == 0)
+        {
+            DestroyHittable();
+        }
     }
 
     /// <summary>
@@ -40,5 +52,16 @@ public abstract class HittableBase : MonoBehaviour, IHittable
     {
         return hit.collider.GetComponent<IHittable>() != null &&
             hit.collider.GetComponent<IHittable>().Id != firedFrom.Id;
+    }
+
+    /// <summary>
+    /// Called when hitpoints reaches 0.
+    /// </summary>
+    public virtual void DestroyHittable()
+    {
+        if(explosionEffect != null)
+        {
+            Instantiate(explosionEffect, transform.position, EffectOrientation);
+        }
     }
 }
