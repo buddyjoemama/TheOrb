@@ -25,6 +25,11 @@ public abstract class HittableBase : MonoBehaviour, IHittable
     public Transform explosionEffect;
 
     /// <summary>
+    /// The effect used at the hit location
+    /// </summary>
+    public Transform projectileHitEffect;
+
+    /// <summary>
     /// Anything that can fire a projectile is itself hittable.
     /// </summary>
     /// <param name="collider"></param>
@@ -51,7 +56,8 @@ public abstract class HittableBase : MonoBehaviour, IHittable
     public virtual bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
         return hit.collider.GetComponent<IHittable>() != null &&
-            hit.collider.GetComponent<IHittable>().Id != firedFrom.Id;
+            hit.collider.GetComponent<IHittable>().Id != firedFrom.Id &&
+            this.gameObject.activeSelf;
     }
 
     /// <summary>
@@ -63,5 +69,7 @@ public abstract class HittableBase : MonoBehaviour, IHittable
         {
             Instantiate(explosionEffect, transform.position, EffectOrientation);
         }
+
+        this.gameObject.SetActive(false);
     }
 }

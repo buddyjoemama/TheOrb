@@ -196,8 +196,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 342.9999694824219,
-            "y": 280.0
+            "x": 400.0,
+            "y": 287.0
         },
         "m_Blocks": [
             {
@@ -944,7 +944,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "c52ab937b22448f480de61c902328fd4"
     },
-    "m_SurfaceType": 1,
+    "m_SurfaceType": 0,
     "m_AlphaMode": 0,
     "m_TwoSided": false,
     "m_AlphaClip": false,

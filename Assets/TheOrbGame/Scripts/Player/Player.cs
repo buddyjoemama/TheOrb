@@ -14,12 +14,15 @@ public class Player : HittableBase
     private Vector3 cameraOffset;
     // Start is called before the first frame update
     private GunRig rig;
+    private ShieldContainer shieldContainer;
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
         cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
+        shieldContainer = GetComponentInChildren<ShieldContainer>();
+
     }
 
     internal void AddHealth(int lifeValue)
@@ -89,7 +92,7 @@ public class Player : HittableBase
 
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
-        rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z)); 
+        rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
     }
 
     private void LateUpdate()

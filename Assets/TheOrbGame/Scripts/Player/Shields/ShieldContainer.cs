@@ -6,6 +6,7 @@ public class ShieldContainer : HittableBase
 
     public override Quaternion EffectOrientation => Quaternion.Euler(-90, 0, 0);
 
+ 
     public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
         return base.IsValidHit(hit, firedFrom) && firedFrom.Tag != "Player";
