@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ShieldContainer : HittableBase
+public class ShieldContainer : AbstractHittable
 {
     public Shield shield;
 

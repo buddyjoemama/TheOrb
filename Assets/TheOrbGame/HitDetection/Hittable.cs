@@ -5,7 +5,7 @@ using UnityEditor.UIElements;
 using UnityEngine;
 
 // eventually this needs to be promoted to the base class
-public class Hittable : HittableBase
+public class Hittable : AbstractHittable
 {
     public int maxHitPoints;
     public int currentHitPoints;

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [ExecuteInEditMode]
-public class Player : HittableBase
+public class Player : AbstractHittable
 {
     private Rigidbody rigidBody;
     private float movementX;
@@ -47,43 +47,7 @@ public class Player : HittableBase
     }
     public void Update()
     {
-        if(Physics.Raycast(rigidBody.transform.position, new Vector3(0, 0, 1), out RaycastHit hitFront))
-        {
-            var localPoint = hitFront.collider.transform.InverseTransformPoint(hitFront.point);
 
-            if (hitFront.collider.gameObject.GetComponent<Wall>() != null)
-            {
-                hitFront.collider.gameObject.GetComponent<Wall>().UpdatePlayerPosition(localPoint, hitFront.distance);
-            }
-        }
-
-        if (Physics.Raycast(rigidBody.transform.position, new Vector3(1, 0, 0), out RaycastHit hit))
-        {
-            var localPoint = hit.collider.transform.InverseTransformPoint(hit.point);
-
-            if (hit.collider.gameObject.GetComponent<Wall>() != null)
-            {
-                hit.collider.gameObject.GetComponent<Wall>().UpdatePlayerPosition(localPoint, hit.distance);
-            }
-        }
-
-        if (Physics.Raycast(rigidBody.transform.position, new Vector3(-1, 0, 0), out RaycastHit leftHit))
-        {
-            var localPoint = leftHit.collider.transform.InverseTransformPoint(leftHit.point);
-            if (leftHit.collider.gameObject.GetComponent<Wall>() != null)
-            {
-                leftHit.collider.gameObject.GetComponent<Wall>().UpdatePlayerPosition(localPoint, leftHit.distance);
-            }
-        }
-
-        if (Physics.Raycast(rigidBody.transform.position, new Vector3(0, 0, -1), out RaycastHit backHit))
-        {
-            var localPoint = backHit.collider.transform.InverseTransformPoint(hit.point);
-            if (backHit.collider.gameObject.GetComponent<Wall>() != null)
-            {
-                backHit.collider.gameObject.GetComponent<Wall>().UpdatePlayerPosition(localPoint, backHit.distance);
-            }
-        }
     }
 
     private void FixedUpdate()
