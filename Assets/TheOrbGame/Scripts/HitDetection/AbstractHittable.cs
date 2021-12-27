@@ -19,6 +19,10 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public int HitPoints = 0;
 
+    public Color HitColor;
+
+    public Color ParticleColor;
+
     /// <summary>
     /// Effect used when hittable is destoyed.
     /// </summary>
