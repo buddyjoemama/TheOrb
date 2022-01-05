@@ -56,7 +56,7 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
         if(HitPoints > 0 && HitColorPropertyName != null)
         {
-            
+            _hitEffect.Apply();
         }
         else
         {
