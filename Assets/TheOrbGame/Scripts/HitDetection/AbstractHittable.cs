@@ -21,7 +21,7 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public Color HitColor;
 
-    public Color ParticleColor;
+    public String HitColorPropertyName;
 
     /// <summary>
     /// Effect used when hittable is destoyed.
@@ -32,6 +32,14 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// The effect used at the hit location
     /// </summary>
     public Transform projectileHitEffect;
+
+    private IHitEffect _hitEffect; 
+
+    public virtual void Start()
+    {
+        //_baseColor = this.GetComponent<Renderer>().material.GetColor(HitColorPropertyName);
+        _hitEffect = this.GetComponent<IHitEffect>();
+    }
 
     /// <summary>
     /// Anything that can fire a projectile is itself hittable.
@@ -46,7 +54,11 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     {
         HitPoints -= 1;
 
-        if(HitPoints == 0)
+        if(HitPoints > 0 && HitColorPropertyName != null)
+        {
+            
+        }
+        else
         {
             DestroyHittable();
         }

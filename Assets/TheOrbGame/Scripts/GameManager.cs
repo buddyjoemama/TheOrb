@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Player player;
-    private Hittable hitablePlayer;
+   // private Hittable hitablePlayer;
     private Image lifeBar;
     public Transform objectToCreate;
+
+    public Camera mainCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +25,19 @@ public class GameManager : MonoBehaviour
         //StartCoroutine(CreateObject());
     }
 
+
+    public void FixedUpdate()
+    {
+    }
+
     private void HitablePlayer_OnHitPointsChanged()
     {
-        lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
+       // lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
     }
 
     private void HitablePlayer_OnHit(int damage)
     {
-        lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
+     //   lifeBar.fillAmount = hitablePlayer.currentHitPoints / (float)hitablePlayer.maxHitPoints;
     }
 
     IEnumerator CreateObject()

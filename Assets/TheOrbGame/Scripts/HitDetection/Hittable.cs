@@ -90,14 +90,14 @@ public class Hittable : AbstractHittable
             DestroyMe();
         }
 
-        // Delegate the actual effect
-        if(this.hitColorVarName != null)
-        {
-            if(this.GetComponentInChildren<SimpleHitEffect>() != null)
-            {
-                var hitEffect = this.GetComponentInChildren<SimpleHitEffect>();
-                hitEffect.Apply(this.hitColorVarName, this.hitColor);
-            }
-        }
+        //// Delegate the actual effect
+        //if(this.hitColorVarName != null)
+        //{
+        //    if(this.GetComponentInChildren<SimpleHitEffect>() != null)
+        //    {
+        //        var hitEffect = this.GetComponentInChildren<SimpleHitEffect>();
+        //        hitEffect.Apply(this.hitColorVarName, this.hitColor);
+        //    }
+        //}
     }
 }

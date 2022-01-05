@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleHitEffect : MonoBehaviour
+public class BoxHitEffect : MonoBehaviour, IHitEffect
 {
-    private Color? originalColor = null;
+    private Color? _originalColor = null;
     private Coroutine coroutine;
 
-    public void Apply(string varName, Color hitColor)
+    public string OriginalColorPropertyName;
+
+    private void Start()
     {
-        if (originalColor == null)
+        _originalColor = GetComponent<Renderer>().material.GetColor(OriginalColorPropertyName);
+    }
+
+    public void Apply()
+    {
+        if (_originalColor == null)
         {
-            originalColor = GetComponent<Renderer>().material.GetColor(varName);
+            _originalColor = GetComponent<Renderer>().material.GetColor(OriginalColorPropertyName);
         }
 
         if (coroutine != null)
             StopCoroutine(coroutine);
 
-        coroutine = StartCoroutine(ApplyEffect(varName, originalColor.Value, hitColor));
+        coroutine = StartCoroutine(ApplyEffect(OriginalColorPropertyName, _originalColor.Value, Color.red));
     }
 
     IEnumerator ApplyEffect(string varName, Color originalColor, Color hitColor)
