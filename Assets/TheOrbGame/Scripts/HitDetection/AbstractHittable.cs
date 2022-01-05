@@ -37,7 +37,6 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public virtual void Start()
     {
-        //_baseColor = this.GetComponent<Renderer>().material.GetColor(HitColorPropertyName);
         _hitEffect = this.GetComponent<IHitEffect>();
     }
 
@@ -56,7 +55,7 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
         if(HitPoints > 0 && HitColorPropertyName != null)
         {
-            _hitEffect.Apply();
+            _hitEffect?.Apply();
         }
         else
         {
