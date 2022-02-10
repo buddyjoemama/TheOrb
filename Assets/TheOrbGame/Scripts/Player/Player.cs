@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[ExecuteInEditMode]
 public class Player : AbstractHittable
 {
     private Rigidbody rigidBody;

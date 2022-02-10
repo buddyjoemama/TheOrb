@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player
-  m_Shader: {fileID: -6465566751694194690, guid: b1f3109342559a84891fbcd000d4b844, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a5d232f0cd8e7844cbdc28e023c6173a, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -116,6 +116,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_01846260a11c432a91b58bbaa27f3c16_Texture_1:
+        m_Texture: {fileID: 2800000, guid: f533d155669dc8c46a2782b193e1b525, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_38dd5d424fe5a586849d3c012d98a9a7_Texture_1:
         m_Texture: {fileID: 2800000, guid: febcdbf2cb21ae247b0da10909c7f1ee, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -163,7 +167,9 @@ Material:
     m_Floats:
     - DissolveAmount: 0.5
     - Distance: 0
+    - Intensity: 1
     - Strength: 1
+    - Tiling: 2
     - _AlphaClip: 0
     - _BASE_COLOR_WEIGHT: 1
     - _BUMP_MAP_STRENGTH: 0.3
@@ -202,6 +208,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - ActivatedColor: {r: 0.02007062, g: 0, b: 1.981132, a: 0}
+    - BaseColor: {r: 0.49234706, g: 8.548927, b: 0, a: 0}
     - Color_2e91f4fe2b9947a282435de3731f0d19: {r: 1, g: 1, b: 1, a: 0}
     - Color_b070fe119ccf4b5e9898805751c83acc: {r: 0, g: 0.010784314, b: 0.124509804, a: 0}
     - Color_d94e9321f09f40a789169fdf94beef4d: {r: 1, g: 0.37611678, b: 0, a: 0}

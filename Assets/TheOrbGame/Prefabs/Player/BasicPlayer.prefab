@@ -174,6 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitPoints: 0
   explosionEffect: {fileID: 0}
+  projectileHitEffect: {fileID: 0}
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -287,7 +288,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4065649293460175481}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.6
@@ -304,8 +305,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9bdd85660e24247b343d515e37994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 10
+  HitPoints: 4
   explosionEffect: {fileID: 8766891548240748812, guid: 88dd9a474822347bb99798ad8532ec02, type: 3}
+  projectileHitEffect: {fileID: 0}
   shield: {fileID: 6713070758645008403, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
 --- !u!1 &5851121215654115977
 GameObject:
@@ -367,7 +369,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4c119a91a7f5c25489071b5ff1b3abe8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
