@@ -33,10 +33,13 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     private IHitAction _hitAction;
 
+    private IDestroyAction _destroyAction;
+
     public virtual void Start()
     {
         _hitEffect = this.GetComponent<IHitEffect>();
         _hitAction = this.GetComponent<IHitAction>();
+        _destroyAction = this.GetComponent<IDestroyAction>();
     }
 
     /// <summary>
@@ -84,6 +87,8 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
         {
             Instantiate(explosionEffect, transform.position, EffectOrientation);
         }
+        
+        _destroyAction?.Apply();
 
         this.gameObject.SetActive(false);
     }

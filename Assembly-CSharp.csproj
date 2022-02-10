@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -63,6 +64,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\SaveLocationTrigger.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\RotateForever.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\PathFollowingEnemy.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\Actions\ForceHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShieldContainer.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
@@ -71,6 +73,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Player.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyTurret.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\BoxHitEffect.cs" />
@@ -79,8 +82,8 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHitAction.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\Actions\ForceHitAction.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Pickups\IDestroyAction.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Pickups\DropPickupDestroyAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
