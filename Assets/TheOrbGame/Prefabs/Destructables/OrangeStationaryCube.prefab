@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1742124893}
   - component: {fileID: 270435734}
   - component: {fileID: 788539054565780570}
+  - component: {fileID: 669262657}
   m_Layer: 0
   m_Name: OrangeStationaryCube
   m_TagString: Box
@@ -127,8 +128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 3
-  HitColor: {r: 1, g: 0, b: 0, a: 0}
-  HitColorPropertyName: BaseColor
   explosionEffect: {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
   projectileHitEffect: {fileID: 0}
 --- !u!114 &788539054565780570
@@ -144,3 +143,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OriginalColorPropertyName: BaseColor
+--- !u!114 &669262657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377057969015294371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50794edb4d458e34c89a8e2bde51cb57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Force: 250

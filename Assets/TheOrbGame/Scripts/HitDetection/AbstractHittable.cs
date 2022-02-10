@@ -19,10 +19,6 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public int HitPoints = 0;
 
-    public Color HitColor;
-
-    public String HitColorPropertyName;
-
     /// <summary>
     /// Effect used when hittable is destoyed.
     /// </summary>
@@ -33,11 +29,14 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// </summary>
     public Transform projectileHitEffect;
 
-    private IHitEffect _hitEffect; 
+    private IHitEffect _hitEffect;
+
+    private IHitAction _hitAction;
 
     public virtual void Start()
     {
         _hitEffect = this.GetComponent<IHitEffect>();
+        _hitAction = this.GetComponent<IHitAction>();
     }
 
     /// <summary>
@@ -53,9 +52,10 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     {
         HitPoints -= 1;
 
-        if(HitPoints > 0 && HitColorPropertyName != null)
+        if(HitPoints > 0)
         {
             _hitEffect?.Apply();
+            _hitAction?.Apply(collider, transform, hit, projectile);
         }
         else
         {
