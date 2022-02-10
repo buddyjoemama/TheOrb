@@ -20,12 +20,11 @@ public class LifePickup : Pickup
     void Update()
     {
         transform.position = Vector3.SmoothDamp(transform.position,
-            new Vector3(transform.position.x, 2.5f, transform.position.z), ref velocity, 1f);
+            new Vector3(transform.position.x, 5, transform.position.z), ref velocity, 1f);
     }
 
     public override void Apply(Player player)
     {
-      //  player.GetComponentInChildren<Hittable>().AddHitPoint(lifeValue);
         Instantiate(effect, transform.position, Quaternion.Euler(-90, 0, 0));
         Destroy(this.gameObject);
     }
