@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,6 +57,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\TheOrbGame\Scripts\Effects\FadeOut.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\Pickup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
