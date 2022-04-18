@@ -6,6 +6,7 @@ public class BoxHitEffect : MonoBehaviour, IHitEffect
 {
     private Color? _originalColor = null;
     private Coroutine coroutine;
+    public Color HitColor = Color.red;
 
     public string OriginalColorPropertyName;
 
@@ -24,7 +25,7 @@ public class BoxHitEffect : MonoBehaviour, IHitEffect
         if (coroutine != null)
             StopCoroutine(coroutine);
 
-        coroutine = StartCoroutine(ApplyEffect(OriginalColorPropertyName, _originalColor.Value, Color.red));
+        coroutine = StartCoroutine(ApplyEffect(OriginalColorPropertyName, _originalColor.Value, HitColor));
     }
 
     IEnumerator ApplyEffect(string varName, Color originalColor, Color hitColor)
