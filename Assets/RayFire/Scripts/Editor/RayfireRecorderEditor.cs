@@ -31,7 +31,6 @@ namespace RayFire
         static GUIContent gui_playCont       = new GUIContent ("Controller",       "");
         static GUIContent gui_playKin        = new GUIContent ("Set To Kinematic", "");
         static GUIContent gui_playStr        = new GUIContent ("Start Play", "");
-        static GUIContent gui_SpeedMultiplier = new GUIContent("Playback speed multiplier", "");
         
         /// /////////////////////////////////////////////////////////
         /// Inspector

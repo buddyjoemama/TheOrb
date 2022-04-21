@@ -291,7 +291,6 @@ namespace RayFire
         // Start play
         public void StartPlay()
         {
-            animator.speed = 2.2f;
             if (mode == AnimatorType.Play)
                 animator.Play (animationClip.name);
         }
