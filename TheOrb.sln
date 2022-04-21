@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayFireAssembly", "RayFireAssembly.csproj", "{1F448F0F-F67B-A100-3246-44D592A40B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RayFireEditorAssembly", "RayFireEditorAssembly.csproj", "{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +17,14 @@ Global
 		{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F448F0F-F67B-A100-3246-44D592A40B14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F448F0F-F67B-A100-3246-44D592A40B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F448F0F-F67B-A100-3246-44D592A40B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F448F0F-F67B-A100-3246-44D592A40B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

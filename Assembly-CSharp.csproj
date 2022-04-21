@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{58658662-FAFB-70A5-FEA9-35C5D6AA5A62}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -57,8 +56,8 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\TheOrbGame\Scripts\Effects\FadeOut.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Enemy.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\ApplyDamageScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\Pickup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\ITrigger.cs" />
@@ -71,6 +70,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\Actions\ForceHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShieldContainer.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\DemolitionEventScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\PermanentHitable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\AutonomousGunRig.cs" />
@@ -81,21 +81,30 @@
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyTurret.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraController.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\AddRigidComponent.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\BoxHitEffect.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\IHitEffect.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\DropPickupDestroyAction.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Effects\FadeOut.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\ConnectivityEventScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHittable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
+    <Compile Include="Assets\RayFire\Tutorial\Scripts\ActivationEventScript.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\RayFire\Plugins\Android\RFLib_DotNet_2018_andr.dll" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_CNative_2018.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\RayFire\Plugins\Linux\RFLib_DotNet_2018_lin.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86\RFLib_CNative_2018_x86.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
@@ -104,12 +113,20 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\RayFire\Info\FAQ.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\RayFire\Plugins\Windows\x86\RFLib_DotNet_2018_x86.dll" />
+    <None Include="Assets\RayFire\Plugins\Ios\RFLib_DotNet_2018_ios.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\RayFire\Info\CHANGELOG.txt" />
+    <None Include="Assets\RayFire\Plugins\Mac\RFLib_DotNet_2018_osx.dll" />
+    <None Include="Assets\RayFire\Info\README.txt" />
+    <None Include="Assets\RayFire\WhereToStart.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\RayFire\Info\License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -370,6 +387,9 @@
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
       <HintPath>Library\PackageCache\com.unity.burst@1.6.5\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="RFLib_DotNet_2018">
+      <HintPath>Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity 2021.3.0f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -1069,6 +1089,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="RayFireAssembly.csproj">
+      <Project>{1F448F0F-F67B-A100-3246-44D592A40B14}</Project>
+      <Name>RayFireAssembly</Name>
+    </ProjectReference>
+    <ProjectReference Include="RayFireEditorAssembly.csproj">
+      <Project>{79FCE071-02C7-5B81-76D3-C7DA5E85FE48}</Project>
+      <Name>RayFireEditorAssembly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

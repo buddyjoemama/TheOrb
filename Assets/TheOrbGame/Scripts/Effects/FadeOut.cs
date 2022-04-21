@@ -23,7 +23,7 @@ public class FadeOut : MonoBehaviour
     {
         yield return new WaitForSeconds(DelaySeconds);
 
-        int scale = UnityEngine.Random.Range(1, 8);
+        float scale = UnityEngine.Random.Range(1.0f, 5.0f);
 
         while (mat.color.a != targetAlpha)
         {
