@@ -74,7 +74,10 @@ public class BasicProjectile : MonoBehaviour
 
             // Show the mark
             if (bulletMark != null)
-                Instantiate(bulletMark, closest.point, Quaternion.identity);
+            {
+                var rotation = Quaternion.FromToRotation(Vector3.back, closest.normal);
+                Instantiate(bulletMark, closest.point + new Vector3(0, .1f), rotation);
+            }
 
             if (hittable != null)
             {
