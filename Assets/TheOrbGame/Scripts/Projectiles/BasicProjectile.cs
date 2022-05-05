@@ -20,6 +20,7 @@ public class BasicProjectile : MonoBehaviour
 
     public Transform projectileFront;
     public Transform projectileBack;
+    public Transform firedFromTransform;
     public int damage = 2;
 
     private void Awake()
@@ -75,7 +76,7 @@ public class BasicProjectile : MonoBehaviour
             // Show the mark
             if (bulletMark != null)
             {
-                var rotation = Quaternion.FromToRotation(Vector3.back, closest.normal);
+                var rotation = Quaternion.FromToRotation(Vector3.back, closest.normal); 
                 Instantiate(bulletMark, closest.point, rotation, closest.collider.transform);
             }
 
@@ -100,11 +101,12 @@ public class BasicProjectile : MonoBehaviour
     /// </summary>
     /// <param name="forward"></param>
     /// <param name="firedFrom"></param>
-    public void Fire(Vector3 forward, IHittable firedFrom)
+    public void Fire(Vector3 forward, IHittable firedFrom, Transform firedFromTransform)
     {
         projectile.velocity = forward * speed;
         lastBackPosition = projectileBack.position;
         this.firedFrom = firedFrom;
+        this.firedFromTransform = firedFromTransform;
 
         Destroy(projectile.gameObject, 5f);
     }

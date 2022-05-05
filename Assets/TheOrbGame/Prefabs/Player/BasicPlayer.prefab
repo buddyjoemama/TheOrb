@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7458449144072853055}
   m_RootOrder: 0
@@ -62,6 +63,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 20}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5715789688523838073}
   - {fileID: 4506292266461812585}
@@ -87,6 +89,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -218,6 +221,7 @@ Transform:
   m_LocalRotation: {x: 0.05080317, y: 0.57, z: -0.03534411, w: 0.8193106}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7458449144072853055}
   m_Father: {fileID: 8677111932515470731}
@@ -268,6 +272,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8677111932515470731}
   m_RootOrder: 1
@@ -305,10 +310,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9bdd85660e24247b343d515e37994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 4
+  HitPoints: 400
   explosionEffect: {fileID: 8766891548240748812, guid: 88dd9a474822347bb99798ad8532ec02, type: 3}
   projectileHitEffect: {fileID: 0}
-  shield: {fileID: 6713070758645008403, guid: a71120e5a9be5bc43b48d9fc5043a544, type: 3}
+  shield: {fileID: 4124907072100963726, guid: 76409ef211002ef4a89f2d3205107e3f, type: 3}
+  Scale: 0.06
 --- !u!1 &5851121215654115977
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +343,7 @@ Transform:
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.553}
   m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6277063395363487719}
   m_Father: {fileID: 5715789688523838073}
@@ -361,6 +368,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1

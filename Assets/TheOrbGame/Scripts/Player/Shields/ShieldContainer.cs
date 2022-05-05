@@ -3,9 +3,8 @@
 public class ShieldContainer : AbstractHittable
 {
     public Shield shield;
-
-    public override Quaternion EffectOrientation => Quaternion.Euler(-90, 0, 0);
-
+    public float Scale;
+    private Shield clone;
  
     public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
@@ -18,8 +17,11 @@ public class ShieldContainer : AbstractHittable
 
         if (HitPoints > 0)
         {
-            Shield clone = Instantiate(shield, this.transform.position, Quaternion.identity);
-            clone.Apply(hit.point, this);
-        }
+            var rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            clone = Instantiate(shield, hit.point, rotation);
+            clone.Apply(this);
+           // clone.transform.localScale = new Vector3(Scale, Scale, Scale);
+           // clone.
+        }   
     }
 }

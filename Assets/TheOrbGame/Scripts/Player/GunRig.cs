@@ -20,7 +20,7 @@ public class GunRig : MonoBehaviour
     public virtual void OnFire()
     {
         BasicProjectile clone = Instantiate(projectile, firePoint.transform.position, firePoint.rotation);
-        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<IHittable>());
+        clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<IHittable>(), this.transform);
     }
 
     protected virtual void Update() { }

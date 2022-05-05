@@ -5,40 +5,46 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
-    public float beginFadeAmount = .01f;
-    public int LocalScale = 30;
     private ShieldContainer _parentContainer;
+    private Vector3 _difference = new Vector3();
 
-    internal void Apply(Vector3 hitPoint, ShieldContainer parentContainer)
+    public void Start()
     {
-        _parentContainer = parentContainer;
-        transform.localScale = new Vector3(LocalScale, LocalScale, LocalScale);
-        transform.LookAt(hitPoint);
         StartCoroutine(FadeOut());
-    }
-
-    private void FixedUpdate()
-    {
-        if (_parentContainer != null)
-        {
-            this.transform.position = _parentContainer.transform.position;
-            this.transform.localScale += new Vector3(.1f, .1f, .1f);
-        }
     }
 
     IEnumerator FadeOut()
     {
-        float fadeAmount = beginFadeAmount;
+        float fadeAmount = 1f;
+
+        Light light = GetComponentInChildren<Light>();
+
+       // yield return new WaitForSeconds(.5f);
 
         do
         {
-            GetComponent<Renderer>().material.SetFloat("FadeAmt", fadeAmount);
-            fadeAmount += Time.deltaTime;
+            GetComponent<Renderer>().material.SetFloat("FadeAmount", fadeAmount);
+            fadeAmount -= (Time.deltaTime);
+            light.intensity -= (Time.deltaTime * 80);
 
             yield return new WaitForFixedUpdate();
         }
-        while (fadeAmount <= 1 && _parentContainer.HitPoints > 0);
+        while (fadeAmount >= 0);
 
         Destroy(this.gameObject);
+    }
+
+    public void Update()
+    {
+        if(_parentContainer != null)
+        {
+            this.transform.position = (_parentContainer.transform.position - _difference);
+        }
+    }
+
+    internal void Apply(ShieldContainer shieldContainer)
+    {
+        _difference = shieldContainer.transform.position - this.transform.position;
+        _parentContainer = shieldContainer;
     }
 }
