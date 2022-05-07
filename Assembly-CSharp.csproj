@@ -86,9 +86,9 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FadeOut.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHittable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
+    <Compile Include="Assets\BulletMark.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
-    <Compile Include="Assets\BulletMark.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />

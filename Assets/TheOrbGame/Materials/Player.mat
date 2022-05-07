@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Player
-  m_Shader: {fileID: -6465566751694194690, guid: e876f14b50ccd4e459f5924326574bcf, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 3a373efb85518534c917dc8aa1e8e831, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -169,6 +169,7 @@ Material:
     m_Floats:
     - DissolveAmount: 0.5
     - Distance: 0
+    - FadeAmount: 1
     - Intensity: 1
     - Strength: 1
     - Tiling: 2

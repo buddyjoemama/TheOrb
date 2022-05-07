@@ -20,8 +20,6 @@ public class ShieldContainer : AbstractHittable
             var rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
             clone = Instantiate(shield, hit.point, rotation);
             clone.Apply(this);
-           // clone.transform.localScale = new Vector3(Scale, Scale, Scale);
-           // clone.
         }   
     }
 }

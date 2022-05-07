@@ -23,7 +23,9 @@ public class Player : AbstractHittable
         cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
         shieldContainer = GetComponentInChildren<ShieldContainer>();
-        input = GetComponent<PlayerInput>();    
+        input = GetComponent<PlayerInput>();
+
+        //shieldContainer.gameObject.SetActive(false);
     }
 
     internal void AddHealth(int lifeValue)
@@ -70,7 +72,6 @@ public class Player : AbstractHittable
     private void LateUpdate()
     {
         mainCamera.transform.position = transform.position + cameraOffset;
-        //this.shield.transform.position = this.transform.position;
     }
 
     private void OnTriggerEnter(Collider other)

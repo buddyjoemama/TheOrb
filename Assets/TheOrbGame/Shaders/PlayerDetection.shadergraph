@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 2,
+    "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "7d282172a9994b8ab846b5d9ccc738b3",
     "m_Properties": [
@@ -17,6 +17,12 @@
         }
     ],
     "m_Keywords": [],
+    "m_Dropdowns": [],
+    "m_CategoryData": [
+        {
+            "m_Id": "7b2d56e085b84f8ea15d481bd49c9ff7"
+        }
+    ],
     "m_Nodes": [
         {
             "m_Id": "321aa710aec34e51b8487894e5164a09"
@@ -255,10 +261,11 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"fileID\":10210,\"guid\":\"0000000000000000e000000000000000\",\"type\":0}}",
             "m_Guid": ""
-        }
+        },
+        "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_ConcretePrecision": 0,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -454,9 +461,13 @@
         "m_GuidSerialized": "7db8d78a-e249-4f6c-bddf-22199b739ae1"
     },
     "m_Name": "Distance",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_1c46aa2e60b8483ab7893be4b2ef6ae8",
     "m_OverrideReferenceName": "Distance",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -675,7 +686,8 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 0
+    "m_Space": 0,
+    "m_PositionSource": 0
 }
 
 {
@@ -971,16 +983,43 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.CategoryData",
+    "m_ObjectId": "7b2d56e085b84f8ea15d481bd49c9ff7",
+    "m_Name": "",
+    "m_ChildObjectList": [
+        {
+            "m_Id": "d0cf6f51e8684dd58a2e5837d2d17d23"
+        },
+        {
+            "m_Id": "1c46aa2e60b8483ab7893be4b2ef6ae8"
+        },
+        {
+            "m_Id": "e91aab5016964c37947e8a06fb95afc0"
+        },
+        {
+            "m_Id": "d94e9321f09f40a789169fdf94beef4d"
+        }
+    ]
+}
+
+{
+    "m_SGVersion": 1,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalTarget",
     "m_ObjectId": "7c14c935ceeb42a59cd9e95c87e851ea",
     "m_ActiveSubTarget": {
         "m_Id": "4876a14a41174a988d6ef856342fc4d6"
     },
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
+    "m_ZTestMode": 4,
+    "m_ZWriteControl": 0,
     "m_AlphaMode": 0,
-    "m_TwoSided": true,
+    "m_RenderFace": 0,
     "m_AlphaClip": true,
-    "m_CustomEditorGUI": ""
+    "m_CastShadows": true,
+    "m_ReceiveShadows": true,
+    "m_CustomEditorGUI": "",
+    "m_SupportVFX": false
 }
 
 {
@@ -1350,9 +1389,13 @@
         "m_GuidSerialized": "14812dfa-6ef0-49f7-a3ce-37ede685abb2"
     },
     "m_Name": "Strength",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_d0cf6f51e8684dd58a2e5837d2d17d23",
     "m_OverrideReferenceName": "Strength",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1397,9 +1440,13 @@
         "m_GuidSerialized": "fe8dbb34-a559-4961-95ac-9294efb5aaa2"
     },
     "m_Name": "Color",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_d94e9321f09f40a789169fdf94beef4d",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -1410,6 +1457,7 @@
         "b": 0.0,
         "a": 0.0
     },
+    "isMainColor": false,
     "m_ColorMode": 0
 }
 
@@ -1557,9 +1605,13 @@
         "m_GuidSerialized": "5ea26cba-c2ce-44f8-b06b-01eb444b79bc"
     },
     "m_Name": "Position",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector4_e91aab5016964c37947e8a06fb95afc0",
     "m_OverrideReferenceName": "Position",
     "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,

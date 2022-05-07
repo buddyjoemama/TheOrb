@@ -19,8 +19,6 @@ public class Shield : MonoBehaviour
 
         Light light = GetComponentInChildren<Light>();
 
-       // yield return new WaitForSeconds(.5f);
-
         do
         {
             GetComponent<Renderer>().material.SetFloat("FadeAmount", fadeAmount);
@@ -39,6 +37,7 @@ public class Shield : MonoBehaviour
         if(_parentContainer != null)
         {
             this.transform.position = (_parentContainer.transform.position - _difference);
+            this.transform.localScale += new Vector3(.005f, .005f, .005f);
         }
     }
 
