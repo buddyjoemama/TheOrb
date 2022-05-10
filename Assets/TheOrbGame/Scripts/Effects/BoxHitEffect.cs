@@ -36,10 +36,10 @@ public class BoxHitEffect : MonoBehaviour, IHitEffect
 
         while (currentColor != originalColor)
         {
-            currentColor = Color.Lerp(currentColor, originalColor, Time.deltaTime / 2);
+            currentColor = Color.Lerp(currentColor, originalColor, Time.deltaTime / 1.5f);
             GetComponent<Renderer>().material.SetColor(varName, currentColor);
 
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class Player : AbstractHittable
 {
+    public bool ShieldEnabled = false;
     private Rigidbody rigidBody;
     private float movementX;
     private float movementY;
@@ -15,8 +16,9 @@ public class Player : AbstractHittable
     private GunRig rig;
     private ShieldContainer shieldContainer;
     private PlayerInput input;
+    private Color originalColor = Color.white;
 
-    void Start()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
@@ -24,8 +26,6 @@ public class Player : AbstractHittable
         rig = GetComponentInChildren<GunRig>();
         shieldContainer = GetComponentInChildren<ShieldContainer>();
         input = GetComponent<PlayerInput>();
-
-        //shieldContainer.gameObject.SetActive(false);
     }
 
     internal void AddHealth(int lifeValue)
@@ -50,6 +50,7 @@ public class Player : AbstractHittable
     }
     public void Update()
     {
+        shieldContainer.gameObject.SetActive(ShieldEnabled);
     }
 
     private void FixedUpdate()
@@ -60,13 +61,14 @@ public class Player : AbstractHittable
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
 
         if (input.GetDevice<Keyboard>().bKey.isPressed)// Input.GetKeyDown(KeyCode.B))
-        { 
+        {
             rigidBody.velocity = new Vector3(0, 0, 0);
             rigidBody.angularVelocity = new Vector3(0, 0, 0);
-            return;
         }
-
-        rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+        else
+        {
+            rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+        }
     }
 
     private void LateUpdate()
@@ -80,10 +82,5 @@ public class Player : AbstractHittable
         
         if(trigger != null)
             trigger.Apply(this);
-    }
-
-    public override void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
-    {
-        
     }
 }
