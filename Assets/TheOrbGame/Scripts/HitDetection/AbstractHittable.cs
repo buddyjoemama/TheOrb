@@ -17,6 +17,8 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public virtual Quaternion EffectOrientation => Quaternion.identity;
 
+    public virtual Vector3 EffectPosition => transform.position;
+
     public int HitPoints = 0;
 
     /// <summary>
@@ -29,11 +31,11 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// </summary>
     public Transform projectileHitEffect;
 
-    private IHitEffect _hitEffect;
+    protected IHitEffect _hitEffect;
 
-    private IHitAction _hitAction;
+    protected IHitAction _hitAction;
 
-    private IDestroyAction _destroyAction;
+    protected IDestroyAction _destroyAction;
 
     public virtual void Start()
     {
@@ -85,7 +87,7 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     {
         if(explosionEffect != null)
         {
-            Instantiate(explosionEffect, transform.position, EffectOrientation);
+            Instantiate(explosionEffect, EffectPosition, EffectOrientation);
         }
         
         _destroyAction?.Apply();

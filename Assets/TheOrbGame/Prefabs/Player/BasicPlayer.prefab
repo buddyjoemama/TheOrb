@@ -179,7 +179,7 @@ MonoBehaviour:
   HitPoints: 10
   explosionEffect: {fileID: 0}
   projectileHitEffect: {fileID: 0}
-  ShieldEnabled: 0
+  ShieldEnabled: 1
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -326,8 +326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b9bdd85660e24247b343d515e37994b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 400
-  explosionEffect: {fileID: 8766891548240748812, guid: 88dd9a474822347bb99798ad8532ec02, type: 3}
+  HitPoints: 3
+  explosionEffect: {fileID: 7444780387873532474, guid: ed2c032dac7c40b4c96664c09af9280e, type: 3}
   projectileHitEffect: {fileID: 0}
   shield: {fileID: 4124907072100963726, guid: 76409ef211002ef4a89f2d3205107e3f, type: 3}
   Scale: 0.06
@@ -358,7 +358,7 @@ Transform:
   m_GameObject: {fileID: 5851121215654115977}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.553}
-  m_LocalScale: {x: 0.1, y: 0.2, z: 0.1}
+  m_LocalScale: {x: 0.15, y: 0.3, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6277063395363487719}
@@ -393,7 +393,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 79db2f09e6e74424a9027830dcef0804, type: 2}
+  - {fileID: 2100000, guid: ce63d3d2577fb0c4e8900b68dd9cb1de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

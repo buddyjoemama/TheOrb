@@ -48,9 +48,10 @@ public class Player : AbstractHittable
     {
         rig.OnFire();
     }
+
     public void Update()
     {
-        shieldContainer.gameObject.SetActive(ShieldEnabled);
+        //shieldContainer.gameObject.SetActive(ShieldEnabled);
     }
 
     private void FixedUpdate()
