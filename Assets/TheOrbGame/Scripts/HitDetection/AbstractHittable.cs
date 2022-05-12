@@ -87,11 +87,17 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     {
         if(explosionEffect != null)
         {
-            Instantiate(explosionEffect, EffectPosition, EffectOrientation);
+            var explosion = Instantiate(explosionEffect, EffectPosition, EffectOrientation);
+            DestroyExplosion(explosion);
         }
         
         _destroyAction?.Apply();
 
         this.gameObject.SetActive(false);
+    }
+
+    protected virtual void DestroyExplosion(Transform effect)
+    {
+        //Destroy(effect, 10);
     }
 }

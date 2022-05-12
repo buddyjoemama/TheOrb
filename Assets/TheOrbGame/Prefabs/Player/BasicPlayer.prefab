@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 10
-  explosionEffect: {fileID: 0}
+  HitPoints: 3
+  explosionEffect: {fileID: 3643413817276054061, guid: f207316fc8114064987fce85a627e938, type: 3}
   projectileHitEffect: {fileID: 0}
-  ShieldEnabled: 1
+  ShieldEnabled: 0
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0

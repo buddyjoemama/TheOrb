@@ -86,7 +86,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FadeOut.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHittable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
-    <Compile Include="Assets\BulletMark.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\BulletMark.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
   </ItemGroup>

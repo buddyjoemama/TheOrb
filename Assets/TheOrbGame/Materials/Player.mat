@@ -173,7 +173,7 @@ Material:
     - FadeAmount: 1
     - Intensity: 4.8
     - Strength: 1
-    - Tiling: 4
+    - Tiling: 6
     - _AlphaClip: 0
     - _BASE_COLOR_WEIGHT: 1
     - _BUMP_MAP_STRENGTH: 0.3

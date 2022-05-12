@@ -18,6 +18,8 @@ public class Player : AbstractHittable
     private PlayerInput input;
     private Color originalColor = Color.white;
 
+    public override Vector3 EffectPosition => transform.position;
+
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();

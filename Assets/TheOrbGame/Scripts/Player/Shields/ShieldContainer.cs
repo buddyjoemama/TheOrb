@@ -5,7 +5,13 @@ public class ShieldContainer : AbstractHittable
     public Shield shield;
     public float Scale;
     private Shield clone;
- 
+
+    public override void Start()
+    {
+        base.Start();
+        this.gameObject.SetActive(false);
+    }
+
     public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
         return base.IsValidHit(hit, firedFrom) && firedFrom.Tag != "Player";
