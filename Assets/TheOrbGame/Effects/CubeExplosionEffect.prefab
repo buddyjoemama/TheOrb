@@ -5041,6 +5041,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3710445348252904354}
     m_Modifications:
+    - target: {fileID: 36364621914406214, guid: 24a0f58d910d3ca4abf977f4ff676b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 490508006727394753, guid: 24a0f58d910d3ca4abf977f4ff676b1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 80
@@ -5100,6 +5104,10 @@ PrefabInstance:
     - target: {fileID: 5750617941952241679, guid: 24a0f58d910d3ca4abf977f4ff676b1b, type: 3}
       propertyPath: m_Name
       value: EnergyExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5750617941952241679, guid: 24a0f58d910d3ca4abf977f4ff676b1b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7348734819168207317, guid: 24a0f58d910d3ca4abf977f4ff676b1b, type: 3}
       propertyPath: looping
@@ -5174,6 +5182,10 @@ PrefabInstance:
     - target: {fileID: 2644768588704295781, guid: eca09c723f436054f8b1743cb4ca5718, type: 3}
       propertyPath: m_Name
       value: Particle System (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2644768588704295781, guid: eca09c723f436054f8b1743cb4ca5718, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8548949331999347682, guid: eca09c723f436054f8b1743cb4ca5718, type: 3}
       propertyPath: m_RootOrder
