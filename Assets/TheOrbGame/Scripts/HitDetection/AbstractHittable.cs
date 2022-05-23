@@ -15,33 +15,19 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
 
     public virtual bool ShouldDestroy => false;
 
-    public virtual Quaternion EffectOrientation => Quaternion.identity;
-
-    public virtual Vector3 EffectPosition => transform.position;
-
     public int HitPoints = 0;
-
-    /// <summary>
-    /// Effect used when hittable is destoyed.
-    /// </summary>
-    public Transform explosionEffect;
-
-    /// <summary>
-    /// The effect used at the hit location
-    /// </summary>
-    public Transform projectileHitEffect;
 
     protected IHitEffect _hitEffect;
 
     protected IHitAction _hitAction;
 
-    protected IDestroyAction _destroyAction;
+    protected IEnumerable<IDestroyAction> _destroyActions;
 
     public virtual void Start()
     {
         _hitEffect = this.GetComponent<IHitEffect>();
         _hitAction = this.GetComponent<IHitAction>();
-        _destroyAction = this.GetComponent<IDestroyAction>();
+        _destroyActions = this.GetComponents<IDestroyAction>().AsEnumerable();
     }
 
     /// <summary>
@@ -53,14 +39,14 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// <param name="projectile"></param>
     /// <param name="firedFrom"></param>
     /// <returns></returns>
-    public virtual void Hit(Transform collider, Transform transform, RaycastHit hit, BasicProjectile projectile)
+    public virtual void Hit(Transform collider, RaycastHit hit, BasicProjectile projectile)
     {
         HitPoints -= 1;
 
         if(HitPoints > 0)
         {
             _hitEffect?.Apply();
-            _hitAction?.Apply(collider, transform, hit, projectile);
+            _hitAction?.Apply(collider, hit, projectile);
         }
         else
         {
@@ -85,19 +71,16 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// </summary>
     public virtual void DestroyHittable()
     {
-        if(explosionEffect != null)
+        foreach(var action in _destroyActions)
         {
-            var explosion = Instantiate(explosionEffect, EffectPosition, EffectOrientation);
-            DestroyExplosion(explosion);
+            action.Apply();
         }
-        
-        _destroyAction?.Apply();
 
-        this.gameObject.SetActive(false);
+        OnDestroyed();
     }
 
-    protected virtual void DestroyExplosion(Transform effect)
+    protected virtual void OnDestroyed()
     {
-        //Destroy(effect, 10);
+        Destroy(gameObject);
     }
 }

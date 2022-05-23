@@ -6,25 +6,16 @@ using UnityEngine.InputSystem;
 
 public class Player : AbstractHittable
 {
-    public bool ShieldEnabled = false;
     private Rigidbody rigidBody;
     private float movementX;
     private float movementY;
-    private Camera mainCamera;
-    private Vector3 cameraOffset;
-    // Start is called before the first frame update
     private GunRig rig;
     private ShieldContainer shieldContainer;
     private PlayerInput input;
-    private Color originalColor = Color.white;
-
-    public override Vector3 EffectPosition => transform.position;
 
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
-        mainCamera = Camera.main;
-        cameraOffset = Camera.main.transform.position - transform.position;
         rig = GetComponentInChildren<GunRig>();
         shieldContainer = GetComponentInChildren<ShieldContainer>();
         input = GetComponent<PlayerInput>();
@@ -51,11 +42,6 @@ public class Player : AbstractHittable
         rig.OnFire();
     }
 
-    public void Update()
-    {
-        //shieldContainer.gameObject.SetActive(ShieldEnabled);
-    }
-
     private void FixedUpdate()
     {
         Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 25;
@@ -72,11 +58,6 @@ public class Player : AbstractHittable
         {
             rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
         }
-    }
-
-    private void LateUpdate()
-    {
-        mainCamera.transform.position = transform.position + cameraOffset;
     }
 
     private void OnTriggerEnter(Collider other)

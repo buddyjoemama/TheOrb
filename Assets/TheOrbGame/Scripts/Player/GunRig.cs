@@ -7,12 +7,11 @@ using UnityEngine.InputSystem;
 public class GunRig : MonoBehaviour
 {
     public Transform firePoint;
-    public Player target;
     public BasicProjectile projectile;
     public Reticle reticle;
     private Reticle rClone;
 
-    private void Start()
+    public virtual void Start()
     {
         rClone = Instantiate(reticle);
     }
@@ -23,30 +22,20 @@ public class GunRig : MonoBehaviour
         clone.Fire(firePoint.forward, this.gameObject.GetComponentInParent<IHittable>(), this.transform);
     }
 
-    protected virtual void Update() { }
-
-    protected virtual void FixedUpdate()
+    public virtual void Update()
     {
         var mousePos = InputSystem.GetDevice<Mouse>().position;
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(mousePos.x.ReadValue(), mousePos.y.ReadValue()));
-        Vector3 lookAt = Vector3.zero;
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 1000))
+        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue))
         {
-            lookAt = hit.point;
+            Vector3 lookAtPoint = hit.collider.GetComponent<ILookAt>()?.GetLookAtPoint(hit) ?? hit.point;
 
-            if (rClone != null)
-            {
-                rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
-                rClone.transform.position = lookAt + rClone.transform.up;
-            }
-        }
-        else
-        {
-            lookAt = ray.GetPoint(1000);
-        }
+            rClone.transform.rotation = Quaternion.FromToRotation(Vector3.up, hit.normal);
+            rClone.transform.position = lookAtPoint + (rClone.transform.up / 10);
 
-        transform.LookAt(lookAt);
+            transform.LookAt(lookAtPoint);
+        }
     }
 }

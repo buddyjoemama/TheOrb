@@ -114,6 +114,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3120452793549007389}
     m_Modifications:
+    - target: {fileID: 422183399, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5377057969015294371, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: m_Name
       value: OrangeStationaryCube (4)

@@ -95,6 +95,20 @@
             },
             "m_InputSlot": {
                 "m_Node": {
+                    "m_Id": "19eaa4c565e846838994788a856a75ec"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "1ddd1ff67233bd80818529283535d9fd"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
                     "m_Id": "daca315d4d6f46d1847ec33b70de2814"
                 },
                 "m_SlotId": 0
@@ -145,20 +159,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "e8c2176cff0c718eb82e0a24c1fef46b"
-                },
-                "m_SlotId": 7
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "b29643fefb9f492aa2784809c3af5124"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "f1a543653d0e4f549960593f7323a3cb"
                 },
                 "m_SlotId": 0
@@ -204,8 +204,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 493.0000305175781,
-            "y": -16.0
+            "x": 505.99993896484377,
+            "y": 5.9999799728393559
         },
         "m_Blocks": [
             {
@@ -420,9 +420,9 @@
     },
     "m_Color": {
         "color": {
-            "r": 0.3254716992378235,
-            "g": 0.519855260848999,
-            "b": 1.0,
+            "r": 1.0,
+            "g": 0.0,
+            "b": 0.0,
             "a": 0.0
         },
         "mode": 0
@@ -546,10 +546,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 66.99998474121094,
-            "y": 236.0,
-            "width": 208.0,
-            "height": 302.0
+            "x": 75.33332824707031,
+            "y": 216.66671752929688,
+            "width": 209.33335876464845,
+            "height": 303.9999694824219
         }
     },
     "m_Slots": [
@@ -1244,7 +1244,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 3.700000047683716,
     "m_DefaultValue": 1.0,
     "m_Labels": [
         "X"
@@ -1320,7 +1320,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Alpha",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.25,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }

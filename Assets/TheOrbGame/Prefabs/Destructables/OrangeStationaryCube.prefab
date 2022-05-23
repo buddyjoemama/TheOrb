@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 8718906068228413358}
   - component: {fileID: 4742342658143670199}
   - component: {fileID: 1742124893}
-  - component: {fileID: 270435734}
   - component: {fileID: 788539054565780570}
   - component: {fileID: 669262657}
-  - component: {fileID: 1998855217}
   - component: {fileID: 1998855226}
+  - component: {fileID: 8084043108435292061}
+  - component: {fileID: 422183399}
   m_Layer: 0
   m_Name: OrangeStationaryCube
   m_TagString: Box
@@ -119,21 +119,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &270435734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377057969015294371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eadd430b902127479774357c6818a69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HitPoints: 3
-  explosionEffect: {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
-  projectileHitEffect: {fileID: 0}
 --- !u!114 &788539054565780570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,26 +146,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Force: 250
---- !u!95 &1998855217
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5377057969015294371}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1998855226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,3 +160,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PercentDropRate: 25
   PickupType: {fileID: 2360449544453181061, guid: 1c84e18dfe1169d4d812146980844f1e, type: 3}
+--- !u!114 &8084043108435292061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377057969015294371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b527e652845a4393bf0e6402b5fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionEffect: {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
+  EffectOffset: {x: 0, y: 0, z: 0}
+  EffectLifetimeSeconds: 10
+--- !u!114 &422183399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377057969015294371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eadd430b902127479774357c6818a69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitPoints: 3

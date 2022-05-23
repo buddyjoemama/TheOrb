@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeExplosionEffect : MonoBehaviour
+public class GameObjectTTL : MonoBehaviour
 {
     public float TimeToLiveInSeconds;
 

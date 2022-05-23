@@ -47,6 +47,7 @@ GameObject:
   - component: {fileID: 5080036164057487700}
   - component: {fileID: 6139298273850449781}
   - component: {fileID: 3635010511459602559}
+  - component: {fileID: 3939084704030959684}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Player
@@ -176,10 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitPoints: 3
-  explosionEffect: {fileID: 3643413817276054061, guid: f207316fc8114064987fce85a627e938, type: 3}
-  projectileHitEffect: {fileID: 0}
-  ShieldEnabled: 0
+  HitPoints: 2
 --- !u!54 &6139298273850449781
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -210,6 +208,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HitColor: {r: 1, g: 0, b: 0, a: 1}
   OriginalColorPropertyName: HitColor
+--- !u!114 &3939084704030959684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738804018425212160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81b527e652845a4393bf0e6402b5fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExplosionEffect: {fileID: 3643413817276054061, guid: f207316fc8114064987fce85a627e938, type: 3}
+  EffectOffset: {x: 0, y: -10, z: 0}
+  EffectLifetimeSeconds: 10
 --- !u!1 &3910689776267863053
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +325,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1802516407289869573
 MonoBehaviour:
@@ -327,10 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 3
-  explosionEffect: {fileID: 7444780387873532474, guid: ed2c032dac7c40b4c96664c09af9280e, type: 3}
-  projectileHitEffect: {fileID: 0}
-  shield: {fileID: 4124907072100963726, guid: 76409ef211002ef4a89f2d3205107e3f, type: 3}
-  Scale: 0.06
+  ExplosionEffect: {fileID: 7444780387873532474, guid: ed2c032dac7c40b4c96664c09af9280e, type: 3}
+  Shield: {fileID: 4124907072100963726, guid: 76409ef211002ef4a89f2d3205107e3f, type: 3}
 --- !u!1 &5851121215654115977
 GameObject:
   m_ObjectHideFlags: 0

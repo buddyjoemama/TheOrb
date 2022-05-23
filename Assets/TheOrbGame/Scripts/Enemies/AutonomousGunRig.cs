@@ -4,20 +4,16 @@ using UnityEngine;
 
 public class AutonomousGunRig : GunRig
 {
-    public bool enabled = true;
+    public Player target;
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Start()
     {
         StartCoroutine(Fire());
     }
 
-    protected override void Update()
+    public override void Update()
     {
-        if (target)
-        {
-            transform.LookAt(target.transform.position);
-        }
+        transform.LookAt(target.transform.position);
     }
 
     public override void OnFire()

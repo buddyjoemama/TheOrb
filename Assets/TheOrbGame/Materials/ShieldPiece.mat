@@ -105,7 +105,7 @@ Material:
     m_Floats:
     - FadeAmount: 1
     - FadeAmt: 0.1
-    - Intensity: 50
+    - Intensity: 7.1
     - Tiling: 1
     - _AlphaClip: 0
     - _Blend: 0

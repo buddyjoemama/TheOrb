@@ -85,7 +85,7 @@ public class BasicProjectile : MonoBehaviour
                 // Ask the hittable if this is a valid hit.
                 if(hittable.IsValidHit(closest, firedFrom))
                 {
-                    hittable.Hit(transform, projectile.transform, closest, this);
+                    hittable.Hit(transform, closest, this);
                 }
             }
 

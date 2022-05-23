@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class PermanentHitable : AbstractHittable
 {
-    public override void Hit(Transform collider, Transform transform, RaycastHit hitPoint, BasicProjectile projectile)
+    public override void Hit(Transform collider, RaycastHit hitPoint, BasicProjectile projectile)
     {
         
     }

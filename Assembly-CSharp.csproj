@@ -65,7 +65,6 @@
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\AbstractHittable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\SaveLocationTrigger.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\RotateForever.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Enemies\PathFollowingEnemy.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\Actions\ForceHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShieldContainer.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
@@ -73,7 +72,8 @@
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\PermanentHitable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\AutonomousGunRig.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\IDestroyAction.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Effects\CubeExplosionEffect.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Effects\GameObjectTTL.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\Effects\BasicExplosionAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Player.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
@@ -89,6 +89,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\BulletMark.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\ILookAt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />

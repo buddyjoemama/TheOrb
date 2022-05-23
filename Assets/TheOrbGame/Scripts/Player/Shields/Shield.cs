@@ -11,6 +11,7 @@ public class Shield : MonoBehaviour
     public void Start()
     {
         StartCoroutine(FadeOut());
+        //transform.localScale = new Vector3(.05f, .05f, .05f);
     }
 
     IEnumerator FadeOut()
