@@ -14,7 +14,8 @@ public class CameraController : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.position = ObjectToWatch.position + _cameraOffset;
+        if(ObjectToWatch != null)
+            transform.position = ObjectToWatch.position + _cameraOffset;
     }
 
     //Quaternion target = Quaternion.Euler(20, 90, 0);

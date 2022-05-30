@@ -13,7 +13,8 @@ public class AutonomousGunRig : GunRig
 
     public override void Update()
     {
-        transform.LookAt(target.transform.position);
+        if(target != null)  
+            transform.LookAt(target.transform.position);
     }
 
     public override void OnFire()

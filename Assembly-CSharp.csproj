@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\ILookAt.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\Pickup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
@@ -89,7 +90,6 @@
     <Compile Include="Assets\TheOrbGame\Scripts\BulletMark.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\ILookAt.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
