@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\ILookAt.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\Enemies\Enemy.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\Pickup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Reticle.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Pickups\ITrigger.cs" />
