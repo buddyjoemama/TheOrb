@@ -78,6 +78,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHitAction.cs" />
+    <Compile Include="Assets\TestExplosion.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\EnemyTurret.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\CameraController.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\BoxHitEffect.cs" />
