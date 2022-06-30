@@ -58,7 +58,7 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// What was hit (IHittable)? Cant hit yourself...
     /// </summary>
     /// <param name="hit"></param>
-    /// <returns></returns>
+    /// <returns></returns> 
     public virtual bool IsValidHit(RaycastHit hit, IHittable firedFrom)
     {
         return hit.collider.GetComponent<IHittable>() != null &&

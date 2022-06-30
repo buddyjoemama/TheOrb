@@ -2,10 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestExplosion : MonoBehaviour
+public class TestExplosion : AbstractHittable
 {
+    public float Strength = 10;
+
+    public override void Hit(Transform collider, RaycastHit hit, BasicProjectile projectile)
+    {
+        BlowUp(hit.point);
+    }
+
+    public override bool IsValidHit(RaycastHit hit, IHittable firedFrom)
+    {
+        return true;
+    }
+
     // Start is called before the first frame update
-    void Start()
+    void BlowUp(Vector3 hitPosition)
     {
        // void SetForce()
        // {
@@ -17,9 +29,9 @@ public class TestExplosion : MonoBehaviour
             //if (forceByMass == false)
             //    forceMode = ForceMode.VelocityChange;
 
-            float strength =10;
             float variation = 50;
         float chaos = 1;
+      //  Vector3 hitPosition = new Vector3(40f, 12.5f, -20f);// this.transform.position;
 
             // Get str for each object by explode type with variation
             foreach (var collider in this.GetComponentsInChildren<Collider>())// Projectile projectile in projectiles)
@@ -27,15 +39,15 @@ public class TestExplosion : MonoBehaviour
                 // TODO check if not activated and doesn't need to be forced
 
                 // Get local velocity strength
-                float strVar = strength * variation / 100f + strength;
-                float str = Random.Range(strength, strVar);
-                var closest = collider.bounds.ClosestPoint(this.transform.position);
-            float fade = 1f - Vector3.Distance(this.transform.position, collider.transform.position) / 5.5f;    
+                float strVar = Strength * variation / 100f + Strength;
+                float str = Random.Range(Strength, strVar);
+                var closest = collider.bounds.ClosestPoint(hitPosition);
+                float fade = 1f - Vector3.Distance(hitPosition, collider.transform.position) / 5.5f;    
 
                 float strMult = fade * str * 10f;
 
                 // Get explosion vector from explosion position to projectile center of mass
-                Vector3 vector = Vector3.Normalize(collider.transform.position - this.transform.position);
+                Vector3 vector = Vector3.Normalize(hitPosition - closest);
 
                 // Apply force
                 collider.attachedRigidbody.AddForce(vector * strMult, forceMode);
@@ -45,6 +57,7 @@ public class TestExplosion : MonoBehaviour
 
                 // Set rotation impulse
                 collider.attachedRigidbody.angularVelocity = rot;
+            collider.attachedRigidbody.useGravity = true;
             }
        // }
     }

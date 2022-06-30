@@ -172,9 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81b527e652845a4393bf0e6402b5fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExplosionEffect: {fileID: 543322495166000757, guid: 74a1b0ad25cd8c347aa6e67314bdcd10, type: 3}
+  ExplosionEffect: {fileID: 543322495166000757, guid: 6bced20406bac3b4bb4065292d361b00, type: 3}
   EffectOffset: {x: 0, y: 0, z: 0}
-  EffectLifetimeSeconds: 10
+  EffectLifetimeSeconds: 20
+  UseConfiguredLifetime: 1
+  EffectScale: 1.5
 --- !u!114 &422183399
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -273,7 +273,7 @@ namespace RayFire
         void UI_ImpulseStr()
         {
             EditorGUI.BeginChangeCheck();
-            bomb.strength = EditorGUILayout.Slider (gui_impulseStr, bomb.strength, 0, 10f);
+            bomb.strength = EditorGUILayout.Slider (gui_impulseStr, bomb.strength, 0, 1000f);
             if (EditorGUI.EndChangeCheck() == true)
             {
                 foreach (RayfireBomb scr in targets)
