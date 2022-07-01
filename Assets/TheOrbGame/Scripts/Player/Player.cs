@@ -57,6 +57,11 @@ public class Player : AbstractHittable
         IsGrounded = true;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        RigidBody.velocity = RigidBody.angularVelocity = Vector3.zero;
+    }
+
     private void FixedUpdate()
     {
         Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 25;

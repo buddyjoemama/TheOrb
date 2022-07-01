@@ -28,7 +28,9 @@ public class GunRig : MonoBehaviour
 
         Ray ray = Camera.main.ScreenPointToRay(new Vector3(mousePos.x.ReadValue(), mousePos.y.ReadValue()));
 
-        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue))
+        LayerMask mask = LayerMask.GetMask("Default", "Floor");
+
+        if (Physics.Raycast(ray, out RaycastHit hit, float.MaxValue, mask))
         {
             Vector3 lookAtPoint = hit.collider.GetComponent<ILookAt>()?.GetLookAtPoint(hit) ?? hit.point;
 

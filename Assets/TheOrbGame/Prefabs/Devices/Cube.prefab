@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9083854117622218979}
   - component: {fileID: 9083854117622218989}
   - component: {fileID: 9083854117622218978}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 9083854118004552670}
   - component: {fileID: 9083854118004552671}
   - component: {fileID: 9083854118004552667}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,3 +226,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57238e2b8d8f6cb419e66dddd307c585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Displacement: 10
