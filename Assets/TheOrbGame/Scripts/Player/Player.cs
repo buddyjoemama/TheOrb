@@ -1,29 +1,39 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : AbstractHittable
 {
-    private Rigidbody rigidBody;
     private float movementX;
     private float movementY;
     private GunRig rig;
     private ShieldContainer shieldContainer;
     private PlayerInput input;
+    private IEnumerable<IPlayerPowerup> powerups;
 
     private void Awake()
     {
-        rigidBody = GetComponent<Rigidbody>();
+        RigidBody = GetComponent<Rigidbody>();
         rig = GetComponentInChildren<GunRig>();
         shieldContainer = GetComponentInChildren<ShieldContainer>();
         input = GetComponent<PlayerInput>();
+        powerups = GetComponents<IPlayerPowerup>().AsEnumerable();
+    }
+
+    public bool IsGrounded { get; set; }
+    public Rigidbody RigidBody { get; set; }
+
+    private void Start()
+    {
+
     }
 
     internal void AddHealth(int lifeValue)
     {
-        
+                       
     }
 
     /// <summary>
@@ -42,6 +52,11 @@ public class Player : AbstractHittable
         rig.OnFire();
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        IsGrounded = true;
+    }
+
     private void FixedUpdate()
     {
         Vector3 movementForce = new Vector3(this.movementX, 0.0f, this.movementY) * 25;
@@ -49,14 +64,14 @@ public class Player : AbstractHittable
         // Make it relative to the camera.
         Vector3 transformVector = Camera.main.transform.TransformVector(movementForce);
 
-        if (input.GetDevice<Keyboard>().bKey.isPressed)// Input.GetKeyDown(KeyCode.B))
+        if (input.GetDevice<Keyboard>().bKey.isPressed)
         {
-            rigidBody.velocity = new Vector3(0, 0, 0);
-            rigidBody.angularVelocity = new Vector3(0, 0, 0);
+            RigidBody.velocity = new Vector3(0, 0, 0);
+            RigidBody.angularVelocity = new Vector3(0, 0, 0);
         }
-        else
+        else if(IsGrounded)
         {
-            rigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
+            RigidBody.AddForce(new Vector3(transformVector.x, 0.0f, transformVector.z));
         }
     }
 

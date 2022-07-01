@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 6139298273850449781}
   - component: {fileID: 3635010511459602559}
   - component: {fileID: 3939084704030959684}
+  - component: {fileID: 3500466167769590249}
   m_Layer: 0
   m_Name: BasicPlayer
   m_TagString: Player
@@ -223,6 +224,21 @@ MonoBehaviour:
   ExplosionEffect: {fileID: 3643413817276054061, guid: f207316fc8114064987fce85a627e938, type: 3}
   EffectOffset: {x: 0, y: -10, z: 0}
   EffectLifetimeSeconds: 10
+  UseConfiguredLifetime: 1
+  EffectScale: 1.5
+--- !u!114 &3500466167769590249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3738804018425212160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6085f45007c55747ace0b2570d9a02a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
 --- !u!1 &3910689776267863053
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ namespace Assets.TheOrbGame.Scripts.Effects
             explosion.localScale = new Vector3(EffectScale, EffectScale, EffectScale);
 
            // if(UseConfiguredLifetime)
-                Destroy(explosion.gameObject, 10);
+                Destroy(explosion.gameObject, 15);
         }
     }
 
