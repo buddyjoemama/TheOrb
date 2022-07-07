@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2794320507043153866}
   m_Layer: 6
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -112,8 +112,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HitPoints: 0
-  explosionEffect: {fileID: 0}
-  projectileHitEffect: {fileID: 0}
 --- !u!1 &2794320507532554007
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +126,7 @@ GameObject:
   - component: {fileID: 2794320507532554001}
   m_Layer: 6
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -223,7 +221,7 @@ GameObject:
   - component: {fileID: 2794320507669376760}
   m_Layer: 6
   m_Name: Main Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

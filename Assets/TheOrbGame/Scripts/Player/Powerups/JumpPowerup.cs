@@ -9,6 +9,7 @@ using UnityEngine.InputSystem;
 public class JumpPowerup : PlayerPowerup, IPlayerPowerup
 {
     private PlayerInput input;
+    public int JumpPower = 10;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class JumpPowerup : PlayerPowerup, IPlayerPowerup
     {
         if(IsEnabled && Player.IsGrounded && input.GetDevice<Keyboard>().spaceKey.isPressed)
         {
-            Player.RigidBody.AddForce(0, 6, 0, ForceMode.Impulse);
+            Player.RigidBody.AddForce(0, JumpPower, 0, ForceMode.Impulse);
             Player.IsGrounded = false;
         }
     }
