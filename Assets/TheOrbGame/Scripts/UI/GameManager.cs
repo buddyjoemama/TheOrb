@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public Player player;
@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour
 
         //Cursor.visible = false;
         //StartCoroutine(CreateObject());
+
+        // Set children properties
+        foreach(var item in this.GetComponentsInChildren<IRequiresPlayer>())
+        {
+           // item.Player = this.P
+        }
     }
 
 

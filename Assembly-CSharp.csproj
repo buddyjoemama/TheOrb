@@ -76,7 +76,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\GameObjectTTL.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\BasicExplosionAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Player.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\GameManager.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\GameManager.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\FlashIn.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\IHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Effects\TestExplosion.cs" />
@@ -95,6 +95,8 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Powerups\IPlayerPowerup.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\UIBlasterIndicator.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\IRequiresPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />
