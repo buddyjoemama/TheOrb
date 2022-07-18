@@ -226,6 +226,7 @@ MonoBehaviour:
   EffectLifetimeSeconds: 10
   UseConfiguredLifetime: 1
   EffectScale: 1.5
+  RandomizeRotation: 0
 --- !u!114 &3500466167769590249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,7 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6085f45007c55747ace0b2570d9a02a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
+  IsEnabled: 0
+  JumpPower: 10
 --- !u!1 &3910689776267863053
 GameObject:
   m_ObjectHideFlags: 0

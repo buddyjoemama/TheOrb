@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 9756b25e81e414fadae18e72a9fb9e6a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0044840095, g: 0.018052297, b: 0.031240288, a: 1}
+  m_IndirectSpecularColor: {r: 0.00448399, g: 0.018052246, b: 0.031240292, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -856,11 +856,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectToWatch: {fileID: 1612235375}
---- !u!1 &274965321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3738804018425212160, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
-  m_PrefabInstance: {fileID: 1172195326}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &304106696
 Mesh:
   m_ObjectHideFlags: 0
@@ -1284,6 +1279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -1336,7 +1332,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1446
+  m_Name: pb_Mesh-22882
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1544,6 +1540,7 @@ MonoBehaviour:
   EffectLifetimeSeconds: 10
   UseConfiguredLifetime: 1
   EffectScale: 10
+  RandomizeRotation: 0
 --- !u!114 &659271159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1556,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bd57afd31fd4579b0c2d6259f575d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitColor: {r: 1, g: 0, b: 0, a: 1}
+  HitColor: {r: 0.9622642, g: 0.9622642, b: 0.9622642, a: 1}
   OriginalColorPropertyName: HitColor
 --- !u!1001 &764600205
 PrefabInstance:
@@ -1621,7 +1618,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1474
+  m_Name: pb_Mesh-22924
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2101,7 +2098,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31230
+  m_Name: pb_Mesh-22910
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2302,6 +2299,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3939084704030959684, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
+      propertyPath: RandomizeRotation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4065649293460175481, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2430,7 +2431,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-16082
+  m_Name: pb_Mesh-22896
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2594,7 +2595,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-45040
+  m_Name: pb_Mesh-22938
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3248,7 +3249,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5080036164057487700, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
   m_PrefabInstance: {fileID: 1172195326}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274965321}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b101355c70d52354d9eed74327bfc891, type: 3}
@@ -3259,24 +3260,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8677111932515470731, guid: 85e3557f9aa5f3b499cd23f41de26934, type: 3}
   m_PrefabInstance: {fileID: 1172195326}
   m_PrefabAsset: {fileID: 0}
---- !u!143 &1612235384
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274965321}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Height: 1
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &1916749849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4067,9 +4050,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3527823052262849452, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
+      propertyPath: ShotFillAmount
+      value: 0.176
+      objectReference: {fileID: 0}
     - target: {fileID: 7337791772322000690, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337791772322000690, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7337791772322000691, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
       propertyPath: player
@@ -6886,7 +6877,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6970056376795428680, guid: 2417e589310804b418c5d5cb64797a46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -95.3
+      value: -51.2
       objectReference: {fileID: 0}
     - target: {fileID: 6970056376795428680, guid: 2417e589310804b418c5d5cb64797a46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6894,7 +6885,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6970056376795428680, guid: 2417e589310804b418c5d5cb64797a46, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 27.4
+      value: -44.3
       objectReference: {fileID: 0}
     - target: {fileID: 6970056376795428680, guid: 2417e589310804b418c5d5cb64797a46, type: 3}
       propertyPath: m_LocalRotation.w

@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public delegate void OnShotFired(Player player);
+
 public class Player : AbstractHittable
 {
     private float movementX;
@@ -13,6 +15,7 @@ public class Player : AbstractHittable
     private ShieldContainer shieldContainer;
     private PlayerInput input;
     private IEnumerable<IPlayerPowerup> powerups;
+    public event OnShotFired OnShotFired;
 
     private void Awake()
     {
@@ -25,11 +28,6 @@ public class Player : AbstractHittable
 
     public bool IsGrounded { get; set; }
     public Rigidbody RigidBody { get; set; }
-
-    private void Start()
-    {
-
-    }
 
     internal void AddHealth(int lifeValue)
     {
@@ -50,6 +48,8 @@ public class Player : AbstractHittable
     private void OnFire()
     {
         rig.OnFire();
+        if(OnShotFired != null)
+            OnShotFired(this);
     }
 
     private void OnCollisionStay(Collision collision)

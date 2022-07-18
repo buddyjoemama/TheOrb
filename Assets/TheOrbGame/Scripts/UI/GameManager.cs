@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public Camera mainCamera;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Physics.IgnoreLayerCollision(0, 3);
         //lifeBar = GetComponentInChildren<Image>();
@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         foreach(var item in this.GetComponentsInChildren<IRequiresPlayer>())
         {
            // item.Player = this.P
+           item.Player = this.player;
         }
     }
 
