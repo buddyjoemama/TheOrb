@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 1439592695364068922}
   - component: {fileID: 233546321132236980}
   - component: {fileID: 376878437670472602}
-  - component: {fileID: 3527823052262849452}
+  - component: {fileID: 7910985774421559255}
   m_Layer: 5
-  m_Name: Blaster
+  m_Name: BlasterFeedback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3527823052262849452
+--- !u!114 &7910985774421559255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,10 +117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3251108656329629114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d0338e7b6ed9b43acfc9b0895faf69, type: 3}
+  m_Script: {fileID: 11500000, guid: 334693cef9cb54fc6ab19fb07d34f2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShotFillAmount: 0.15
+  ShotFillAmount: 0.176
   ShotFalloff: 0.01
 --- !u!1 &3319749620123534961
 GameObject:
@@ -132,8 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4628841238656958512}
   - component: {fileID: 2129245996890907617}
+  - component: {fileID: 1790511818033235688}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: BlasterMeter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,6 +174,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1790511818033235688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3319749620123534961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4069eae6b4ed40dc8c16aae29082fb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3817036556836992439
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +273,7 @@ GameObject:
   - component: {fileID: 5322763122758740817}
   - component: {fileID: 4001601574594797298}
   - component: {fileID: 8736586330613065071}
+  - component: {fileID: 4218143555475790127}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -325,6 +339,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4218143555475790127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4855713246515823518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ec1bfd57aa4d5a9f357a5cb800334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7337791771479860258
 GameObject:
   m_ObjectHideFlags: 0

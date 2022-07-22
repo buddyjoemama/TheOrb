@@ -28,10 +28,21 @@ public class Player : AbstractHittable
 
     public bool IsGrounded { get; set; }
     public Rigidbody RigidBody { get; set; }
+    public bool FiringEnabled { get; internal set; }
 
     internal void AddHealth(int lifeValue)
     {
                        
+    }
+
+    internal void DisableFiring()
+    {
+        FiringEnabled = false;
+    }
+
+    internal void EnableFiring()
+    {
+        FiringEnabled = true;
     }
 
     /// <summary>
@@ -47,9 +58,12 @@ public class Player : AbstractHittable
 
     private void OnFire()
     {
-        rig.OnFire();
-        if(OnShotFired != null)
-            OnShotFired(this);
+        if (FiringEnabled)
+        {
+            rig.OnFire();
+            if (OnShotFired != null)
+                OnShotFired(this);
+        }
     }
 
     private void OnCollisionStay(Collision collision)
