@@ -5,6 +5,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+public delegate void FireHandler(Player sender);
+
 public class Player : AbstractHittable
 {
     private float movementX;
@@ -13,6 +15,8 @@ public class Player : AbstractHittable
     private ShieldContainer shieldContainer;
     private PlayerInput input;
     private IEnumerable<IPlayerPowerup> powerups;
+
+    public event FireHandler OnPlayerFire;
 
     private void Awake()
     {
@@ -49,6 +53,9 @@ public class Player : AbstractHittable
 
     private void OnFire()
     {
+        if (OnPlayerFire != null)
+            OnPlayerFire(this);
+
         rig.OnFire();
     }
 

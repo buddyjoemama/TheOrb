@@ -12,6 +12,15 @@ public class GameManager : MonoBehaviour
 
     public Camera mainCamera;
 
+    private void Awake()
+    {
+        // Set children properties
+        foreach (var item in this.GetComponentsInChildren<IRequiresPlayer>())
+        {
+            item.Player = player;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +33,6 @@ public class GameManager : MonoBehaviour
 
         //Cursor.visible = false;
         //StartCoroutine(CreateObject());
-
-        // Set children properties
-        foreach(var item in this.GetComponentsInChildren<IRequiresPlayer>())
-        {
-           // item.Player = this.P
-        }
     }
 
 
