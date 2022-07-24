@@ -14,10 +14,12 @@ namespace Assets.TheOrbGame.Scripts.Effects
         public float EffectLifetimeSeconds = 10;
         public bool UseConfiguredLifetime = true;
         public float EffectScale = 1.5f;
+        public bool RandomizeRotation = true;
 
         public virtual void Apply()
         {
-            var explosion = Instantiate(ExplosionEffect, transform.position + EffectOffset, Quaternion.identity.Random());
+            var explosion = Instantiate(ExplosionEffect, transform.position + EffectOffset,
+                RandomizeRotation ? Quaternion.identity.Random() : Quaternion.identity);
             explosion.localScale = new Vector3(EffectScale, EffectScale, EffectScale);
 
            // if(UseConfiguredLifetime)

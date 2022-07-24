@@ -15,6 +15,7 @@ public class Player : AbstractHittable
     private ShieldContainer shieldContainer;
     private PlayerInput input;
     private IEnumerable<IPlayerPowerup> powerups;
+    public event OnShotFired OnShotFired;
 
     public event FireHandler OnPlayerFire;
 
@@ -29,15 +30,21 @@ public class Player : AbstractHittable
 
     public bool IsGrounded { get; set; }
     public Rigidbody RigidBody { get; set; }
-
-    private void Start()
-    {
-
-    }
+    public bool FiringEnabled { get; internal set; }
 
     internal void AddHealth(int lifeValue)
     {
                        
+    }
+
+    internal void DisableFiring()
+    {
+        FiringEnabled = false;
+    }
+
+    internal void EnableFiring()
+    {
+        FiringEnabled = true;
     }
 
     /// <summary>

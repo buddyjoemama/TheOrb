@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIBlasterIndicator : MonoBehaviour, IRequiresPlayer
+public class BlasterMeter : MonoBehaviour
 {
-    public Player Player { get; set; }
-
     // Start is called before the first frame update
     void Start()
     {

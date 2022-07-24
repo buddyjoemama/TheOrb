@@ -71,9 +71,12 @@ public abstract class AbstractHittable : MonoBehaviour, IHittable
     /// </summary>
     public virtual void DestroyHittable()
     {
-        foreach(var action in _destroyActions)
+        if (_destroyActions != null)
         {
-            action.Apply();
+            foreach (var action in _destroyActions)
+            {
+                action.Apply();
+            }
         }
 
         OnDestroyed();

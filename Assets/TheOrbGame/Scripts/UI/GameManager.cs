@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Physics.IgnoreLayerCollision(0, 3);
         //lifeBar = GetComponentInChildren<Image>();
