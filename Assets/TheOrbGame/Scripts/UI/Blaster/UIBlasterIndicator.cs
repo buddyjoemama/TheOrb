@@ -8,19 +8,20 @@ public class UIBlasterIndicator : MonoBehaviour, IRequiresPlayer
     public float ShotFillAmount = .11f;
     public float ShotFalloff = .01f;
     public float FillReductionFactor = .35f;
+    public bool ReductionEnabled = true;
 
     public Player Player { get; set; }
     private Image _image;
 
-    private bool requireCooldown = false;
-
     // Start is called before the first frame update
     void Start()
     {
-        Player.OnShotFired += (p) => 
+        Player.OnPlayerFire += (p) => 
         {
             float reduceAmt = _image.fillAmount * FillReductionFactor;
             var val = ShotFillAmount - (ShotFillAmount * reduceAmt);
+
+            Debug.Log("Reduce: " + reduceAmt + ". val: " + val);
 
             _image.fillAmount += val;
         };
@@ -50,21 +51,7 @@ public class UIBlasterIndicator : MonoBehaviour, IRequiresPlayer
             _image.color = Color.red;
         }
 
-        _image.fillAmount -= ShotFalloff;
-        
-
-       /* if (_image.fillAmount < 1 && !requireCooldown)
-        {
+        if(ReductionEnabled)
             _image.fillAmount -= ShotFalloff;
-            _image.color = Color.Lerp(Color.white, Color.red, _image.fillAmount);
-        }
-        else if(_image.fillAmount == 1)
-        {
-            requireCooldown = true;
-        }
-        else if(_image.fillAmount == 0)
-        {
-            requireCooldown = false;
-        }*/
     }
 }

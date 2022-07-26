@@ -15,7 +15,6 @@ public class Player : AbstractHittable
     private ShieldContainer shieldContainer;
     private PlayerInput input;
     private IEnumerable<IPlayerPowerup> powerups;
-    public event OnShotFired OnShotFired;
 
     public event FireHandler OnPlayerFire;
 

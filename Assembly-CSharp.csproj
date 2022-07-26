@@ -69,6 +69,7 @@
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\Actions\ForceHitAction.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\ShieldContainer.cs" />
     <Compile Include="Assets\BaseTemplate\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\IRequiresPlayer.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\GunRig.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\PermanentHitable.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Enemies\AutonomousGunRig.cs" />
@@ -93,10 +94,11 @@
     <Compile Include="Assets\TheOrbGame\Scripts\Projectiles\BasicProjectile.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\BulletMark.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Powerups\IPlayerPowerup.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\Blaster\BlasterMeter.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\HitDetection\GameObjects\HittableBase.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\Blaster\BlasterMeterBackground.cs" />
+    <Compile Include="Assets\TheOrbGame\Scripts\UI\Blaster\UIBlasterIndicator.cs" />
     <Compile Include="Assets\TheOrbGame\Scripts\Player\Shields\Shield.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\UI\UIBlasterIndicator.cs" />
-    <Compile Include="Assets\TheOrbGame\Scripts\UI\IRequiresPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\RayFire\Plugins\Windows\x86_x64\RFLib_DotNet_2018.dll" />

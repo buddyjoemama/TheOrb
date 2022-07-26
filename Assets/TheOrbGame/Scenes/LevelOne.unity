@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 8900000, guid: 9756b25e81e414fadae18e72a9fb9e6a, type: 3}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00448399, g: 0.018052246, b: 0.031240292, a: 1}
+  m_IndirectSpecularColor: {r: 0.0044840095, g: 0.018052297, b: 0.031240288, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1279,7 +1279,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -4054,14 +4053,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 160533509}
-    - target: {fileID: 7337791771479860269, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7337791771479860269, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
-      propertyPath: m_PlaneDistance
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 7337791772322000690, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -4113,10 +4104,6 @@ PrefabInstance:
     - target: {fileID: 7337791772322000700, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8736586330613065071, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}
-      propertyPath: m_Material
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58abf6984bd8c246a8cb1362d7c6b14, type: 3}

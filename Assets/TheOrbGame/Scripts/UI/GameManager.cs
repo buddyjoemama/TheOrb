@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        Physics.IgnoreLayerCollision(0, 3);
+
         // Set children properties
         foreach (var item in this.GetComponentsInChildren<IRequiresPlayer>())
         {
@@ -21,19 +23,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        Physics.IgnoreLayerCollision(0, 3);
-        //lifeBar = GetComponentInChildren<Image>();
+    //// Start is called before the first frame update
+    //void Awake()
+    //{
+    //    Physics.IgnoreLayerCollision(0, 3);
+    //    //lifeBar = GetComponentInChildren<Image>();
 
-        //hitablePlayer = player.GetComponent<Hittable>();
-        //hitablePlayer.OnHit += HitablePlayer_OnHit;
-        //hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
+    //    //hitablePlayer = player.GetComponent<Hittable>();
+    //    //hitablePlayer.OnHit += HitablePlayer_OnHit;
+    //    //hitablePlayer.OnHitPointsChanged += HitablePlayer_OnHitPointsChanged;
 
-        //Cursor.visible = false;
-        //StartCoroutine(CreateObject());
-    }
+    //    //Cursor.visible = false;
+    //    //StartCoroutine(CreateObject());
+    //}
 
 
     public void FixedUpdate()
