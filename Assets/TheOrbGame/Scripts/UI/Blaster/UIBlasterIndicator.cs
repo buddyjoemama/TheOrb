@@ -12,7 +12,7 @@ public class UIBlasterIndicator : MonoBehaviour, IRequiresPlayer
 
     public Player Player { get; set; }
     private Image _image;
-
+      
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +51,7 @@ public class UIBlasterIndicator : MonoBehaviour, IRequiresPlayer
             _image.color = Color.red;
         }
 
-        if(ReductionEnabled)
+        if (ReductionEnabled)
             _image.fillAmount -= ShotFalloff;
     }
 }
