@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c5ee11c8745fa5469d273920fdbb276, type: 2}
+  - {fileID: 2100000, guid: ccb59c81aa769744998fc0a0ca538018, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -177,6 +177,7 @@ MonoBehaviour:
   EffectLifetimeSeconds: 20
   UseConfiguredLifetime: 1
   EffectScale: 1.5
+  RandomizeRotation: 1
 --- !u!114 &422183399
 MonoBehaviour:
   m_ObjectHideFlags: 0

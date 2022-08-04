@@ -45,8 +45,16 @@ PrefabInstance:
       value: OrangeStationaryCube
       objectReference: {fileID: 0}
     - target: {fileID: 8084043108435292061, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: EffectScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084043108435292061, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: RandomizeRotation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084043108435292061, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: UseConfiguredLifetime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260144303801164709, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: m_RootOrder
@@ -104,6 +112,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8718906068228413358, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0eba8451930d944b874169f59facb75, type: 3}
 --- !u!4 &936015182534582646 stripped
@@ -129,6 +141,10 @@ PrefabInstance:
     - target: {fileID: 8084043108435292061, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: RandomizeRotation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084043108435292061, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: UseConfiguredLifetime
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8260144303801164709, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: m_RootOrder
@@ -185,6 +201,10 @@ PrefabInstance:
     - target: {fileID: 8260144303801164709, guid: e0eba8451930d944b874169f59facb75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8718906068228413358, guid: e0eba8451930d944b874169f59facb75, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0eba8451930d944b874169f59facb75, type: 3}
