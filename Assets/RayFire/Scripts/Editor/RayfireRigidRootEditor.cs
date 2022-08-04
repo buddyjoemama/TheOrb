@@ -985,6 +985,15 @@ namespace RayFire
                     scr.fading.shardAmount = root.fading.shardAmount;
                     SetDirty (scr);
                 }
+
+            EditorGUI.BeginChangeCheck();
+            root.fading.shardTag = EditorGUILayout.TextField("Tag", root.fading.shardTag);
+            if (EditorGUI.EndChangeCheck())
+                foreach (RayfireRigidRoot scr in targets)
+                {
+                    scr.fading.shardTag = root.fading.shardTag;
+                    SetDirty(scr);
+                }
         }
         
         /// /////////////////////////////////////////////////////////

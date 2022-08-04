@@ -20,13 +20,14 @@ namespace RayFire
         public float          fadeTime;
         public float          sizeFilter;
         public int            shardAmount;
-        
+        public string         shardTag;
+
         [NonSerialized] public int         state; // 1-Living, 2-Fading, 3-Faded
         [NonSerialized] public bool        stop;
         [NonSerialized] public Vector3     position;
         [NonSerialized] public bool        offsetCorState;
         [NonSerialized] public IEnumerator offsetEnum;
-        
+
         /// /////////////////////////////////////////////////////////
         /// Constructor
         /// /////////////////////////////////////////////////////////
@@ -44,7 +45,8 @@ namespace RayFire
             fadeTime      = 5f;
             sizeFilter    = 0f;
             shardAmount   = 5;
-             
+            shardTag = null;
+            
             Reset();
         }
 
@@ -61,6 +63,7 @@ namespace RayFire
             fadeTime      = fade.fadeTime;
             sizeFilter    = fade.sizeFilter;
             shardAmount   = fade.shardAmount;
+            shardTag = fade.shardTag;
 
             Reset();
         }
@@ -232,20 +235,20 @@ namespace RayFire
             //if (scr.objectType != ObjectType.NestedCluster && scr.physics.physicsEnum != null)
             //    scr.StopCoroutine (scr.physics.physicsEnum);
         }
-        
+
         // Fading init for Shard object
-        public static void FadeShard (RayfireRigidRoot scr, RFShard shard)
+        public static void FadeShard(RayfireRigidRoot scr, RFShard shard)
         {
             // No fading
             if (scr.fading.fadeType == FadeType.None)
                 return;
-            
+
             // Shard living, fading or faded
             if (shard.fade > 0)
                 return;
-            
-            // Size check
-            if (scr.fading.sizeFilter > 0 && shard.sz > scr.fading.sizeFilter)
+
+            // Tag check
+            if ((!String.IsNullOrWhiteSpace(scr.fading.shardTag) && shard.col.CompareTag(scr.fading.shardTag)))
                 return;
             
             // Start life coroutine

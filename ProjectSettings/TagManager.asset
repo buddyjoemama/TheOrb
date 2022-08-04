@@ -9,6 +9,7 @@ TagManager:
   - Floor
   - Enemy
   - Box
+  - DontFade
   layers:
   - Default
   - TransparentFX
